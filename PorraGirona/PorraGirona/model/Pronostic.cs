@@ -10,7 +10,7 @@ namespace PorraGirona
     {
         private int idPronostic;
         private Usuari usuari;
-        //private Partit partit;
+        private Partit partit;
         private string resultat;
 
         public int IdPronostic
@@ -30,6 +30,18 @@ namespace PorraGirona
             get { return resultat; }
             set { resultat = value; }
         }
+
+        public Partit Partit
+        {
+            get { return partit; }
+            set { partit = value; }
+        }
+
+        public override string ToString()
+        {
+            return $"Pronostic [ID: {idPronostic}, Usuari: {usuari.Dni}, Partit: {partit.Local} vs {partit.Visitant}, Resultat: {resultat}]";
+        }
+    }
 
     }
 }

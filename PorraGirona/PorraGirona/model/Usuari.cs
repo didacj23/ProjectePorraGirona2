@@ -67,7 +67,17 @@ namespace PorraGirona
 
         }
 
-        
+        public bool Pronosticar(Partit partit, int golsA, int golsB)
+        {
+            
+        }
+
+        public override string ToString()
+        {
+            return $"Usuari [DNI: {dni}, Nom: {nom}, Cognom: {cognom}, Punts acumulats: {puntsAcumulats}]";
+        }
+
+
 
 
 

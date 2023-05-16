@@ -8,24 +8,24 @@ namespace PorraGirona
 {
     internal class ClassificacioUsuaris
     {
-        private List<Usuari> usuari;
+        private List<Usuari> usuaris;
 
         public ClassificacioUsuaris()
         {
-            usuari = new List<Usuari>();
+            usuaris = new List<Usuari>();
         }
 
-        public List<Usuari> Usuari
+        public List<Usuari> Usuaris
         {
-            get { return usuari; }
-            set { usuari = value; }
+            get { return usuaris; }
+            set { usuaris = value; }
         }
 
         public override string ToString()
         {
             string result = "Classificacio Usuari:\n";
 
-            foreach (Usuari usuari in usuari)
+            foreach (Usuari usuari in usuaris)
             {
                 result += usuari.ToString() + "\n";
             }
