@@ -17,7 +17,6 @@ namespace PorraGirona
         private int totalPartitsEmpatats;
         private LlistaJugadors jugadors;
 
-
         public Equip(string nom, string camp, string foto, string categoria, LlistaJugadors jugadors)
         {
             this.nom = nom;
@@ -29,8 +28,6 @@ namespace PorraGirona
             totalPartitsEmpatats=0;
             this.jugadors=jugadors;
         }
-
-
 
         public string Nom
         {
@@ -79,19 +76,11 @@ namespace PorraGirona
             get { return jugadors; }
             set { jugadors=value; }
         }
+                
 
-        
-
-        public string ToString()
+        public override string ToString()
         {
-            return $"Nom: {Nom} \n"+
-                    $"Camp: {Camp} \n"+
-                    $"Foto: {Foto} \n" +
-                    $"Categoria: {Categoria} \n" +
-                    $"TotalPartitsGuanyats: {TotalPartitsGuanyats} \n" +
-                    $"TotalPartitsPerduts: {TotalPartitsPerduts} \n" +
-                    $"TotalPartitsEmpatats: {TotalPartitsEmpatats} \n" +
-                    $"Jugadors: {Jugadors}";
+            return $"Nom: {Nom},  Camp: {Camp},  Foto: {Foto},  Categoria: {Categoria},  TotalPartitsGuanyats: {TotalPartitsGuanyats},  TotalPartitsPerduts: {TotalPartitsPerduts},  TotalPartitsEmpatats: {TotalPartitsEmpatats},  Jugadors: {Jugadors}";
         }
 
     }

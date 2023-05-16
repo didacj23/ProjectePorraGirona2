@@ -87,13 +87,13 @@ namespace PorraGirona
         public string Estat
         {
             get { return estat; }
-            set { estat=value; }}
+            set { estat=value; }
         }
 
-        /*public override string ToString()
+        public override string ToString()
         {
-            return
-        }*/
+            return $"IdPartit: {IdPartit},  Equip A: {EquipA},  Equip B: {EquipB},  Gols Equip A: {GolsEquipA},  Gols Equip B: {GolsEquipB}, Dia i Hora: {DiaHora},  Temporada: {Temporada},  Camp: {Camp},  Estat: {Estat}";
+        }
 
     }
 }
