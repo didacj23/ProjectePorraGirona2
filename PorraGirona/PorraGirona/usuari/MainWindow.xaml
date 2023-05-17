@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:PorraGirona"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+<<<<<<< Updated upstream
     <Grid x:Name="Inici" Background="#FFCF152D">
         <Label x:Name="lbl_porraGiorna_inici" Content="Porra Girona FC" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Background="#FFCF152D" Foreground="White" FontSize="24" FontFamily="Yu Gothic UI" FontWeight="Bold"/>
         <Image x:Name="img_logo_inici" Source="C:\Users\USUARIO\Documents\GitHub\ProjectePorraGirona2\PorraGirona\PorraGirona\usuari\Girona_FC_new_logo.png" Height="NaN" Margin="238,97,238,137" Width="NaN"></Image>
@@ -13,21 +14,46 @@
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+=======
+    <Grid x:Name="inici" Background="#FFCF152D">
+        <Image HorizontalAlignment="Left" Height="143" Margin="328,97,0,0" VerticalAlignment="Top" Width="158" Source="/usuari/Girona_FC_new_logo.png"/>
+        <Label Content="Porra Girona FC" HorizontalAlignment="Center" Margin="0,32,0,0" VerticalAlignment="Top" FontFamily="Yu Gothic UI" FontSize="22" Foreground="White" FontWeight="Bold"/>
+        <Button x:Name="btn_iniciarSessio_inici" Content="Registrar-se" HorizontalAlignment="Left" Margin="404,305,0,0" VerticalAlignment="Top" Background="#FFD75667" BorderBrush="#FFD75667" FontWeight="Bold" FontFamily="Yu Gothic UI" Foreground="White" BorderThickness="0" Height="23" Width="83">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="3">
+>>>>>>> Stashed changes
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
             </Button.Template>
         </Button>
+<<<<<<< Updated upstream
         <Button Content="Registrar-me" HorizontalAlignment="Left" Margin="404,336,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+=======
+        <Button x:Name="btn_Registrar_se_inici" Content="Iniciar sessió" HorizontalAlignment="Left" Margin="315,305,0,0" VerticalAlignment="Top" Background="#FFD75667" BorderBrush="#FFD75667" FontWeight="Bold" FontFamily="Yu Gothic UI" Foreground="White" BorderThickness="0" Height="23" Width="82">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+>>>>>>> Stashed changes
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
             </Button.Template>
         </Button>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
     </Grid>
 </Window>
