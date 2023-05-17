@@ -1,0 +1,34 @@
+﻿<Window x:Class="PorraGirona.usuari.IniciUsuari"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PorraGirona.usuari"
+        mc:Ignorable="d"
+        Title="IniciUsuari" Height="450" Width="800">
+    <Grid Background="#FFCF152D">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lb_nomUsuari" Content="Hola, nomUsuari" HorizontalAlignment="Left" Margin="35,29,0,0" VerticalAlignment="Top" Width="163" Foreground="White" FontWeight="Medium" FontSize="19" FontFamily="Yu Gothic UI"/>
+        <Label x:Name="lb_teusPronostics" Content="Els teus pronòstics" HorizontalAlignment="Left" Margin="35,144,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI"/>
+        <Label x:Name="lb_propersPartits" Content="Propers partits" HorizontalAlignment="Left" Margin="591,47,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI"/>
+        <Label x:Name="lb_infoPuntuacioUsuari" Content="La teva puntuació acumulada:" HorizontalAlignment="Left" Margin="36,90,0,0" VerticalAlignment="Top" Width="223" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI"/>
+        <Label x:Name="lb_infoPuntuacioUsuari_Copy" Content="número" HorizontalAlignment="Left" Margin="264,90,0,0" VerticalAlignment="Top" Width="223" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI"/>
+        <DataGrid x:Name="dg_PronosticsUsuari" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="35,180,259,50" Width="NaN" FontFamily="Yu Gothic UI" Background="#FFCF152D">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="PARTIT"/>
+                <DataGridTextColumn Header="DIA I HORA"/>
+                <DataGridTextColumn Header="PRONÒSTIC GOLS A"/>
+                <DataGridTextColumn Header="PRONÒSTIC GOLS B"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dg_PropersPartits" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="591,88,10,142" Width="NaN" FontFamily="Yu Gothic UI" Background="#FFCF152D">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="PARTIT"/>
+                <DataGridTextColumn Header="DIA I HORA"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
