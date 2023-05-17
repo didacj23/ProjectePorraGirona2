@@ -2,26 +2,12 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-<<<<<<< Updated upstream
-    <Compile Update="usuari\IniciUsuari.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="usuari\Pronostic.xaml.cs">
-=======
-    <Compile Update="usuari\IniciarSessio.xaml.cs">
->>>>>>> Stashed changes
+    <Compile Update="usuari\registre.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
-    <Page Update="usuari\IniciUsuari.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="usuari\Pronostic.xaml">
-=======
-    <Page Update="usuari\IniciarSessio.xaml">
->>>>>>> Stashed changes
+    <Page Update="usuari\registre.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
