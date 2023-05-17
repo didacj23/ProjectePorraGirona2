@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace PorraGirona.usuari
 {
     /// <summary>
-    /// Lógica de interacción para IniciarSessio.xaml
+    /// Lógica de interacción para registre.xaml
     /// </summary>
-    public partial class IniciarSessio : Window
+    public partial class registre : Window
     {
-        public IniciarSessio()
+        public registre()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

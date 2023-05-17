@@ -1,0 +1,82 @@
+﻿<Window x:Class="PorraGirona.usuari.registre"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PorraGirona.usuari"
+        mc:Ignorable="d"
+        Title="registre" Height="450" Width="800">
+    <Grid x:Name="registre1" Background="#FFCF152D">
+        <Label x:Name="lbl_titol_registre" Content="Registre't" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Background="#FFCF152D" Foreground="White" FontSize="24" FontFamily="Yu Gothic UI" FontWeight="Bold"/>
+        <TextBox x:Name="inp_Usuari_IniciarSessio" HorizontalAlignment="Center" Margin="0,116,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+            <TextBox.Template>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+        <TextBox x:Name="inp_cognom_registre" HorizontalAlignment="Center" Margin="0,164,0,0" TextWrapping="Wrap" Text="Cognom" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+            <TextBox.Template>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+        <TextBox x:Name="inp_nom_registre" HorizontalAlignment="Center" Margin="0,116,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+            <TextBox.Template>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+        <TextBox x:Name="inp_dni_registre" HorizontalAlignment="Center" Margin="0,212,0,0" TextWrapping="Wrap" Text="DNI" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+            <TextBox.Template>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+        <TextBox x:Name="inp_contrassenya_registre" HorizontalAlignment="Center" Margin="0,260,0,0" TextWrapping="Wrap" Text="Contrassenya" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+            <TextBox.Template>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+        <Button x:Name="btn_regstre_registre" Content="Registre't" HorizontalAlignment="Center" Margin="0,324,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</Window>
