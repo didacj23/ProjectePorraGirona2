@@ -22,7 +22,7 @@
         </TextBox>
 
 
-        <TextBox x:Name="inp_Usuari_IniciarSessio" HorizontalAlignment="Center" Margin="0,116,0,0" TextWrapping="Wrap" Text="Usuari" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+        <TextBox x:Name="inp_Usuari_IniciarSessio" HorizontalAlignment="Center" Margin="0,116,0,0" TextWrapping="Wrap" Text="DNI" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
