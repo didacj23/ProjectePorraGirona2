@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,19 +11,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PorraGirona
+namespace PorraGirona.usuari
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Lógica de interacción para IniciUsuari.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class IniciUsuari : Window
     {
-        public MainWindow()
+        public IniciUsuari()
         {
             InitializeComponent();
+
+            string connectionString = "Data Source=localhost;Initial Catalog=porragirona;
         }
     }
 }
