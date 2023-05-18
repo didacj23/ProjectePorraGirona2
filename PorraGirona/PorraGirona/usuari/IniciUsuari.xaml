@@ -10,12 +10,46 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="lb_nomUsuari" Content="Hola, nomUsuari" HorizontalAlignment="Left" Margin="35,29,0,0" VerticalAlignment="Top" Width="163" Foreground="White" FontWeight="Medium" FontSize="19" FontFamily="Yu Gothic UI"/>
-        <Label x:Name="lb_teusPronostics" Content="Els teus pronòstics" HorizontalAlignment="Left" Margin="35,144,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI"/>
-        <Label x:Name="lb_propersPartits" Content="Propers partits" HorizontalAlignment="Left" Margin="591,47,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI"/>
-        <Label x:Name="lb_infoPuntuacioUsuari" Content="La teva puntuació acumulada:" HorizontalAlignment="Left" Margin="36,90,0,0" VerticalAlignment="Top" Width="223" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI"/>
-        <Label x:Name="lb_infoPuntuacioUsuari_Copy" Content="número" HorizontalAlignment="Left" Margin="264,90,0,0" VerticalAlignment="Top" Width="223" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI"/>
-        <DataGrid x:Name="dg_PronosticsUsuari" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="35,180,259,50" Width="NaN" FontFamily="Yu Gothic UI" Background="#FFCF152D">
+        <Label x:Name="lbl_nomUsuari_usuari" Content="Hola, nomUsuari" HorizontalAlignment="Left" Margin="35,29,0,0" VerticalAlignment="Top" Width="163" Foreground="White" FontWeight="Medium" FontSize="19" FontFamily="Yu Gothic UI Light"/>
+        <Label x:Name="lbl_teusPronostics_usuari" Content="Els teus pronòstics" HorizontalAlignment="Left" Margin="35,75,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+        <Label x:Name="lbl_propersPartits_usuari" Content="Propers partits" HorizontalAlignment="Left" Margin="35,235,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+        <Label x:Name="lb_infoPuntuacio_usuari" Content="Puntuació" HorizontalAlignment="Left" Margin="580,32,0,0" VerticalAlignment="Top" Width="80" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+        <Label x:Name="txtb_puntuacio_usuari" Content="número" HorizontalAlignment="Left" Margin="666,31,0,0" VerticalAlignment="Top" Width="68" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI" Height="33">
+            <Label.Style>
+                <Style TargetType="{x:Type Label}">
+                    <Setter Property="Background" Value="#FFD75667"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Label}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Label.Style>
+        </Label>
+
+        <DataGrid x:Name="dg_Pronostics_usuari" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="35,106,32,193" Width="NaN" FontFamily="Yu Gothic UI Light" Background="#FFCF152D" BorderBrush="#FFCF152D" GridLinesVisibility="None">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Background" Value="#d75667"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#FFCF152D"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="BorderThickness" Value="0 0 0 1"/>
+                    <Setter Property="BorderBrush" Value="black"/>
+                </Style>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="BorderBrush" Value="#d75667"/>
+                    <Setter Property="BorderThickness" Value="0 0 0 0"/>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="PARTIT"/>
                 <DataGridTextColumn Header="DIA I HORA"/>
@@ -23,12 +57,55 @@
                 <DataGridTextColumn Header="PRONÒSTIC GOLS B"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="dg_PropersPartits" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="591,88,10,142" Width="NaN" FontFamily="Yu Gothic UI" Background="#FFCF152D">
+
+
+
+
+        <DataGrid x:Name="dg_PropersPartits_usuari" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="35,266,512,27" Width="NaN" FontFamily="Yu Gothic UI Light" Background="#FFCF152D" BorderBrush="#FFCF152D" GridLinesVisibility="None">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#FFCF152D"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="BorderThickness" Value="0 0 0 1"/>
+                    <Setter Property="BorderBrush" Value="black"/>
+                </Style>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Background" Value="#d75667"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="PARTIT"/>
                 <DataGridTextColumn Header="DIA I HORA"/>
             </DataGrid.Columns>
         </DataGrid>
+        <DataGrid x:Name="dg_classificacio_usuari" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="327,266,293,33" Width="NaN" FontFamily="Yu Gothic UI Light" Background="#FFCF152D" BorderBrush="#FFCF152D" GridLinesVisibility="None">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Setter Property="Background" Value="#d75667"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#FFCF152D"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="BorderThickness" Value="0 0 0 1"/>
+                    <Setter Property="BorderBrush" Value="black"/>
+                </Style>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="BorderBrush" Value="#d75667"/>
+                    <Setter Property="BorderThickness" Value="0 0 0 0"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nom"/>
+                <DataGridTextColumn Header="Puntuació"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lbl_classificacio_usuari" Content="Classificació" HorizontalAlignment="Left" Margin="329,235,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+
+
+
+
 
     </Grid>
 </Window>

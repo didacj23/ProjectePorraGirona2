@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:PorraGirona"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="Inici" Background="#FFCF152D">
+    <Grid x:Name="inp_dni_IniciarSessio" Background="#FFCF152D">
         <Label x:Name="lbl_porraGiorna_inici" Content="Porra Girona FC" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Background="#FFCF152D" Foreground="White" FontSize="24" FontFamily="Yu Gothic UI" FontWeight="Bold"/>
-        <Image Source="..\Girona_FC_new_logo.png" Height="NaN" Margin="128,89,128,128" Width="NaN"></Image>
-        <Button Content="Iniciar sesión" HorizontalAlignment="Left" Margin="300,336,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667">
+        <Image x:Name="img_logo_inici" Source="..\Girona_FC_new_logo.png" Height="NaN" Margin="128,89,128,128" Width="NaN"></Image>
+        <Button x:Name="btn_iniciarSessio_inici" Content="Iniciar sesión" HorizontalAlignment="Left" Margin="300,336,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
@@ -18,7 +18,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Registrar-me" HorizontalAlignment="Left" Margin="404,336,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667">
+        <Button x:Name="btn_regis_inici" Content="Registrar-me" HorizontalAlignment="Left" Margin="404,336,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
