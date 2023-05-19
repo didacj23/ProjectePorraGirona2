@@ -66,11 +66,12 @@ namespace PorraGirona
             this.puntsAcumulats = 0;
 
         }
-
+        /*
         public bool Pronosticar(Partit partit, int golsA, int golsB)
         {
             
         }
+        */
 
         public override string ToString()
         {

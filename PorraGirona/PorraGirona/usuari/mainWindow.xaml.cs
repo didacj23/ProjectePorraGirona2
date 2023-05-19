@@ -1,6 +1,6 @@
-﻿using System;
+﻿using PorraGirona.usuari;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,18 +13,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace PorraGirona.usuari
+namespace PorraGirona
 {
     /// <summary>
-    /// Lógica de interacción para IniciUsuari.xaml
+    /// Lógica de interacción para mainWindow.xaml
     /// </summary>
-    public partial class IniciUsuari : Window
+    public partial class mainWindow : Window
     {
-        public IniciUsuari()
+        public mainWindow()
         {
             InitializeComponent();
+        }
 
-            string connectionString = "Data Source=localhost;Initial Catalog=porragirona";
+        private void btn_iniciarSessio_inici_Click(object sender, RoutedEventArgs e)
+        {
+            IniciarSessio iniciarSessio = new IniciarSessio();
+
+            iniciarSessio.Show();
+
         }
     }
 }

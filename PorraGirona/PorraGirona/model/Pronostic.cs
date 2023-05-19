@@ -36,12 +36,7 @@ namespace PorraGirona
             get { return partit; }
             set { partit = value; }
         }
-
-        public override string ToString()
-        {
-            return $"Pronostic [ID: {idPronostic}, Usuari: {usuari.Dni}, Partit: {partit.Local} vs {partit.Visitant}, Resultat: {resultat}]";
-        }
-    }
+    
 
     }
 }
