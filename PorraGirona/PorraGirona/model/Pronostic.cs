@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGirona.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,9 +40,9 @@ namespace PorraGirona
 
         public override string ToString()
         {
-            return $"Pronostic [ID: {idPronostic}, Usuari: {usuari.Dni}, Partit: {partit.Local} vs {partit.Visitant}, Resultat: {resultat}]";
+            return $"Pronostic [ID: {idPronostic}, Usuari: {usuari.Dni}, Partit: {partit.EquipA} vs {partit.EquipB}, Resultat: {resultat}]";
         }
     }
 
-    }
+    
 }
