@@ -18,7 +18,7 @@ namespace PorraGirona.dades
             connectionString=$"Server={servidor};Database={basedades};Uid={usuari};Pwd={contrasenya}";
         }
 
-        public void InsertarUsuari()
+        public void InsertarUsuari(Usuari u/*string dni, string contrasenya, string nom, string cognom, int puntsAcumulats*/)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -26,10 +26,20 @@ namespace PorraGirona.dades
 
                 string query = "INSERT INTO usuaris(dni, contrasenya, nom, cognom, puntsAcumulats, administrador) values (@dni, @contrasenya, @nom, @cognom, @puntsAcumulats, @administrador)";
 
-                MySqlCommand comand = new MySqlCommand(query, conn);
-                comand.Parameters.AddWithValue("@dni", dni);
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@dni", u.Dni);
+                    command.Parameters.AddWithValue("@contrasenya", u.Contrasenya);
+                    command.Parameters.AddWithValue("@nom", u.Nom);
+                    command.Parameters.AddWithValue("@cognom", u.Cognom);
+                    command.Parameters.AddWithValue("@puntsAcumulats", u.PuntsAcumulats);
 
-                
+                    //command.Parameters.AddWithValue("@administrador", administrador);
+
+                    command.ExecuteNonQuery();
+                }              
+                                
+                conn.Close(); //el using la tanca automaticament xo wno
             }
         }
 

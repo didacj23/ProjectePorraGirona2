@@ -39,7 +39,7 @@ namespace PorraGirona
             //Conectar amb base d dades x guardar usuari        
 
             Connexio c = new Connexio("localhost", "porragirona", "root", "");
-            c.InsertarUsuari();
+            c.InsertarUsuari(this);
         }
 
         public string Dni
@@ -77,6 +77,10 @@ namespace PorraGirona
             set{ puntsAcumulats = value; }
         }
 
+        public string Contrasenya
+        {
+            get { return contrasenya; }
+        }
 
 
         /*public bool Pronosticar(Partit partit, int golsA, int golsB)
