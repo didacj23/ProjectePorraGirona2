@@ -13,4 +13,18 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\USUARIO\Documents\GitHub\ProjectePorraGirona2\PorraGirona\PorraGirona\usuari\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\USUARIO\Documents\GitHub\ProjectePorraGirona2\PorraGirona\PorraGirona\usuari\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="usuari\MainWindow.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
 </Project>
