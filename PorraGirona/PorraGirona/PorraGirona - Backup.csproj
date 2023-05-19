@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <Page Update="usuari\MainWindow.xaml">
-      <CopyToOutputDirectory></CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
   </ItemGroup>
 
