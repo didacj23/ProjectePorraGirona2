@@ -20,9 +20,33 @@ namespace PorraGirona.model
             partits = new List<Partit>();
         }
 
+        public bool AfegirPartit(Partit p)
+        {
+            if (partits.Contains(p)) return false;
+            else
+            {
+                partits.Add(p);
+                return true;
+            }
+        }
+
+        public bool EliminarPartit(Partit p)
+        {
+            if (partits.Contains(p))
+            {
+                partits.Remove(p);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
         public override string ToString()
         {
-            string result = "Classificacio Usuari:\n";
+            string result = "Partits:\n";
 
             foreach (Partit partit in partits)
             {

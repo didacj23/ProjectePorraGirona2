@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PorraGirona
+namespace PorraGirona.model
 {
     internal class Partit
     {
@@ -32,6 +32,11 @@ namespace PorraGirona
             this.temporada=temporada;
             this.camp=camp;
             estat="programat";
+        }
+
+        public Partit(Equip equipA, Equip equipB, DateTime diaHora, string temporada, string camp, string estat):this(equipA, equipB, diaHora, temporada, camp)
+        {
+            this.estat=estat;
         }
 
         public int ContPartit

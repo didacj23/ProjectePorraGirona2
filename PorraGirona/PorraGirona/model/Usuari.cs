@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using PorraGirona.dades;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -11,9 +13,34 @@ namespace PorraGirona
     internal class Usuari
     {
         private string dni;
+        private string contrasenya;
         private string nom;
         private string cognom;
         private int puntsAcumulats;
+
+        public Usuari()
+        {
+            dni = string.Empty;
+            contrasenya="";
+            nom = string.Empty;
+            cognom = string.Empty;            
+            puntsAcumulats = 0;            
+        }
+
+        public Usuari(string dni, string contrasenya, string nom, string cognom)
+        {
+            this.dni = dni;
+            this.contrasenya= contrasenya;
+            this.nom = nom;
+            this.cognom = cognom;            
+            puntsAcumulats = 0;
+
+
+            //Conectar amb base d dades x guardar usuari        
+
+            Connexio c = new Connexio("localhost", "porragirona", "root", "");
+            c.InsertarUsuari(this);
+        }
 
         public string Dni
         {
@@ -50,37 +77,20 @@ namespace PorraGirona
             set{ puntsAcumulats = value; }
         }
 
-        public Usuari ()
+        public string Contrasenya
         {
-            nom = string.Empty;
-            cognom = string.Empty;
-            dni = string.Empty;
-            puntsAcumulats = 0;
+            get { return contrasenya; }
         }
 
-        public Usuari(string nom, string cognom, string dni, int puntsAcumulats)
-        {
-            this.nom = nom;
-            this.cognom = cognom;
-            this.dni = dni;
-            this.puntsAcumulats = 0;
 
-        }
-        /*
-        public bool Pronosticar(Partit partit, int golsA, int golsB)
+        /*public bool Pronosticar(Partit partit, int golsA, int golsB)
         {
             
-        }
-        */
+        }*/
 
         public override string ToString()
         {
             return $"Usuari [DNI: {dni}, Nom: {nom}, Cognom: {cognom}, Punts acumulats: {puntsAcumulats}]";
         }
-
-
-
-
-
     }
 }

@@ -8,7 +8,7 @@ namespace PorraGirona.model
 {
     internal class Administrador:Usuari
     {
-        /*public Administrador(string nom, string cognom, string dni):base(nom, cognom, dni) { }*/
+        public Administrador(string dni, string pass, string nom, string cognom):base(dni, pass, nom, cognom) { }
 
         public bool CrearJugador(string dni, string nom, string cognom, Equip equip, string posicio, int numero)
         {

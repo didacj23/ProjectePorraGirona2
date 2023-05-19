@@ -30,6 +30,19 @@ namespace PorraGirona
             this.jugadors=jugadors;
         }
 
+        /*
+        public Equip(string nom, string camp, string foto, string categoria, int totalPartitsGuanyats, int totalPartitsPerduts, int totalPartitsEmpatats, )
+        {
+            this.nom = nom;
+            this.camp = camp;
+            this.foto = foto;
+            this.categoria = categoria;
+            totalPartitsGuanyats = 0;
+            totalPartitsPerduts = 0;
+            totalPartitsEmpatats = 0;
+            this.jugadors = jugadors;
+        }*/
+
         public string Nom
         {
             get { return nom; }

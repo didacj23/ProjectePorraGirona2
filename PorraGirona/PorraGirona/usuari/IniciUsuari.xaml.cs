@@ -24,7 +24,7 @@ namespace PorraGirona.usuari
         {
             InitializeComponent();
 
-            string connectionString = "Data Source=localhost;Initial Catalog=porragirona";
+            
         }
     }
 }
