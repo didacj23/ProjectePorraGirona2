@@ -23,5 +23,40 @@ namespace PorraGirona.usuari
         {
             InitializeComponent();
         }
+
+        private void rad_CrearAdmin_admin_Checked(object sender, RoutedEventArgs e)
+        {
+            lbl_nomUsuari_admin.Visibility = rad_CrearAdmin_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            inp_Usuari_admin.Visibility = rad_CrearAdmin_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            btn_Crear_admin.Visibility = rad_CrearAdmin_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+
+        }
+
+        private void rad_eliminarUsuari_admin_Checked(object sender, RoutedEventArgs e)
+        {
+            lbl_nomUsuari_admin.Visibility = rad_eliminarUsuari_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            inp_Usuari_admin.Visibility = rad_eliminarUsuari_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            btn_eliminarUsuari_admin.Visibility = rad_eliminarUsuari_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void btn_Crear_admin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void rad_programarPartit_admin_Checked(object sender, RoutedEventArgs e)
+        {
+            lbl_EquipA_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible: Visibility.Collapsed;
+            lbl_EquipB_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            lbl_DataHora_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            lbl_id_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+
+            inp_EquipA_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            inp_EquipB_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            inp_DataHora_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+            inp_id_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+
+            btn_ProgramarPartit_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+        }
     }
 }
