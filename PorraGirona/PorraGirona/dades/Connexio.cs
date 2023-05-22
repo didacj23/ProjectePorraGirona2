@@ -115,7 +115,10 @@ namespace PorraGirona.dades
                         return u2;
                     }
                 }
+            }
         }
+
+
 
         /*
         public void Connectar()
