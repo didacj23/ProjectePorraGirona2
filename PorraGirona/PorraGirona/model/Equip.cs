@@ -16,9 +16,19 @@ namespace PorraGirona
         private int totalPartitsGuanyats;
         private int totalPartitsPerduts;
         private int totalPartitsEmpatats;
-        private LlistaJugadors jugadors;
 
-        public Equip(string nom, string camp, string foto, string categoria, LlistaJugadors jugadors)
+        public Equip()
+        {
+            nom="";
+            camp="";
+            foto="";
+            categoria="";
+            totalPartitsGuanyats=0;
+            totalPartitsPerduts=0;
+            totalPartitsEmpatats=0;
+        }
+
+        public Equip(string nom, string camp, string foto, string categoria)
         {
             this.nom = nom;
             this.camp = camp;
@@ -27,20 +37,18 @@ namespace PorraGirona
             totalPartitsGuanyats=0;
             totalPartitsPerduts=0;
             totalPartitsEmpatats=0;
-            this.jugadors=jugadors;
         }
 
         /*
-        public Equip(string nom, string camp, string foto, string categoria, int totalPartitsGuanyats, int totalPartitsPerduts, int totalPartitsEmpatats, )
+        public Equip(string nom, string camp, string foto, string categoria, int totalPartitsGuanyats, int totalPartitsPerduts, int totalPartitsEmpatats)
         {
             this.nom = nom;
             this.camp = camp;
             this.foto = foto;
             this.categoria = categoria;
-            totalPartitsGuanyats = 0;
-            totalPartitsPerduts = 0;
-            totalPartitsEmpatats = 0;
-            this.jugadors = jugadors;
+            this.totalPartitsGuanyats = 0;
+            this.totalPartitsPerduts = 0;
+            this.totalPartitsEmpatats = 0;
         }*/
 
         public string Nom
@@ -84,17 +92,11 @@ namespace PorraGirona
             get { return  totalPartitsEmpatats; }
             set { totalPartitsEmpatats = value; }
         }
-
-        public LlistaJugadors Jugadors
-        {
-            get { return jugadors; }
-            set { jugadors=value; }
-        }
                 
 
         public override string ToString()
         {
-            return $"Nom: {Nom},  Camp: {Camp},  Foto: {Foto},  Categoria: {Categoria},  TotalPartitsGuanyats: {TotalPartitsGuanyats},  TotalPartitsPerduts: {TotalPartitsPerduts},  TotalPartitsEmpatats: {TotalPartitsEmpatats},  Jugadors: {Jugadors}";
+            return $"Nom: {Nom},  Camp: {Camp},  Foto: {Foto},  Categoria: {Categoria},  TotalPartitsGuanyats: {TotalPartitsGuanyats},  TotalPartitsPerduts: {TotalPartitsPerduts},  TotalPartitsEmpatats: {TotalPartitsEmpatats}";
         }
 
     }

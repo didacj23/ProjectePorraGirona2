@@ -27,6 +27,7 @@ namespace PorraGirona
             puntsAcumulats = 0;            
         }
 
+        //guarda a la base de dades
         public Usuari(string dni, string contrasenya, string nom, string cognom)
         {
             this.dni = dni;
@@ -41,6 +42,17 @@ namespace PorraGirona
             Connexio c = new Connexio("localhost", "porragirona", "root", "");
             c.InsertarUsuari(this);
         }
+
+        //no guarda a la base de dades. es fa servir per obtenir un usuari de la base de dades
+        public Usuari(string dni, string contrasenya, string nom, string cognom, int puntsAcumulats)
+        {
+            this.dni = dni;
+            this.contrasenya = contrasenya;
+            this.nom = nom;
+            this.cognom = cognom;
+            this.puntsAcumulats = puntsAcumulats;
+        }
+
 
         public string Dni
         {
