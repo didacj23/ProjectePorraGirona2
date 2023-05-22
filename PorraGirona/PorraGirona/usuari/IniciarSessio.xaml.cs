@@ -33,7 +33,7 @@ namespace PorraGirona.usuari
         private void btn_inicSessio_iniciSessio_Click(object sender, RoutedEventArgs e)
         {
             string dni = inp_Usuari_IniciarSessio.Text;
-            string pass = inp_Contrassenya_IniciarSessio.Text;
+            string pass = inp_Contrassenya_iniciSessio.Text;
 
             Sessio s=new Sessio(dni, pass);
 
@@ -42,6 +42,11 @@ namespace PorraGirona.usuari
                 //entrar a la pagina d'inici de usuari
 
                 MessageBox.Show("ok"); //esborrar
+
+                IniciUsuari iniciUsuari = new IniciUsuari();
+                Close();
+                iniciUsuari.Show();
+
             }
             else
             {

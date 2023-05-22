@@ -1,0 +1,28 @@
+﻿<Window x:Class="PorraGirona.usuari.Administrador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PorraGirona.usuari"
+        mc:Ignorable="d"
+        Title="Administrador" Height="450" Width="800">
+    <Grid Background="#FFCF152D">
+        <TextBlock x:Name="lbl_nomUsuari_admin" HorizontalAlignment="Left" Margin="35,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light" FontSize="19"><Run Text="Hola, nom"/><Run Language="es-es" Text="Admin"/></TextBlock>
+        <RadioButton Content="Crear administrador" HorizontalAlignment="Left" Margin="35,114,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Foreground="White"/>
+        <RadioButton Content="Eliminar usuari" HorizontalAlignment="Left" Margin="35,134,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Foreground="White"/>
+        <RadioButton Content="Programar partit" HorizontalAlignment="Left" Margin="35,154,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light"/>
+        <RadioButton Content="Entrar resultat" HorizontalAlignment="Left" Margin="35,174,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light"/>
+        <RadioButton Content="Crear equip" HorizontalAlignment="Left" Margin="35,194,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light"/>
+        <RadioButton Content="Eliminar equip" HorizontalAlignment="Left" Margin="35,212,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light"/>
+        <Button x:Name="btn_ActualitzarPunts_admin" Content="Actualitzar punts" HorizontalAlignment="Left" Margin="35,281,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</Window>

@@ -10,7 +10,7 @@
         <Label x:Name="lbl_titol_iniciarSessio" Content="Iniciar sessió" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Background="#FFCF152D" Foreground="White" FontSize="24" FontFamily="Yu Gothic UI" FontWeight="Bold"/>
 
 
-        <TextBox x:Name="inp_Usuari_IniciarSessio" HorizontalAlignment="Center" Margin="0,116,0,0" TextWrapping="Wrap" Text="DNI" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+        <TextBox x:Name="inp_Usuari_IniciarSessio" HorizontalAlignment="Center" Margin="0,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
@@ -23,7 +23,7 @@
             </TextBox.Template>
         </TextBox>
 
-        <Button x:Name="btn_inicSessio_iniciSessio" Content="Iniciar sesión" HorizontalAlignment="Center" Margin="0,272,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_inicSessio_iniciSessio_Click">
+        <Button x:Name="btn_inicSessio_iniciSessio" Content="Iniciar sesión" HorizontalAlignment="Center" Margin="0,296,0,0" VerticalAlignment="Top" Height="40" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic Light" Click="btn_inicSessio_iniciSessio_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
@@ -32,7 +32,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBox x:Name="inp_Contrassenya_iniciSessio" HorizontalAlignment="Center" Margin="0,174,0,0" TextWrapping="Wrap" Text="Contrassenya" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+        <TextBox x:Name="inp_Contrassenya_iniciSessio" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center" Margin="0,214,0,0">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
@@ -44,6 +44,8 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
+        <TextBlock x:Name="lbl_usuari_IniciSessio" HorizontalAlignment="Left" Margin="313,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="Usuari"/></TextBlock>
+        <TextBlock x:Name="lbl_Contrassenya_iniciSessio" HorizontalAlignment="Left" Margin="313,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="Contrassenya"/></TextBlock>
 
     </Grid>
 </Window>
