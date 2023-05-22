@@ -37,11 +37,88 @@ namespace PorraGirona.dades
                     //command.Parameters.AddWithValue("@administrador", administrador);
 
                     command.ExecuteNonQuery();
+
                 }              
                                 
                 conn.Close(); //el using la tanca automaticament xo wno
             }
         }
+
+        public bool IniciarSessió(Sessio s)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = $"SELECT dni, contrasenya FROM usuaris WHERE dni='{s.Dni}'";
+
+                using (MySqlCommand command = new MySqlCommand( query, conn))
+                {
+                    using (MySqlDataReader reader  = command.ExecuteReader())
+                    {
+                        if(reader.Read())
+                        {
+                            string contrasenyaCorrecta = reader.GetString("contrasenya");
+
+                            if (contrasenyaCorrecta == s.Pass) //si la contrasenya es correcta
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            conn.Close();
+                            return false;
+                        }
+
+                        
+                    }
+                }
+            }
+
+        }
+
+        public Usuari BuscarUsuari(Usuari u1)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = $"SELECT dni FROM usuaris WHERE dni='{u1.Dni}'";
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        Usuari u2 = new Usuari();
+                        if (reader.Read())
+                        {
+                            //obtenir dades de la bd
+                            string dni = reader.GetString("dni");
+                            string nom = reader.GetString("nom");
+                            string cognom = reader.GetString("cognom");
+                            string contrasenya = reader.GetString("contrasenya");
+                            int puntsAcumulats = reader.GetInt32("puntsAcumulats");
+
+                            u2.Nom=nom;
+                            u2.Cognom=cognom;
+                            u2.Dni=dni;
+                            u2.Contrasenya=contrasenya;
+                            u2.PuntsAcumulats=puntsAcumulats;                               
+                           
+                        }
+                        
+                        return u2;
+                    }
+                }
+            }
+        }
+
+
 
         /*
         public void Connectar()

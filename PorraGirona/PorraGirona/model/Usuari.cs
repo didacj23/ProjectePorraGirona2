@@ -80,6 +80,7 @@ namespace PorraGirona
         public string Contrasenya
         {
             get { return contrasenya; }
+            set { contrasenya = value;}
         }
 
 

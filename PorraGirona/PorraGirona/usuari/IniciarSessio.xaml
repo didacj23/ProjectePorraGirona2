@@ -34,7 +34,7 @@
             </TextBox.Template>
         </TextBox>
 
-        <Button x:Name="btn_inicSessio_iniciSessio" Content="Iniciar sesión" HorizontalAlignment="Center" Margin="0,272,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI">
+        <Button x:Name="btn_inicSessio_iniciSessio" Content="Iniciar sesión" HorizontalAlignment="Center" Margin="0,272,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_inicSessio_iniciSessio_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
