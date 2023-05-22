@@ -8,19 +8,18 @@
         Title="IniciarSessio" Height="450" Width="800">
     <Grid x:Name="iniciar_Sessió" Background="#FFCF152D">
         <Label x:Name="lbl_titol_iniciarSessio" Content="Iniciar sessió" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Background="#FFCF152D" Foreground="White" FontSize="24" FontFamily="Yu Gothic UI" FontWeight="Bold"/>
-        <TextBox x:Name="inp_Contrassenya_IniciarSessio" HorizontalAlignment="Center" Margin="0,174,0,0" TextWrapping="Wrap" Text="Contrassenya" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
-            <TextBox.Template>
-                <ControlTemplate TargetType="TextBox">
+        <PasswordBox x:Name="inp_Contrassenya_IniciarSessio" HorizontalAlignment="Center" Margin="0,174,0,0" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center" >
+            <PasswordBox.Template>
+                <ControlTemplate TargetType="PasswordBox">
                     <Border Background="{TemplateBinding Background}"
-            BorderBrush="{TemplateBinding BorderBrush}"
-            BorderThickness="{TemplateBinding BorderThickness}"
-            CornerRadius="3">
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="3">
                         <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
                     </Border>
                 </ControlTemplate>
-            </TextBox.Template>
-        </TextBox>
-
+            </PasswordBox.Template>
+        </PasswordBox>
 
         <TextBox x:Name="inp_Usuari_IniciarSessio" HorizontalAlignment="Center" Margin="0,116,0,0" TextWrapping="Wrap" Text="DNI" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
             <TextBox.Template>
@@ -44,8 +43,6 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-
-
 
     </Grid>
 </Window>

@@ -18,7 +18,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="usuari\Girona_FC_new_logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="C:\Users\USUARIO\Documents\GitHub\ProjectePorraGirona2\PorraGirona\PorraGirona\usuari\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="usuari\Girona_FC_new_logo.png" />
   </ItemGroup>
 
   <ItemGroup>

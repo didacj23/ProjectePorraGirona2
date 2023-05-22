@@ -8,7 +8,7 @@
         Title="mainWindow" Height="450" Width="800">
     <Grid Background="#FFCF152D">
         <Label x:Name="lbl_porraGiorna_inici" Content="Porra Girona FC" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Background="#FFCF152D" Foreground="White" FontSize="24" FontFamily="Yu Gothic UI" FontWeight="Bold"/>
-        <Image x:Name="img_logo_inici" Source="/Girona_FC_new_logo.png" Height="NaN" Margin="128,89,128,128" Width="NaN"/>
+        <Image x:Name="img_logo_inici" Source="/usuari/Girona_FC_new_logo.png" Height="NaN" Margin="128,89,128,128" Width="NaN"/>
         <Button x:Name="btn_iniciarSessio_inici" Content="Iniciar sesión" HorizontalAlignment="Left" Margin="300,336,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" Click="btn_iniciarSessio_inici_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">

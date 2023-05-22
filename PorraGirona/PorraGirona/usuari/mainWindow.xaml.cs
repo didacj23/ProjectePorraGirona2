@@ -28,7 +28,7 @@ namespace PorraGirona
         private void btn_iniciarSessio_inici_Click(object sender, RoutedEventArgs e)
         {
             IniciarSessio iniciarSessio = new IniciarSessio();
-
+            Close();
             iniciarSessio.Show();
 
         }
