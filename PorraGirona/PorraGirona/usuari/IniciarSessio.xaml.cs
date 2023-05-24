@@ -35,10 +35,11 @@ namespace PorraGirona.usuari
             if(s.Valida)
             {
                 //entrar a la pagina d'inici de usuari
-
                 IniciUsuari iniciUsuari = new IniciUsuari();
                 Close();
                 iniciUsuari.Show();
+
+                
 
             }
             else
@@ -49,6 +50,13 @@ namespace PorraGirona.usuari
 
             }
 
+        }
+
+        private void btn_enrere_registre_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow mainWindow = new mainWindow();
+            mainWindow.Show();
+            Close();
         }
     }
 }

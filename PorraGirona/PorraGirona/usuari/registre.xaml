@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="registre" Height="450" Width="800">
     <Grid x:Name="registre1" Background="#FFCF152D">
-        <Label x:Name="lbl_titol_registre" Content="Registre't" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Background="#FFCF152D" Foreground="White" FontSize="24" FontFamily="Yu Gothic UI" FontWeight="Bold"/>
-        <TextBox x:Name="inp_Usuari_IniciarSessio" HorizontalAlignment="Center" Margin="0,116,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+        <Label x:Name="lbl_titol_registre" Content="Registra't" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Background="#FFCF152D" Foreground="White" FontSize="24" FontFamily="Yu Gothic UI" FontWeight="Bold"/>
+        <TextBox x:Name="inp_Nom_registre" HorizontalAlignment="Center" Margin="0,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
@@ -20,7 +20,7 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <TextBox x:Name="inp_cognom_registre" HorizontalAlignment="Center" Margin="0,164,0,0" TextWrapping="Wrap" Text="Cognom" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+        <TextBox x:Name="inp_cognom_registre" HorizontalAlignment="Center" Margin="0,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
@@ -32,7 +32,7 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <TextBox x:Name="inp_nom_registre" HorizontalAlignment="Center" Margin="0,116,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+        <TextBox x:Name="inp_dni_registre" HorizontalAlignment="Center" Margin="0,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
@@ -44,7 +44,7 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <TextBox x:Name="inp_dni_registre" HorizontalAlignment="Center" Margin="0,212,0,0" TextWrapping="Wrap" Text="DNI" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+        <TextBox x:Name="inp_contrassenya_registre" HorizontalAlignment="Center" Margin="0,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
@@ -56,19 +56,7 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <TextBox x:Name="inp_contrassenya_registre" HorizontalAlignment="Center" Margin="0,260,0,0" TextWrapping="Wrap" Text="Contrassenya" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
-            <TextBox.Template>
-                <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="3">
-                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
-                    </Border>
-                </ControlTemplate>
-            </TextBox.Template>
-        </TextBox>
-        <Button x:Name="btn_regstre_registre" Content="Registre't" HorizontalAlignment="Center" Margin="0,324,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_regstre_registre_Click">
+        <Button x:Name="btn_regstre_registre" Content="Registra't" HorizontalAlignment="Center" Margin="0,368,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI Light" Click="btn_regstre_registre_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
@@ -77,6 +65,26 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <Button x:Name="btn_enrere_registre" Content="&lt;" HorizontalAlignment="Left" Margin="21,14,0,0" VerticalAlignment="Top" Height="40" Width="42" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_enrere_registre_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.HorizontalContentAlignment>
+                <HorizontalAlignment>Center</HorizontalAlignment>
+            </Button.HorizontalContentAlignment>
+            <Button.VerticalContentAlignment>
+                <VerticalAlignment>Center</VerticalAlignment>
+            </Button.VerticalContentAlignment>
+        </Button>
+        <TextBlock x:Name="lbl_usuari_IniciSessio" HorizontalAlignment="Left" Margin="314,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="Nom"/></TextBlock>
+        <TextBlock x:Name="lbl_cognom_registre" HorizontalAlignment="Left" Margin="314,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="Cognom"/></TextBlock>
+        <TextBlock x:Name="lbl_usuari_IniciSessio_Copy1" HorizontalAlignment="Left" Margin="314,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="DNI"/></TextBlock>
+        <TextBlock x:Name="lbl_contrasenya_registre" HorizontalAlignment="Left" Margin="313,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="Contrasenya"/></TextBlock>
+
 
     </Grid>
 </Window>
