@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using PorraGirona.dades;
+using PorraGirona.model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -36,11 +37,13 @@ namespace PorraGirona
             this.cognom = cognom;            
             puntsAcumulats = 0;
 
-
-            //Conectar amb base d dades x guardar usuari        
-
             Connexio c = new Connexio("localhost", "porragirona", "root", "");
-            c.InsertarUsuari(this);
+
+            if(c.BuscarUsuari(this).Dni=="") //si l'usuari que s'esta creant no existeix
+            {
+                c.InsertarUsuari(this);
+            }
+           
         }
 
         //no guarda a la base de dades. es fa servir per obtenir un usuari de la base de dades
@@ -95,11 +98,19 @@ namespace PorraGirona
             set { contrasenya = value;}
         }
 
-
-        /*public bool Pronosticar(Partit partit, int golsA, int golsB)
+        public int Pronosticar(Partit partit, int golsA, int golsB)
         {
+            int r=-1;
+
+            if(partit.Estat=="programat")
+            {
+                Pronostic pr = new Pronostic(partit, golsA, golsB);
+                r=0;
+            }else if (partit.Estat=="encurs") r=1;
+            else if(partit.Estat=="finalitzat") r=2;      
             
-        }*/
+            return r;
+        }
 
         public override string ToString()
         {

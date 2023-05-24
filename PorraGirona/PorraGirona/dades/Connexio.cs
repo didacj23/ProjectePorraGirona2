@@ -95,11 +95,13 @@ namespace PorraGirona.dades
 
                 string query = $"SELECT dni FROM usuaris WHERE dni='{u1.Dni}'";
 
+                Usuari u2 = new Usuari();
+
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        Usuari u2 = new Usuari();
+                        
                         if (reader.Read())
                         {
                             int administrador = reader.GetInt32("administrador");
@@ -121,13 +123,16 @@ namespace PorraGirona.dades
 
                         }
 
-                        return u2;
+                        
                     }
                 }
+                return u2;
 
                 conn.Close();
             }
         }
+
+        //public bool EliminarUsuari(string dni)
 
         public void InsertarEquip(Equip e)
         {
@@ -142,7 +147,6 @@ namespace PorraGirona.dades
                     command.Parameters.AddWithValue("@nom_equip",e.Nom);
                     command.Parameters.AddWithValue("@camp", e.Camp);
                     command.Parameters.AddWithValue("@foto", e.Foto);
-                    command.Parameters.AddWithValue("@categoria", e.Categoria);
                     command.Parameters.AddWithValue("@total_partits_guanyats", e.TotalPartitsGuanyats);
                     command.Parameters.AddWithValue("@total_partits_perduts", e.TotalPartitsPerduts);
                     command.Parameters.AddWithValue("@total_partits_empatats", e.TotalPartitsEmpatats);
@@ -154,6 +158,8 @@ namespace PorraGirona.dades
                 conn.Close(); //el using la tanca automaticament xo wno
             }
         }
+
+        //public bool EliminarEquip(string nom_equip)
 
         /*
         public LlistaPartits ObtenirPartits()
@@ -206,7 +212,6 @@ namespace PorraGirona.dades
                             string nom_equip_bd = reader.GetString("nom_equip");
                             string camp = reader.GetString("camp");
                             string foto = reader.GetString("foto");
-                            string categoria = reader.GetString("categoria");
                             int total_partits_guanyats = reader.GetInt32("total_partits_guanyats");
                             int total_partits_perduts = reader.GetInt32("total_partits_perduts");
                             int total_partits_empatats = reader.GetInt32("total_partits_empatats");
@@ -214,7 +219,6 @@ namespace PorraGirona.dades
                             e.Nom=nom_equip_bd;
                             e.Camp=camp;
                             e.Foto=foto;
-                            e.Categoria=categoria;
                             e.TotalPartitsGuanyats = total_partits_guanyats;
                             e.TotalPartitsPerduts=total_partits_perduts;
                             e.TotalPartitsEmpatats = total_partits_empatats;
@@ -228,26 +232,27 @@ namespace PorraGirona.dades
                 conn.Close();
 
             }
-        }   
+        }           
         
-        /*
         public void InsertarPartit(Partit p)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
 
-                string query = "INSERT INTO usuaris(dni, contrasenya, nom, cognom, puntsAcumulats, administrador) values (@dni, @contrasenya, @nom, @cognom, @puntsAcumulats, @administrador)";
+                string query = "INSERT INTO partits(id_partit, equip_A, equip_B, gols_equip_A, gols_equip_B, dia_hora, temporada, camp, estat) values (@id_partit, @equip_A, @equip_B, @gols_equip_A, @gols_equip_B, @dia_hora, @temporada, @camp, @estat)";
 
 
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
-                    command.Parameters.AddWithValue("@dni", u.Dni);
-                    command.Parameters.AddWithValue("@contrasenya", u.Contrasenya);
-                    command.Parameters.AddWithValue("@nom", u.Nom);
-                    command.Parameters.AddWithValue("@cognom", u.Cognom);
-                    command.Parameters.AddWithValue("@puntsAcumulats", u.PuntsAcumulats);
-
+                    command.Parameters.AddWithValue("@id_partit", p.IdPartit);
+                    command.Parameters.AddWithValue("@equip_A", p.EquipA.Nom);
+                    command.Parameters.AddWithValue("@equip_A", p.EquipB.Nom);
+                    command.Parameters.AddWithValue("@gols_equip_A", p.GolsEquipA);
+                    command.Parameters.AddWithValue("@gols_equip_B", p.GolsEquipB);
+                    command.Parameters.AddWithValue("@dia_hora", p.DiaHora);
+                    command.Parameters.AddWithValue("@camp", p.Camp);
+                    command.Parameters.AddWithValue("@estat", p.Estat);
 
                     command.ExecuteNonQuery();
 
@@ -255,8 +260,34 @@ namespace PorraGirona.dades
 
                 conn.Close(); //el using la tanca automaticament xo wno
             }
-        }*/
-                
+        }
+
+        public void InsertarPronostic(Pronostic pr)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = "INSERT INTO pronostics(id_pronostic, dni_usuari, id_partit, gols_equip_a, gols_equip_b) values (@id_pronostic, @dni_usuari, @id_partit, @gols_equip_A, @gols_equip_B)";
+
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@id_pronostic", pr.IdPronostic);
+                    command.Parameters.AddWithValue("@dni_usuari", pr.Usuari.Dni);
+                    command.Parameters.AddWithValue("@id_partit", pr.Partit.IdPartit);
+                    command.Parameters.AddWithValue("@gols_equip_a", pr.GolsEquipA);
+                    command.Parameters.AddWithValue("@gols_equip_b", pr.GolsEquipB);
+
+                    command.ExecuteNonQuery();
+
+                }
+
+                conn.Close(); //el using la tanca automaticament xo wno
+            }
+        }
+
+        //public void CancelarPronostic(Pronostic pr)
 
     }
 }

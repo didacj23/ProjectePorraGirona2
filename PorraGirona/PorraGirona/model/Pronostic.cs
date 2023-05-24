@@ -1,4 +1,5 @@
-﻿using PorraGirona.model;
+﻿using PorraGirona.dades;
+using PorraGirona.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,27 @@ namespace PorraGirona
 {
     internal class Pronostic
     {
+        private static int contPronostic = 0;
         private int idPronostic;
         private Usuari usuari;
         private Partit partit;
-        private string resultat;
+        private int golsEquipA;
+        private int golsEquipB;
+
+        public Pronostic(Partit p, int golsEquipA, int golsEquipB) 
+        {
+            idPronostic = contPronostic;
+            contPronostic++;
+
+            partit=p;
+            this.golsEquipA=golsEquipA;
+            this.golsEquipB = golsEquipB;
+
+            //guardar pronostic a la bd
+            Connexio c = new Connexio("localhost", "porragirona", "root", "");
+
+        }
+
 
         public int IdPronostic
         {
@@ -26,10 +44,15 @@ namespace PorraGirona
             set { usuari = value; }
         }
 
-        public string Resultat
+        public int GolsEquipA
         {
-            get { return resultat; }
-            set { resultat = value; }
+            get { return golsEquipA; }
+            set { golsEquipA=value; }
+        }
+        public int GolsEquipB
+        {
+            get { return golsEquipB; }
+            set { golsEquipB = value; }
         }
 
         public Partit Partit
@@ -38,9 +61,15 @@ namespace PorraGirona
             set { partit = value; }
         }
 
+        /*
+        public string ResultatPartit()
+        {
+
+        }*/
+
         public override string ToString()
         {
-            return $"Pronostic [ID: {idPronostic}, Usuari: {usuari.Dni}, Partit: {partit.EquipA} vs {partit.EquipB}, Resultat: {resultat}]";
+            return $"Pronostic [ID: {idPronostic}, Usuari: {usuari.Dni}, Partit: {partit.EquipA} vs {partit.EquipB}]";
         }
     }
 

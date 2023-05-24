@@ -12,7 +12,6 @@ namespace PorraGirona
         private string nom;
         private string camp;
         private string foto;
-        private string categoria;
         private int totalPartitsGuanyats;
         private int totalPartitsPerduts;
         private int totalPartitsEmpatats;
@@ -22,18 +21,16 @@ namespace PorraGirona
             nom="";
             camp="";
             foto="";
-            categoria="";
             totalPartitsGuanyats=0;
             totalPartitsPerduts=0;
             totalPartitsEmpatats=0;
         }
 
-        public Equip(string nom, string camp, string foto, string categoria)
+        public Equip(string nom, string camp, string foto)
         {
             this.nom = nom;
             this.camp = camp;
             this.foto = foto;
-            this.categoria = categoria;
             totalPartitsGuanyats=0;
             totalPartitsPerduts=0;
             totalPartitsEmpatats=0;
@@ -69,12 +66,6 @@ namespace PorraGirona
             set { foto = value; }
         }
 
-        public string Categoria
-        {
-            get { return categoria; }
-            set { categoria = value; }
-        }
-
         public int TotalPartitsGuanyats
         {
             get { return totalPartitsGuanyats;}
@@ -96,7 +87,7 @@ namespace PorraGirona
 
         public override string ToString()
         {
-            return $"Nom: {Nom},  Camp: {Camp},  Foto: {Foto},  Categoria: {Categoria},  TotalPartitsGuanyats: {TotalPartitsGuanyats},  TotalPartitsPerduts: {TotalPartitsPerduts},  TotalPartitsEmpatats: {TotalPartitsEmpatats}";
+            return $"Nom: {Nom},  Camp: {Camp},  Foto: {Foto},  TotalPartitsGuanyats: {TotalPartitsGuanyats},  TotalPartitsPerduts: {TotalPartitsPerduts},  TotalPartitsEmpatats: {TotalPartitsEmpatats}";
         }
 
     }
