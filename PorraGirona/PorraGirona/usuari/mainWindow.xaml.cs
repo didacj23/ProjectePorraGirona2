@@ -32,5 +32,12 @@ namespace PorraGirona
             iniciarSessio.Show();
 
         }
+
+        private void btn_regis_inici_Click(object sender, RoutedEventArgs e)
+        {
+            registre registre = new registre();
+            Close();
+            registre.Show();
+        }
     }
 }

@@ -25,23 +25,16 @@ namespace PorraGirona.usuari
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void btn_inicSessio_iniciSessio_Click(object sender, RoutedEventArgs e)
         {
             string dni = inp_Usuari_IniciarSessio.Text;
-            string pass = inp_Contrassenya_iniciSessio.Text;
+            string pass = inp_Contrassenya_IniciarSessio.Text;
 
             Sessio s=new Sessio(dni, pass);
 
             if(s.Valida)
             {
                 //entrar a la pagina d'inici de usuari
-
-                MessageBox.Show("ok"); //esborrar
 
                 IniciUsuari iniciUsuari = new IniciUsuari();
                 Close();
@@ -52,7 +45,7 @@ namespace PorraGirona.usuari
             {
                 //no entrar
 
-                MessageBox.Show("no ok");//esborrar
+                MessageBox.Show("Error");
 
             }
 

@@ -32,6 +32,12 @@ namespace PorraGirona.usuari
             string pass = inp_contrassenya_registre.Text;
 
             Usuari u = new Usuari(dni, pass, nom, cognom);
+
+            IniciarSessio iniciarSessio = new IniciarSessio();
+            Close();
+            iniciarSessio.Show();
+
+
         }
     }
 }
