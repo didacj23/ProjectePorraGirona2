@@ -22,9 +22,22 @@ namespace PorraGirona.usuari
     {
         public IniciUsuari()
         {
+            btn_admin_iniciUsuari.Visibility 
             InitializeComponent();
 
             
+        }
+
+        private void dg_Pronostics_usuari_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btn_regstre_registre_Click(object sender, RoutedEventArgs e)
+        {
+            Administrador admin = new Administrador();
+            Close();
+            admin.Show();
         }
     }
 }

@@ -26,7 +26,7 @@ namespace PorraGirona.usuari
 
         private void btn_regstre_registre_Click(object sender, RoutedEventArgs e)
         {
-            string nom= inp_nom_registre.Text;
+            string nom= inp_Nom_registre.Text;
             string cognom= inp_cognom_registre.Text;
             string dni = inp_dni_registre.Text;
             string pass = inp_contrassenya_registre.Text;
@@ -38,6 +38,13 @@ namespace PorraGirona.usuari
             iniciarSessio.Show();
 
 
+        }
+
+        private void btn_enrere_registre_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow mainWindow = new mainWindow(); 
+            mainWindow.Show();
+            Close(); 
         }
     }
 }

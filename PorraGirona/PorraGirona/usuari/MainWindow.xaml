@@ -18,7 +18,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btn_regis_inici" Content="Registrar-me" HorizontalAlignment="Left" Margin="404,336,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667">
+        <Button x:Name="btn_regis_inici" Content="Registrar-me" HorizontalAlignment="Left" Margin="404,336,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" Click="btn_regis_inici_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">

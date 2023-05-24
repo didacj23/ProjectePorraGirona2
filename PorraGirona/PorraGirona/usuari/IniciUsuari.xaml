@@ -33,7 +33,7 @@
             </Label.Style>
         </Label>
 
-        <DataGrid x:Name="dg_Pronostics_usuari" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="35,106,32,193" Width="NaN" FontFamily="Yu Gothic UI Light" Background="#FFCF152D" BorderBrush="#FFCF152D" GridLinesVisibility="None">
+        <DataGrid x:Name="dg_Pronostics_usuari" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="35,106,32,193" Width="NaN" FontFamily="Yu Gothic UI Light" Background="#FFCF152D" BorderBrush="#FFCF152D" GridLinesVisibility="None" SelectionChanged="dg_Pronostics_usuari_SelectionChanged">
             <DataGrid.Resources>
                 <Style TargetType="DataGridCell">
                     <Setter Property="Background" Value="#d75667"/>
@@ -102,6 +102,26 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="lbl_classificacio_usuari" Content="Classificació" HorizontalAlignment="Left" Margin="329,235,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+        <Button x:Name="btn_enrere_registre" Content="Tancar sessió" HorizontalAlignment="Left" Margin="198,29,0,0" VerticalAlignment="Top" Height="40" Width="114" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_enrere_registre_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
+            <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
+        </Button>
+        <Button x:Name="btn_admin_iniciUsuari" Content="Administració" HorizontalAlignment="Left" Margin="580,306,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI Light" Click="btn_regstre_registre_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
 
 
