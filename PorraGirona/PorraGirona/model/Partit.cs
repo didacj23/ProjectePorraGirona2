@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGirona.dades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +16,21 @@ namespace PorraGirona.model
         private int golsEquipA;
         private int golsEquipB;
         private DateTime diaHora;
-        private string temporada;
         private string camp;
         private string estat;
 
-        public Partit(Equip equipA, Equip equipB, DateTime diaHora, string temporada, string camp)
+        public Partit()
+        {
+            idPartit = contPartit;
+            contPartit++;
+
+            golsEquipA = 0;
+            golsEquipB = 0;
+
+            estat="programat";
+        }
+       
+        public Partit(Equip equipA, Equip equipB, DateTime diaHora, string camp)
         {
             idPartit=contPartit;
             contPartit++;
@@ -29,12 +40,11 @@ namespace PorraGirona.model
             golsEquipA=0;
             golsEquipB=0;
             this.diaHora=diaHora;
-            this.temporada=temporada;
             this.camp=camp;
             estat="programat";
         }
 
-        public Partit(Equip equipA, Equip equipB, DateTime diaHora, string temporada, string camp, string estat):this(equipA, equipB, diaHora, temporada, camp)
+        public Partit(Equip equipA, Equip equipB, DateTime diaHora,  string camp, string estat):this(equipA, equipB, diaHora, camp)
         {
             this.estat=estat;
         }
@@ -77,12 +87,6 @@ namespace PorraGirona.model
             set { diaHora = value; }
         }
 
-        public string Temporada
-        {
-            get { return temporada; }
-            set { temporada=value; }
-        }
-
         public string Camp
         {
             get { return camp; }
@@ -95,9 +99,23 @@ namespace PorraGirona.model
             set { estat=value; }
         }
 
+        public void ProgramarPartit(Equip ea, Equip eb, DateTime diaHora, string camp, string estat)
+        {
+            equipA=ea;
+            equipB=eb;
+            this.diaHora=diaHora;
+            this.camp=camp;
+
+            Connexio c = new Connexio("localhost", "porragirona", "root", "");
+            c.InsertarPartit(this);
+        }
+
+
+
+
         public override string ToString()
         {
-            return $"IdPartit: {IdPartit},  Equip A: {EquipA},  Equip B: {EquipB},  Gols Equip A: {GolsEquipA},  Gols Equip B: {GolsEquipB}, Dia i Hora: {DiaHora},  Temporada: {Temporada},  Camp: {Camp},  Estat: {Estat}";
+            return $"IdPartit: {IdPartit},  Equip A: {EquipA},  Equip B: {EquipB},  Gols Equip A: {GolsEquipA},  Gols Equip B: {GolsEquipB}, Dia i Hora: {DiaHora},  Camp: {Camp},  Estat: {Estat}";
         }
 
     }

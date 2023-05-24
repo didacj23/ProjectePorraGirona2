@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using PorraGirona.dades;
+using PorraGirona.model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -27,6 +28,7 @@ namespace PorraGirona
             puntsAcumulats = 0;            
         }
 
+        //guarda a la base de dades
         public Usuari(string dni, string contrasenya, string nom, string cognom)
         {
             this.dni = dni;
@@ -35,12 +37,25 @@ namespace PorraGirona
             this.cognom = cognom;            
             puntsAcumulats = 0;
 
-
-            //Conectar amb base d dades x guardar usuari        
-
             Connexio c = new Connexio("localhost", "porragirona", "root", "");
-            c.InsertarUsuari(this);
+
+            if(c.BuscarUsuari(this).Dni=="") //si l'usuari que s'esta creant no existeix
+            {
+                c.InsertarUsuari(this);
+            }
+           
         }
+
+        //no guarda a la base de dades. es fa servir per obtenir un usuari de la base de dades
+        public Usuari(string dni, string contrasenya, string nom, string cognom, int puntsAcumulats)
+        {
+            this.dni = dni;
+            this.contrasenya = contrasenya;
+            this.nom = nom;
+            this.cognom = cognom;
+            this.puntsAcumulats = puntsAcumulats;
+        }
+
 
         public string Dni
         {
@@ -83,11 +98,19 @@ namespace PorraGirona
             set { contrasenya = value;}
         }
 
-
-        /*public bool Pronosticar(Partit partit, int golsA, int golsB)
+        public int Pronosticar(Partit partit, int golsA, int golsB)
         {
+            int r=-1;
+
+            if(partit.Estat=="programat")
+            {
+                Pronostic pr = new Pronostic(partit, golsA, golsB);
+                r=0;
+            }else if (partit.Estat=="encurs") r=1;
+            else if(partit.Estat=="finalitzat") r=2;      
             
-        }*/
+            return r;
+        }
 
         public override string ToString()
         {

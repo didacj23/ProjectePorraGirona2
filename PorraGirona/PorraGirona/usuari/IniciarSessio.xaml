@@ -32,7 +32,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBox x:Name="inp_Contrassenya_iniciSessio" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center" Margin="0,214,0,0">
+        <TextBox x:Name="inp_Contrassenya_IniciarSessio" HorizontalAlignment="Center" Margin="0,174,0,0" TextWrapping="Wrap" Text="Contrassenya" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="43" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"

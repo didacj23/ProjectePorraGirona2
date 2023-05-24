@@ -31,7 +31,6 @@ namespace PorraGirona.usuari
             string dni = inp_dni_registre.Text;
             string pass = inp_contrassenya_registre.Text;
 
-            //mirar si ja existeix pel dni abans d crear l objecte
             Usuari u = new Usuari(dni, pass, nom, cognom);
         }
     }
