@@ -31,6 +31,14 @@ namespace PorraGirona
 
         }
 
+        public Pronostic(int idPronostic, Usuari usuari, Partit partit, int golsEquipA, int golsEquipB)
+        {
+            this.idPronostic = idPronostic;
+            this.usuari = usuari;
+            this.partit = partit;
+            this.golsEquipA=golsEquipA;
+            this.golsEquipB=golsEquipB;
+        }
 
         public int IdPronostic
         {

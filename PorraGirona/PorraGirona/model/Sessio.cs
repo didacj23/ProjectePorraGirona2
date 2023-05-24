@@ -13,6 +13,7 @@ namespace PorraGirona.model
         private string dni;
         private string pass;
         private bool valida;
+        private Usuari usuari;
 
 
         /// <summary>
@@ -35,6 +36,8 @@ namespace PorraGirona.model
             {
                 //sessio vàlida
                 valida=true;
+
+                usuari=c.BuscarUsuari(dni);
             }
             else
             {
@@ -54,6 +57,11 @@ namespace PorraGirona.model
         { 
             get { return pass; } 
             set { pass = value; }
+        }
+
+        public Usuari Usuari
+        {
+            get { return usuari; }
         }
 
         public bool Valida

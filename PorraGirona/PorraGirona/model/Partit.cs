@@ -21,9 +21,7 @@ namespace PorraGirona.model
 
         public Partit()
         {
-            idPartit = contPartit;
-            contPartit++;
-
+            idPartit = -1;          
             golsEquipA = 0;
             golsEquipB = 0;
 
@@ -44,11 +42,31 @@ namespace PorraGirona.model
             estat="programat";
         }
 
-        public Partit(Equip equipA, Equip equipB, DateTime diaHora,  string camp, string estat):this(equipA, equipB, diaHora, camp)
+        //Recuperar partits PROGRAMATS des de la bdd. (Per afegir a la llista de partits de la pantalla d'inici)
+        public Partit(int idPartit, Equip equipA, Equip equipB, DateTime diaHora, string camp, string estat)
         {
+            this.idPartit=idPartit;
+            this.equipA=equipA;
+            this.equipB=equipB;
+            this.diaHora=diaHora;
+            this.camp=camp;
             this.estat=estat;
         }
 
+        //Recuperar qualsevol partit de la bdd
+        public Partit(int idPartit, Equip equipA, Equip equipB, int golsEquipA, int golsEquipB, DateTime diaHora, string camp, string estat)
+        {
+            this.idPartit=idPartit;
+            this.equipA=equipA;
+            this.equipB=equipB;
+            this.golsEquipA=golsEquipA;
+            this.golsEquipB=golsEquipB;
+            this.diaHora=diaHora;
+            this.camp=camp;
+            this.estat=estat;
+        }
+
+               
         public int ContPartit
         {
             get { return contPartit;}

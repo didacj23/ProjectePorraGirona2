@@ -44,23 +44,6 @@ namespace PorraGirona.model
         }
 
 
-        public override string ToString()
-        {
-            string result = "Partits:\n";
-
-            foreach (Partit partit in partits)
-            {
-                result += partit.ToString() + "\n";
-            }
-
-            return result;
-        }
-    }
-    
-
-
-
-
-
+    } 
 
 }

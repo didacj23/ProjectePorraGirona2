@@ -18,6 +18,8 @@ namespace PorraGirona.dades
             connectionString=$"Server={servidor};Database={basedades};Uid={usuari};Pwd={contrasenya}";
         }
 
+
+        //USUARI
         public bool IniciarSessió(Sessio s)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -36,6 +38,7 @@ namespace PorraGirona.dades
 
                             if (contrasenyaCorrecta == s.Pass) //si la contrasenya es correcta
                             {
+
                                 return true;
                             }
                             else
@@ -87,13 +90,13 @@ namespace PorraGirona.dades
             }
         }        
 
-        public Usuari BuscarUsuari(Usuari u1)
+        public Usuari BuscarUsuari(string dni_usuari)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
 
-                string query = $"SELECT dni FROM usuaris WHERE dni='{u1.Dni}'";
+                string query = $"SELECT dni FROM usuaris WHERE dni='{dni_usuari}'";
 
                 Usuari u2 = new Usuari();
 
@@ -134,6 +137,10 @@ namespace PorraGirona.dades
 
         //public bool EliminarUsuari(string dni)
 
+
+
+
+        //EQUIP
         public void InsertarEquip(Equip e)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -158,42 +165,6 @@ namespace PorraGirona.dades
                 conn.Close(); //el using la tanca automaticament xo wno
             }
         }
-
-        //public bool EliminarEquip(string nom_equip)
-
-        /*
-        public LlistaPartits ObtenirPartits()
-        {
-            LlistaPartits ls = new LlistaPartits();
-
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                string query = "SELECT * FROM PARTITS";
-
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-
-                conn.Open();
-
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                while(reader.Read())
-                {
-                    int id_partit = reader.GetInt32("id_partit");
-                    string equip_A = reader.GetString("equip_A");
-                    string equip_B = reader.GetString("equip_B");
-                    int gols_equip_A = reader.GetInt32("gols_equip_A");
-                    int gols_equip_B = reader.GetInt32("gols_equip_B");
-                    DateTime dia_hora = reader.GetDateTime("dia_hora");
-                    string temporada = reader.GetString("temporada");
-                    string camp = reader.GetString("camp");
-                    string estat = reader.GetString("estat");
-
-                    Partit p = new Partit(equip_A, equip_B, dia_hora, temporada, camp, estat);
-                }
-            }
-
-            
-        }*/        
         public Equip ObtenirEquip(string nom_equip)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -233,7 +204,12 @@ namespace PorraGirona.dades
 
             }
         }           
-        
+
+        //public bool EliminarEquip(string nom_equip)
+
+
+
+        //PARTIT        
         public void InsertarPartit(Partit p)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -262,6 +238,144 @@ namespace PorraGirona.dades
             }
         }
 
+        public Partit BuscarPartit(int idPartit)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = $"SELECT * FROM partits where id_partit = {idPartit}";
+
+                Partit p = new Partit();
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string nomEquipA = reader.GetString("equip_A");
+                            Equip equipA = ObtenirEquip(nomEquipA);
+
+                            string nomEquipB = reader.GetString("equip_B");
+                            Equip equipB = ObtenirEquip(nomEquipA);
+
+                            int golsEquipA = reader.GetInt32("gols_equip_A");
+                            int golsEquipB = reader.GetInt32("gols_equip_B");
+                            DateTime diaHora = reader.GetDateTime("dia_hora");
+                            string temporada = reader.GetString("temporada");
+                            string camp = reader.GetString("camp");
+                            string estat = reader.GetString("estat");
+
+                            p = new Partit(idPartit, equipA, equipB, golsEquipA, golsEquipB, diaHora, camp, estat);
+
+                        }
+                        else { } //Partit no trobat x aquest id
+
+                    }
+                }
+
+                conn.Close();
+                return p;
+
+            }
+        }
+
+        public LlistaPartits RecuperarLlistaPartits()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = $"SELECT * FROM partits";
+
+                LlistaPartits lp = new LlistaPartits();
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int idPartit = reader.GetInt32("id_partit");
+
+                            string nomEquipA = reader.GetString("equip_A");
+                            Equip equipA = ObtenirEquip(nomEquipA);
+
+                            string nomEquipB = reader.GetString("equip_B");
+                            Equip equipB = ObtenirEquip(nomEquipA);
+
+                            int golsEquipA = reader.GetInt32("gols_equip_A");
+                            int golsEquipB = reader.GetInt32("gols_equip_B");
+                            DateTime diaHora = reader.GetDateTime("dia_hora");
+                            string temporada = reader.GetString("temporada");
+                            string camp = reader.GetString("camp");
+                            string estat = reader.GetString("estat");
+
+                            Partit p = new Partit(idPartit, equipA, equipB, golsEquipA, golsEquipB, diaHora, camp, estat);
+
+                            lp.AfegirPartit(p);
+
+                        }
+
+                    }
+                }
+
+                conn.Close();
+                return lp;
+
+            }
+        }
+
+        public LlistaPartits RecuperarLlistaPartitsNoIniciats()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = $"SELECT * FROM partits where estat = 'programat' and dia_hora > NOW()";
+
+                LlistaPartits lp = new LlistaPartits();
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int idPartit = reader.GetInt32("id_partit");
+
+                            string nomEquipA = reader.GetString("equip_A");
+                            Equip equipA = ObtenirEquip(nomEquipA);
+
+                            string nomEquipB = reader.GetString("equip_B");
+                            Equip equipB = ObtenirEquip(nomEquipA);
+
+                            int golsEquipA = reader.GetInt32("gols_equip_A");
+                            int golsEquipB = reader.GetInt32("gols_equip_B");
+                            DateTime diaHora = reader.GetDateTime("dia_hora");
+                            string temporada = reader.GetString("temporada");
+                            string camp = reader.GetString("camp");
+                            string estat = reader.GetString("estat");
+
+                            Partit p = new Partit(idPartit, equipA, equipB, golsEquipA, golsEquipB, diaHora, camp, "programat");
+
+                            lp.AfegirPartit(p);
+
+                        }
+
+                    }
+                }
+
+                conn.Close();
+                return lp;
+
+            }
+        }
+
+
+
+        //PRONOSTIC
         public void InsertarPronostic(Pronostic pr)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -288,6 +402,50 @@ namespace PorraGirona.dades
         }
 
         //public void CancelarPronostic(Pronostic pr)
+
+        public LlistaPronostics RecuperarPronostics()
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = $"SELECT * FROM pronostics where dni_usuari={/*dni de l'usuari*/}";
+
+                LlistaPronostics lpr = new LlistaPronostics();
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int idPronostic = reader.GetInt32("id_pronostic");
+
+                            string dniUsuari = reader.GetString("dni_usuari");
+                            Usuari u = BuscarUsuari(dniUsuari);
+
+                            int idPartit = reader.GetInt32("id_partit");
+                            Partit p = 
+
+                            Equip equipA = ObtenirEquip(nomEquipA);
+
+                            int golsA = reader.GetInt32("gols_equip_a");
+                            int golsB = reader.GetInt32("gols_equip_b");
+
+                            Pronostic pr = new Pronostic(idPronostic, u, partit, golsA, golsB);
+
+                            lpr.AfegirPronostic(pr);
+
+                        }
+
+                    }
+                }
+
+                conn.Close();
+                return lpr;
+
+            }
+        }
 
     }
 }
