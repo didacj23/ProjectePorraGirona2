@@ -14,7 +14,8 @@ namespace PorraGirona.model
         private string pass;
         private bool valida;
         private Usuari usuari;
-        
+        public bool admin;
+
 
         /// <summary>
         /// Crea un objecte de tipus Sessio amb paràmetres dni i pass introduits x usuari a pantalla
@@ -73,7 +74,6 @@ namespace PorraGirona.model
                 else return false;
             }
         }
-
 
         public bool Valida
         {
