@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PorraGirona.dades;
+using PorraGirona.model;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -24,6 +26,7 @@ namespace PorraGirona.usuari
 
         public IniciUsuari(Usuari us, bool admin)
         {
+            InitializeComponent();
             this.us=us;
 
             if(admin) 
@@ -35,8 +38,13 @@ namespace PorraGirona.usuari
                 btn_admin_iniciUsuari.Visibility = Visibility.Collapsed;
             }
 
-            InitializeComponent();
-                       
+            //recuperar llista pronostics(us)
+
+            Connexio c = new Connexio("localhost", "porragirona", "root", "");
+
+            LlistaPronostics lpr = c.RecuperarPronostics(us);
+
+
         }
 
         private void dg_Pronostics_usuari_SelectionChanged(object sender, SelectionChangedEventArgs e)

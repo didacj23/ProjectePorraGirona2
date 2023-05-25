@@ -171,7 +171,7 @@ namespace PorraGirona.dades
             {
                 conn.Open();
 
-                string query = $"SELECT * FROM EQUIPS WHERE nom_equip = {nom_equip}";
+                string query = $"SELECT * FROM EQUIPS WHERE nom_equip = '{nom_equip}'";
 
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
@@ -263,7 +263,6 @@ namespace PorraGirona.dades
                             int golsEquipA = reader.GetInt32("gols_equip_A");
                             int golsEquipB = reader.GetInt32("gols_equip_B");
                             DateTime diaHora = reader.GetDateTime("dia_hora");
-                            string temporada = reader.GetString("temporada");
                             string camp = reader.GetString("camp");
                             string estat = reader.GetString("estat");
 
@@ -403,14 +402,14 @@ namespace PorraGirona.dades
 
         //public void CancelarPronostic(Pronostic pr)
         
-        /*
-        public LlistaPronostics RecuperarPronostics()
+        
+        public LlistaPronostics RecuperarPronostics(Usuari u)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
 
-                string query = $"SELECT * FROM pronostics where dni_usuari={}";
+                string query = $"SELECT * FROM pronostics where dni_usuari='{u.Dni}'";
 
                 LlistaPronostics lpr = new LlistaPronostics();
 
@@ -422,24 +421,20 @@ namespace PorraGirona.dades
                         {
                             int idPronostic = reader.GetInt32("id_pronostic");
 
-                            string dniUsuari = reader.GetString("dni_usuari");
-                            Usuari u = BuscarUsuari(dniUsuari);
-
                             int idPartit = reader.GetInt32("id_partit");
-                            Partit p = 
-
-                            Equip equipA = ObtenirEquip(nomEquipA);
+                            Partit p = BuscarPartit(idPartit);
 
                             int golsA = reader.GetInt32("gols_equip_a");
                             int golsB = reader.GetInt32("gols_equip_b");
 
-                            Pronostic pr = new Pronostic(idPronostic, u, partit, golsA, golsB);
+                            Pronostic pr = new Pronostic(idPronostic, u, p, golsA, golsB);
 
                             lpr.AfegirPronostic(pr);
 
                         }
 
                     }
+
                 }
 
                 conn.Close();
@@ -447,6 +442,6 @@ namespace PorraGirona.dades
 
             }
         }
-        */
+        
     }
 }

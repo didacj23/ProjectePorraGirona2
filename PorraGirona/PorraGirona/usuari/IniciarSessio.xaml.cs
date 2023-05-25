@@ -43,7 +43,7 @@ namespace PorraGirona.usuari
             else
             {
                 //no entrar
-                MessageBox.Show("Error");
+                MessageBox.Show("DNI o contrasenya invàlids");
             }
 
         }
