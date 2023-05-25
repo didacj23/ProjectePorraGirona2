@@ -29,7 +29,7 @@ namespace PorraGirona.usuari
             string nom= inp_Nom_registre.Text;
             string cognom= inp_cognom_registre.Text;
             string dni = inp_dni_registre.Text;
-            string pass = inp_contrassenya_registre.Text;
+            string pass = pas_contrassenya_registre.Password;
 
             Usuari u = new Usuari(dni, pass, nom, cognom);
 

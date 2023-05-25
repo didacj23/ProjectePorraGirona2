@@ -28,7 +28,7 @@ namespace PorraGirona.usuari
         private void btn_inicSessio_iniciSessio_Click(object sender, RoutedEventArgs e)
         {
             string dni = inp_Usuari_IniciarSessio.Text;
-            string pass = inp_Contrassenya_IniciarSessio.Text;
+            string pass = pas_contrassenya_iniciarSessio.Password;
 
             Sessio s=new Sessio(dni, pass);
 
