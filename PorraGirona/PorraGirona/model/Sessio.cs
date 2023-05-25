@@ -14,7 +14,7 @@ namespace PorraGirona.model
         private string pass;
         private bool valida;
         private Usuari usuari;
-
+        
 
         /// <summary>
         /// Crea un objecte de tipus Sessio amb paràmetres dni i pass introduits x usuari a pantalla
@@ -38,6 +38,7 @@ namespace PorraGirona.model
                 valida=true;
 
                 usuari=c.BuscarUsuari(dni);
+                
             }
             else
             {
@@ -63,6 +64,16 @@ namespace PorraGirona.model
         {
             get { return usuari; }
         }
+
+        public bool Admin
+        {
+            get
+            {
+                if (usuari is Administrador) return true;
+                else return false;
+            }
+        }
+
 
         public bool Valida
         {

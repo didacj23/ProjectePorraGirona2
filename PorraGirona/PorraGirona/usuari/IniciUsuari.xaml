@@ -102,7 +102,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="lbl_classificacio_usuari" Content="Classificació" HorizontalAlignment="Left" Margin="329,235,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
-        <Button x:Name="btn_enrere_registre" Content="Tancar sessió" HorizontalAlignment="Left" Margin="198,29,0,0" VerticalAlignment="Top" Height="40" Width="114" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_enrere_registre_Click">
+        <Button x:Name="btn_enrere_registre" Content="Tancar sessió" HorizontalAlignment="Left" Margin="198,29,0,0" VerticalAlignment="Top" Height="40" Width="114" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
@@ -113,7 +113,7 @@
             <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
             <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
         </Button>
-        <Button x:Name="btn_admin_iniciUsuari" Content="Administració" HorizontalAlignment="Left" Margin="580,306,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI Light" Click="btn_regstre_registre_Click">
+        <Button x:Name="btn_admin_iniciUsuari" Content="Administració" HorizontalAlignment="Left" Margin="580,306,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI Light" >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">

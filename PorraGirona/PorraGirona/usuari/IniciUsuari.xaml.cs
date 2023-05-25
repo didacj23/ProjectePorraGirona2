@@ -20,12 +20,23 @@ namespace PorraGirona.usuari
     /// </summary>
     public partial class IniciUsuari : Window
     {
-        public IniciUsuari()
-        {
-            btn_admin_iniciUsuari.Visibility 
-            InitializeComponent();
+        public Usuari us;
 
-            
+        public IniciUsuari(Usuari us, bool admin)
+        {
+            this.us=us;
+
+            if(admin) 
+            {
+                btn_admin_iniciUsuari.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btn_admin_iniciUsuari.Visibility = Visibility.Collapsed;
+            }
+
+            InitializeComponent();
+                       
         }
 
         private void dg_Pronostics_usuari_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -39,5 +50,7 @@ namespace PorraGirona.usuari
             Close();
             admin.Show();
         }
+
+
     }
 }

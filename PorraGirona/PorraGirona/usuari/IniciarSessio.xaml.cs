@@ -35,19 +35,15 @@ namespace PorraGirona.usuari
             if(s.Valida)
             {
                 //entrar a la pagina d'inici de usuari
-                IniciUsuari iniciUsuari = new IniciUsuari();
+                IniciUsuari iniciUsuari = new IniciUsuari(s.Usuari, s.Admin);
                 Close();
-                iniciUsuari.Show();
-
-                
+                iniciUsuari.Show();               
 
             }
             else
             {
                 //no entrar
-
                 MessageBox.Show("Error");
-
             }
 
         }

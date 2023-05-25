@@ -12,13 +12,7 @@ namespace PorraGirona.model
 
         public Administrador(string dni, string pass, string nom, string cognom, int puntsAcumulats) : base(dni, pass, nom, cognom, puntsAcumulats) { }
 
-        public bool CrearJugador(string dni, string nom, string cognom, Equip equip, string posicio, int numero)
-        {
-            
-            Jugador j = new Jugador(dni, nom, cognom, equip, posicio, numero);
 
-            return true;
-        }
 
 
 

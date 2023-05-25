@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace PorraGirona
 {
-    internal class Usuari
+    public class Usuari
     {
         private string dni;
         private string contrasenya;
@@ -39,7 +39,7 @@ namespace PorraGirona
 
             Connexio c = new Connexio("localhost", "porragirona", "root", "");
 
-            if(c.BuscarUsuari(this).Dni=="") //si l'usuari que s'esta creant no existeix
+            if(c.BuscarUsuari(dni).Dni=="") //si l'usuari que s'esta creant no existeix
             {
                 c.InsertarUsuari(this);
             }
@@ -98,6 +98,7 @@ namespace PorraGirona
             set { contrasenya = value;}
         }
 
+        /*
         public int Pronosticar(Partit partit, int golsA, int golsB)
         {
             int r=-1;
@@ -110,7 +111,7 @@ namespace PorraGirona
             else if(partit.Estat=="finalitzat") r=2;      
             
             return r;
-        }
+        }*/
 
         public override string ToString()
         {

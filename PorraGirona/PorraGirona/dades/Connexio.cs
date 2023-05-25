@@ -96,9 +96,9 @@ namespace PorraGirona.dades
             {
                 conn.Open();
 
-                string query = $"SELECT dni FROM usuaris WHERE dni='{dni_usuari}'";
+                string query = $"SELECT * FROM usuaris WHERE dni='{dni_usuari}'";
 
-                Usuari u2 = new Usuari();
+                Usuari u2 = null;
 
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
@@ -107,21 +107,20 @@ namespace PorraGirona.dades
                         
                         if (reader.Read())
                         {
+                            string dni = reader.GetString("dni");
+                            string contrasenya = reader.GetString("contrasenya");
+                            string nom = reader.GetString("nom");
+                            string cognom = reader.GetString("cognom");                            
+                            int puntsAcumulats = reader.GetInt32("puntsAcumulats");
                             int administrador = reader.GetInt32("administrador");
 
-                            string dni = reader.GetString("dni");
-                            string nom = reader.GetString("nom");
-                            string cognom = reader.GetString("cognom");
-                            string contrasenya = reader.GetString("contrasenya");
-                            int puntsAcumulats = reader.GetInt32("puntsAcumulats");
-                                                        
                             if (administrador == 0)
                             {
                                 u2 = new Usuari(dni, contrasenya, nom, cognom, puntsAcumulats);
                             }
                             else
                             {
-                                u2 = new Administrador(dni, contrasenya, nom, cognom, puntsAcumulats);
+                                u2 = new Administrador(dni, contrasenya, nom, cognom, puntsAcumulats);                                
                             }
 
                         }
@@ -129,6 +128,7 @@ namespace PorraGirona.dades
                         
                     }
                 }
+               
                 return u2;
 
                 conn.Close();
@@ -402,14 +402,15 @@ namespace PorraGirona.dades
         }
 
         //public void CancelarPronostic(Pronostic pr)
-
+        
+        /*
         public LlistaPronostics RecuperarPronostics()
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
 
-                string query = $"SELECT * FROM pronostics where dni_usuari={/*dni de l'usuari*/}";
+                string query = $"SELECT * FROM pronostics where dni_usuari={}";
 
                 LlistaPronostics lpr = new LlistaPronostics();
 
@@ -446,6 +447,6 @@ namespace PorraGirona.dades
 
             }
         }
-
+        */
     }
 }
