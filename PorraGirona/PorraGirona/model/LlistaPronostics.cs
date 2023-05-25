@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGirona.dades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,6 +43,8 @@ namespace PorraGirona.model
                 return false;
             }
         }
+
+        
 
     }
 }
