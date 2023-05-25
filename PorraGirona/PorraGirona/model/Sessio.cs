@@ -14,6 +14,7 @@ namespace PorraGirona.model
         private string pass;
         private bool valida;
         private Usuari usuari;
+        public bool admin;
 
 
         /// <summary>
@@ -62,6 +63,15 @@ namespace PorraGirona.model
         public Usuari Usuari
         {
             get { return usuari; }
+        }
+
+        public bool Admin
+        {
+            get
+            {
+                if (usuari is Administrador) return true;
+                else return false;
+            }
         }
 
         public bool Valida

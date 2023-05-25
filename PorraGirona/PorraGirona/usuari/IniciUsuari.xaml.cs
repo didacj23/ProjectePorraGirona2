@@ -22,7 +22,7 @@ namespace PorraGirona.usuari
     {
         public IniciUsuari()
         {
-            btn_admin_iniciUsuari.Visibility 
+            btn
             InitializeComponent();
 
             
