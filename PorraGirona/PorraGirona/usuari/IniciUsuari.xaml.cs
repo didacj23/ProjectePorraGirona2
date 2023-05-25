@@ -34,7 +34,7 @@ namespace PorraGirona.usuari
             {
                 btn_admin_iniciUsuari.Visibility = Visibility.Collapsed;
             }
-
+             
             InitializeComponent();
                        
         }
