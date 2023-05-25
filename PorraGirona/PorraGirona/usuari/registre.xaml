@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PorraGirona.usuari"
         mc:Ignorable="d"
         Title="registre" Height="450" Width="800">
-    <Grid x:Name="registre1" Background="#FFCF152D">
+    <Grid Background="#FFCF152D">
         <Label x:Name="lbl_titol_registre" Content="Registra't" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Background="#FFCF152D" Foreground="White" FontSize="24" FontFamily="Yu Gothic UI" FontWeight="Bold"/>
         <TextBox x:Name="inp_Nom_registre" HorizontalAlignment="Center" Margin="0,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
             <TextBox.Template>
@@ -33,18 +33,6 @@
             </TextBox.Template>
         </TextBox>
         <TextBox x:Name="inp_dni_registre" HorizontalAlignment="Center" Margin="0,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
-            <TextBox.Template>
-                <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="3">
-                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
-                    </Border>
-                </ControlTemplate>
-            </TextBox.Template>
-        </TextBox>
-        <TextBox x:Name="inp_contrassenya_registre" HorizontalAlignment="Center" Margin="0,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
@@ -84,6 +72,15 @@
         <TextBlock x:Name="lbl_cognom_registre" HorizontalAlignment="Left" Margin="314,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="Cognom"/></TextBlock>
         <TextBlock x:Name="lbl_usuari_IniciSessio_Copy1" HorizontalAlignment="Left" Margin="314,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="DNI"/></TextBlock>
         <TextBlock x:Name="lbl_contrasenya_registre" HorizontalAlignment="Left" Margin="313,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="Contrasenya"/></TextBlock>
+        <PasswordBox x:Name="pas_contrassenya_registre" HorizontalAlignment="Center" Margin="0,298,0,0" VerticalAlignment="Top" Width="174" Height="36" FontFamily="Yu Gothic Light" Background="#FFD75667" BorderBrush="#FFD75667">
+            <PasswordBox.Template>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="False" />
+                    </Border>
+                </ControlTemplate>
+            </PasswordBox.Template>
+        </PasswordBox>
 
 
     </Grid>

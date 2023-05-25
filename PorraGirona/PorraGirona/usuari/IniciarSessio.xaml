@@ -32,18 +32,8 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBox x:Name="inp_Contrassenya_IniciarSessio" HorizontalAlignment="Center" Margin="0,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
-            <TextBox.Template>
-                <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="3">
-                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
-                    </Border>
-                </ControlTemplate>
-            </TextBox.Template>
-        </TextBox>
+
+
         <TextBlock x:Name="lbl_usuari_IniciSessio" HorizontalAlignment="Left" Margin="313,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="Usuari"/></TextBlock>
         <TextBlock x:Name="lbl_Contrassenya_iniciSessio" HorizontalAlignment="Left" Margin="313,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="Contrassenya"/></TextBlock>
         <Button x:Name="btn_enrere_iniciarSessio" Content="&lt;" HorizontalAlignment="Left" Margin="21,14,0,0" VerticalAlignment="Top" Height="40" Width="42" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_enrere_registre_Click">
@@ -57,6 +47,16 @@
             <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
             <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
         </Button>
+        <PasswordBox x:Name="pas_contrassenya_iniciarSessio" HorizontalAlignment="Center" Margin="0,212,0,0" VerticalAlignment="Top" Width="174" Height="36" FontFamily="Yu Gothic Light" Background="#FFD75667" BorderBrush="#FFD75667">
+            <PasswordBox.Template>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="False" />
+                    </Border>
+                </ControlTemplate>
+            </PasswordBox.Template>
+        </PasswordBox>
+
 
     </Grid>
 </Window>

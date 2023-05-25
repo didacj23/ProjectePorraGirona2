@@ -24,6 +24,8 @@ namespace PorraGirona.usuari
 
         public IniciUsuari(Usuari us, bool admin)
         {
+            InitializeComponent();
+
             this.us=us;
 
             if(admin) 
@@ -34,8 +36,10 @@ namespace PorraGirona.usuari
             {
                 btn_admin_iniciUsuari.Visibility = Visibility.Collapsed;
             }
-             
-            InitializeComponent();
+
+            lbl_nomUsuari_usuari.Content = "hola, " + us.Nom + " " + us.Cognom;
+
+            lbl_puntuacio_usuari.Content = us.PuntsAcumulats;
                        
         }
 
@@ -44,13 +48,18 @@ namespace PorraGirona.usuari
 
         }
 
-        private void btn_regstre_registre_Click(object sender, RoutedEventArgs e)
+        private void btn_admin_iniciUsuari_Click(object sender, RoutedEventArgs e)
         {
             Administrador admin = new Administrador();
             Close();
             admin.Show();
         }
 
-
+        private void btn_TancarSessio_iniciUsuari_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow mainWindow = new mainWindow();
+            mainWindow.Show();
+            Close();
+        }
     }
 }

@@ -13,8 +13,8 @@
         <Label x:Name="lbl_nomUsuari_usuari" Content="Hola, nomUsuari" HorizontalAlignment="Left" Margin="35,29,0,0" VerticalAlignment="Top" Width="163" Foreground="White" FontWeight="Medium" FontSize="19" FontFamily="Yu Gothic UI Light"/>
         <Label x:Name="lbl_teusPronostics_usuari" Content="Els teus pronòstics" HorizontalAlignment="Left" Margin="35,75,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
         <Label x:Name="lbl_propersPartits_usuari" Content="Propers partits" HorizontalAlignment="Left" Margin="35,235,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
-        <Label x:Name="lb_infoPuntuacio_usuari" Content="Puntuació" HorizontalAlignment="Left" Margin="580,32,0,0" VerticalAlignment="Top" Width="80" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
-        <Label x:Name="txtb_puntuacio_usuari" Content="número" HorizontalAlignment="Left" Margin="666,31,0,0" VerticalAlignment="Top" Width="68" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI" Height="33">
+        <Label x:Name="lbl_infoPuntuacio_usuari" Content="Puntuació" HorizontalAlignment="Left" Margin="580,32,0,0" VerticalAlignment="Top" Width="80" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+        <Label x:Name="lbl_puntuacio_usuari" Content="número" HorizontalAlignment="Left" Margin="666,31,0,0" VerticalAlignment="Top" Width="68" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI" Height="33">
             <Label.Style>
                 <Style TargetType="{x:Type Label}">
                     <Setter Property="Background" Value="#FFD75667"/>
@@ -102,7 +102,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="lbl_classificacio_usuari" Content="Classificació" HorizontalAlignment="Left" Margin="329,235,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
-        <Button x:Name="btn_enrere_registre" Content="Tancar sessió" HorizontalAlignment="Left" Margin="198,29,0,0" VerticalAlignment="Top" Height="40" Width="114" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI">
+        <Button x:Name="btn_enrere_registre" Content="Tancar sessió" HorizontalAlignment="Left" Margin="198,29,0,0" VerticalAlignment="Top" Height="40" Width="114" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_TancarSessio_iniciUsuari_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
@@ -113,7 +113,7 @@
             <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
             <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
         </Button>
-        <Button x:Name="btn_admin_iniciUsuari" Content="Administració" HorizontalAlignment="Left" Margin="580,306,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI Light">
+        <Button x:Name="btn_admin_iniciUsuari" Content="Administració" HorizontalAlignment="Left" Margin="580,306,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI Light" Click="btn_admin_iniciUsuari_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
@@ -122,6 +122,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        
 
 
 
