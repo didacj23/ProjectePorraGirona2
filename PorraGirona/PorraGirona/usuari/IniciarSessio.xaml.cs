@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -36,16 +35,9 @@ namespace PorraGirona.usuari
             if(s.Valida)
             {
                 //entrar a la pagina d'inici de usuari
-
-                if (s.Admin)
-                {
-                    if (usuari is Administrador) return true;
-                    else return false;
-                }
-
-                IniciUsuari iniciUsuari = new IniciUsuari();
+                IniciUsuari iniciUsuari = new IniciUsuari(s.Usuari, s.Admin);
                 Close();
-                iniciUsuari.Show();               
+                iniciUsuari.Show();                
 
             }
             else
