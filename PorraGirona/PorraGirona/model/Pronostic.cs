@@ -17,7 +17,7 @@ namespace PorraGirona
         private int golsEquipA;
         private int golsEquipB;
 
-        public Pronostic(Usuari usuari, int id_partit, int golsEquipA, int golsEquipB) 
+        public Pronostic(Usuari usuari, int id_partit, int golsEquipA, int golsEquipB)
         {
             idPronostic = contPronostic;
             contPronostic++;
@@ -27,18 +27,40 @@ namespace PorraGirona
             dbPartits dbp = new dbPartits();
             partit = dbp.BuscarPartit(id_partit);
 
-            this.golsEquipA=golsEquipA;
-            this.golsEquipB = golsEquipB;
-
-            dbPronostics dbpr = new dbPronostics();
-            if(dbpr.BuscarPronostic(idPronostic) is null) //si no existiex el pronòstic
+            //comprovar que el resultat no sigui negatiu
+            if (golsEquipA>=0 && golsEquipB >= 0) 
             {
-                dbpr.InsertarPronostic(this);
+                this.golsEquipA = golsEquipA;
+                this.golsEquipB = golsEquipB;
             }
-            else //si existeix el pronòstic. torna el pronostic
+            else
             {
+                throw new Exception("Els gols pronosticats no poden ser negatius.");
+            }
+               
+
+            if(partit.Estat=="programat") //si el partit NO ha començat
+            {
+                dbPronostics dbpr = new dbPronostics();
+                if (dbpr.BuscarPronostic(usuari, partit.IdPartit) is null) //si no existiex el pronòstic
+                {
+                
+                    dbpr.InsertarPronostic(this);
+                }
+                else //si existeix el pronòstic
+                {
+                    dbpr.ActualitzarPronostic(this);
+                }
+            }else if(partit.Estat == "iniciat")
+            {
+                throw new Exception("El partit ja ha començat");
+            }
+            else
+            {
+                throw new Exception("El partit ja ha finalitzat");
 
             }
+
 
         }
 

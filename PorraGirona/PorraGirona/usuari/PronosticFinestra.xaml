@@ -1,11 +1,11 @@
-﻿<Window x:Class="PorraGirona.usuari.Pronostic"
+﻿<Window x:Class="PorraGirona.usuari.PronosticFinestra"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PorraGirona.usuari"
         mc:Ignorable="d"
-        Title="Pronostic" Height="450" Width="800">
+        Title="PronosticFinestra" Height="450" Width="800">
     <Grid Background="#FFCF152D">
         <Label x:Name="lb_pronostic" Content="El teu pronòstic" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Width="164" Foreground="White" FontWeight="Medium" FontSize="19" FontFamily="Yu Gothic UI Light"/>
         <Label x:Name="lb_info_partit" Content="Partit:" HorizontalAlignment="Left" Margin="206,108,0,0" VerticalAlignment="Top" Width="55" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
@@ -47,7 +47,7 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Button x:Name="btn_EditarPronostic" Content="Editar pronòstic" HorizontalAlignment="Left" Margin="249,249,0,0" VerticalAlignment="Top" Background="#FFD75667" BorderBrush="#FFD75667" FontWeight="Bold" FontFamily="Yu Gothic UI" Foreground="White" BorderThickness="0" Height="34" Width="113">
+        <Button x:Name="btn_EditarPronostic" Content="Confirmar pronòstic" HorizontalAlignment="Left" Margin="249,249,0,0" VerticalAlignment="Top" Background="#FFD75667" BorderBrush="#FFD75667" FontWeight="Bold" FontFamily="Yu Gothic UI" Foreground="White" BorderThickness="0" Height="34" Width="113" Click="btn_EditarPronostic_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}"

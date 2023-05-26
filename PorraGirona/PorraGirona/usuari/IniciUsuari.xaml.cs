@@ -73,7 +73,7 @@ namespace PorraGirona.usuari
 
         private void btn_CrearPronostic_iniciUsuari_Click(object sender, RoutedEventArgs e)
         {
-            Pronostic pronostic = new Pronostic(us);
+            PronosticFinestra pronostic = new PronosticFinestra(us);
             Close();
             pronostic.Show();
         }

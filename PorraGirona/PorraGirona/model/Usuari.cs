@@ -42,12 +42,16 @@ namespace PorraGirona
             puntsAcumulats = 0;
             LlistaPronostics lpr;
 
-            //Connexio c = new Connexio("localhost", "porragirona", "root", "");
-
-            /*if(c.BuscarUsuari(dni)== null) //si l'usuari que s'esta creant no existeix
+            dbUsuaris dbu = new dbUsuaris();
+            
+            if(dbu.BuscarUsuari(dni)== null) //si l'usuari que s'esta creant no existeix, el guarda
             {
-                c.InsertarUsuari(this);
-            }*/
+                dbu.InsertarUsuari(this);
+            }
+            else
+            {
+                throw new Exception("Aquest DNI ja està registrat");
+            }
            
         }
 
