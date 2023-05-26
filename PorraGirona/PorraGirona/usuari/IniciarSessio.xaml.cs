@@ -35,7 +35,7 @@ namespace PorraGirona.usuari
             if(s.Valida)
             {
                 //entrar a la pagina d'inici de usuari. Passa els atributs usuari i admin de la sessió iniciada
-                IniciUsuari iniciUsuari = new IniciUsuari(s.Usuari, s.Admin);
+                IniciUsuari iniciUsuari = new IniciUsuari(s.Usuari, s.Admin, s.Usuari.Pronostics);
                 Close();
                 iniciUsuari.Show();                
 

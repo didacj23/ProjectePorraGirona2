@@ -25,7 +25,7 @@ namespace PorraGirona.usuari
     {
         public Usuari us;
 
-        public IniciUsuari(Usuari us, bool admin)
+        public IniciUsuari(Usuari us, bool admin, LlistaPronostics lpr)
         {
             InitializeComponent();
             this.us=us;
@@ -42,13 +42,13 @@ namespace PorraGirona.usuari
             lbl_nomUsuari_usuari.Content = "hola, " + us.Nom + " " + us.Cognom;
 
             lbl_puntuacio_usuari.Content = us.PuntsAcumulats;
-
-
-            LlistaPronostics lpr = us.Pronostics;
+                            
 
             dg_Pronostics_usuari.ItemsSource = lpr.Pronostics;
+            
+            
 
-            MessageBox.Show(lpr.Pronostics.idPartit.ToString());
+            //LlistaPartits lp 
 
         }
 

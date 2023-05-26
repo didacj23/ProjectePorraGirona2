@@ -106,7 +106,7 @@ namespace PorraGirona.dades
         {
             string query = $"SELECT * FROM pronostics WHERE dni_usuari='{dni}'";
 
-            LlistaPronostics lpr = null;
+            LlistaPronostics lpr = new LlistaPronostics();
 
             try
             {
