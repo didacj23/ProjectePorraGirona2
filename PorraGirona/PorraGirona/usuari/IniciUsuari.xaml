@@ -51,10 +51,9 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="PARTIT"/>
-                <DataGridTextColumn Header="DIA I HORA"/>
-                <DataGridTextColumn Header="PRONÒSTIC GOLS A"/>
-                <DataGridTextColumn Header="PRONÒSTIC GOLS B"/>
+                <DataGridTextColumn Header="Partit"/>
+                <DataGridTextColumn Header="Gols Local"/>
+                <DataGridTextColumn Header="Gols Visitant"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -122,7 +121,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        
+
 
 
 
