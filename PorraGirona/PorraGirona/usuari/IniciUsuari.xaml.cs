@@ -70,5 +70,19 @@ namespace PorraGirona.usuari
             mainWindow.Show();
             Close();
         }
+
+        private void btn_CrearPronostic_iniciUsuari_Click(object sender, RoutedEventArgs e)
+        {
+            Pronostic pronostic = new Pronostic();
+            Close();
+            pronostic.Show();
+        }
+
+        private void btn_ModPronostic_iniciaUsuari_Click(object sender, RoutedEventArgs e)
+        {
+            Modificar modificar = new Modificar();
+            Close();
+            modificar.Show();
+        }
     }
 }
