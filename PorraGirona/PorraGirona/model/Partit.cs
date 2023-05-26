@@ -132,7 +132,10 @@ namespace PorraGirona.model
             //c.InsertarPartit(this);
         }
 
-
+        public string Equips
+        {
+            get { return $"{equipA.Nom} vs {equipB.Nom}"; }
+        }
 
 
         public override string ToString()

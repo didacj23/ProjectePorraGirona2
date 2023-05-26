@@ -69,6 +69,11 @@ namespace PorraGirona
             set { partit = value; }
         }
 
+        public string Equips
+        {
+            get { return $"{Partit.EquipA.Nom} vs {Partit.EquipB.Nom}"; }
+        }
+
         /*
         public string ResultatPartit()
         {
