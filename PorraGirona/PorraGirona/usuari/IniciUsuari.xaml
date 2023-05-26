@@ -51,9 +51,11 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Partit" Binding="{Binding partit}" />
-                <DataGridTextColumn Header="Gols Local" Binding="{Binding golsEquipA}" />
-                <DataGridTextColumn Header="Gols Visitant" Binding="{Binding golsEquipB}" />
+
+                <DataGridTextColumn Header="Partit" Binding="{Binding Equips}" />
+                <DataGridTextColumn Header="Gols Local" Binding="{Binding GolsEquipA}" />
+                <DataGridTextColumn Header="Gols Visitant" Binding="{Binding GolsEquipB}" />
+
             </DataGrid.Columns>
         </DataGrid>
 

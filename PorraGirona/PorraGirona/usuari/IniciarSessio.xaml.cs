@@ -27,15 +27,22 @@ namespace PorraGirona.usuari
 
         private void btn_inicSessio_iniciSessio_Click(object sender, RoutedEventArgs e)
         {
+            //cargando
+
             string dni = inp_Usuari_IniciarSessio.Text;
             string pass = pas_contrassenya_iniciarSessio.Password;
 
             Sessio s=new Sessio(dni, pass);
 
             if(s.Valida)
-            {
+            {                
+
+                LlistaPartits lps = new LlistaPartits();
+                lps.Emplenar();
+                
+
                 //entrar a la pagina d'inici de usuari. Passa els atributs usuari i admin de la sessió iniciada
-                IniciUsuari iniciUsuari = new IniciUsuari(s.Usuari, s.Admin, s.Usuari.Pronostics);
+                IniciUsuari iniciUsuari = new IniciUsuari(s.Usuari, s.Admin, s.Usuari.Pronostics, lps);
                 Close();
                 iniciUsuari.Show();                
 

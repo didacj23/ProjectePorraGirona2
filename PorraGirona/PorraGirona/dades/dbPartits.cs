@@ -3,6 +3,7 @@ using PorraGirona.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -60,6 +61,61 @@ namespace PorraGirona.dades
             
         }
 
+        public List<Partit> RecuperarLlistaPartitsProgramats()
+        {
+            string query = $"SELECT * FROM partits WHERE estat='programat' and dia_hora > NOW()";
+
+            //LlistaPartits lp = new LlistaPartits();
+
+            List<Partit> llistaPartits = new List<Partit>();
+
+            try
+            {
+                ConnectarBD();
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {                            
+
+                            int id_partit = reader.GetInt32("id_partit");
+                                
+                            dbEquips dbTeam = new dbEquips();
+
+                            string nom_equip_a = reader.GetString("equip_A");
+                            Equip equipA = dbTeam.BuscarEquip(nom_equip_a);
+
+                            string nom_equip_b = reader.GetString("equip_B");
+                            Equip equipB = dbTeam.BuscarEquip(nom_equip_b);
+
+                            int gols_a = reader.GetInt32("gols_equip_A");
+                            int gols_b = reader.GetInt32("gols_equip_B");
+
+                            DateTime diaHora = reader.GetDateTime("dia_hora");
+                            string camp = reader.GetString("camp");
+                            string estat = reader.GetString("estat");
+
+                            Partit p = new Partit(id_partit, equipA, equipB, diaHora, camp, estat);
+
+                            llistaPartits.Add(p);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+
+            return llistaPartits;
+
+        }
 
     }
 }

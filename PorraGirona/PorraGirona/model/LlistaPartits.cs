@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PorraGirona.dades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PorraGirona.model
 {
-    internal class LlistaPartits
+    public class LlistaPartits
     {
         private List<Partit> partits;
 
@@ -43,6 +44,14 @@ namespace PorraGirona.model
             }
         }
 
+        public void Emplenar()
+        {
+            dbPartits dbs = new dbPartits();
+                        
+
+            List<Partit> llistaPartits = dbs.RecuperarLlistaPartitsProgramats();
+            partits = llistaPartits;
+        }
 
     } 
 
