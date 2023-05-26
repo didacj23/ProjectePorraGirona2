@@ -74,7 +74,7 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Partit" Binding="{Binding IdPronostic}" />
+                <DataGridTextColumn Header="Partit" Binding="{Binding IdPartit}" />
                 <DataGridTextColumn Header="Equip local" Binding="{Binding EquipA.Nom}" />
                 <DataGridTextColumn Header="Equip visitant" Binding="{Binding EquipB.Nom}" />
                 <DataGridTextColumn Header="Data" Binding="{Binding DiaHora}" />
