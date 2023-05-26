@@ -27,6 +27,18 @@ namespace PorraGirona.usuari
 
         private void btn_inicSessio_iniciSessio_Click(object sender, RoutedEventArgs e)
         {
+            lbl_Contrassenya_iniciSessio.Visibility = Visibility.Collapsed;
+            lbl_titol_iniciarSessio.Visibility = Visibility.Collapsed;
+            lbl_usuari_IniciSessio.Visibility = Visibility.Collapsed;
+
+            btn_enrere_iniciarSessio.Visibility = Visibility.Collapsed;
+            btn_inicSessio_iniciSessio.Visibility = Visibility.Collapsed;
+            
+            inp_Usuari_IniciarSessio.Visibility = Visibility.Collapsed;
+            pas_contrassenya_iniciarSessio.Visibility = Visibility.Collapsed;
+
+            lbl_carregant_iniciSessio.Visibility = Visibility.Visible;
+
             string dni = inp_Usuari_IniciarSessio.Text;
             string pass = pas_contrassenya_iniciarSessio.Password;
 
@@ -43,6 +55,9 @@ namespace PorraGirona.usuari
             else
             {
                 //no entrar
+                mainWindow main = new mainWindow();
+                Close();
+                main.Show();
                 MessageBox.Show("DNI o contrasenya invàlids");
             }
 
