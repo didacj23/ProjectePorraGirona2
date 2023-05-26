@@ -48,7 +48,7 @@ namespace PorraGirona.usuari
 
             dg_Pronostics_usuari.ItemsSource = lpr.Pronostics;
 
-            MessageBox.Show(lpr.Pronostics.idPartit.ToString());
+            
 
         }
 
