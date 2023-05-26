@@ -71,5 +71,16 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <Button x:Name="btn_enrere_pronostic" Content="&lt;" HorizontalAlignment="Left" Margin="21,14,0,0" VerticalAlignment="Top" Height="40" Width="42" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_enrere_registre_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
+            <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
+        </Button>
     </Grid>
 </Window>

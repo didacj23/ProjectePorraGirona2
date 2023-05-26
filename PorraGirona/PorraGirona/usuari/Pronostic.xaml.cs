@@ -26,6 +26,14 @@ namespace PorraGirona.usuari
             this.us = us;
         }
 
+        private void btn_enrere_registre_Click(object sender, RoutedEventArgs e)
+        {
+            IniciarSessio enrere = new IniciarSessio();
+            Close();
+            enrere.Show();
+        }
+
+        /*
         private void btn_EditarPronostic_Click(object sender, RoutedEventArgs e)
         {
             int id_partit = Convert.ToInt32(tb_partit.Text);
@@ -36,5 +44,6 @@ namespace PorraGirona.usuari
 
 
         }
+        */
     }
 }
