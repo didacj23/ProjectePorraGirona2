@@ -47,7 +47,7 @@
             <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
             <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
         </Button>
-        <PasswordBox x:Name="pas_contrassenya_iniciarSessio" HorizontalAlignment="Center" Margin="0,212,0,0" VerticalAlignment="Top" Width="174" Height="36" FontFamily="Yu Gothic Light" Background="#FFD75667" BorderBrush="#FFD75667">
+        <PasswordBox x:Name="pas_contrassenya_iniciarSessio" HorizontalAlignment="Center" Margin="0,212,0,0" VerticalAlignment="Top" Width="174" Height="36" FontFamily="Yu Gothic Light" Background="#FFD75667" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#FFD75667">
             <PasswordBox.Template>
                 <ControlTemplate TargetType="{x:Type PasswordBox}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
@@ -56,6 +56,8 @@
                 </ControlTemplate>
             </PasswordBox.Template>
         </PasswordBox>
+
+
 
 
     </Grid>

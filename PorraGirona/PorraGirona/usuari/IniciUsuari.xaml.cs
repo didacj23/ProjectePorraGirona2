@@ -1,6 +1,7 @@
 ﻿using PorraGirona.dades;
 using PorraGirona.model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -48,6 +49,9 @@ namespace PorraGirona.usuari
 
             LlistaPronostics lpr = c.RecuperarPronostics(us);
 
+            dg_Pronostics_usuari.ItemsSource = lpr.Pronostics;
+
+            MessageBox.Show(lpr.Pronostics.idPartit.ToString());
 
         }
 
