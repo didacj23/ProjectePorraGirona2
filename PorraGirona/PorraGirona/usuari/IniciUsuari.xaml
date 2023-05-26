@@ -51,16 +51,16 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Partit"/>
-                <DataGridTextColumn Header="Gols Local"/>
-                <DataGridTextColumn Header="Gols Visitant"/>
+                <DataGridTextColumn Header="Partit" Binding="{Binding partit}" />
+                <DataGridTextColumn Header="Gols Local" Binding="{Binding golsEquipA}" />
+                <DataGridTextColumn Header="Gols Visitant" Binding="{Binding golsEquipB}" />
             </DataGrid.Columns>
         </DataGrid>
 
 
 
 
-        <DataGrid x:Name="dg_PropersPartits_usuari" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="35,266,512,27" Width="NaN" FontFamily="Yu Gothic UI Light" Background="#FFCF152D" BorderBrush="#FFCF152D" GridLinesVisibility="None">
+        <DataGrid x:Name="dg_PropersPartits_usuari" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="35,266,265,27" Width="NaN" FontFamily="Yu Gothic UI Light" Background="#FFCF152D" BorderBrush="#FFCF152D" GridLinesVisibility="None">
             <DataGrid.Resources>
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="Background" Value="#FFCF152D"/>
@@ -74,33 +74,12 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="PARTIT"/>
-                <DataGridTextColumn Header="DIA I HORA"/>
+                <DataGridTextColumn Header="Partit"/>
+                <DataGridTextColumn Header="Equip local"/>
+                <DataGridTextColumn Header="Equip visitant"/>
+                <DataGridTextColumn Header="Data"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="dg_classificacio_usuari" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="327,266,293,33" Width="NaN" FontFamily="Yu Gothic UI Light" Background="#FFCF152D" BorderBrush="#FFCF152D" GridLinesVisibility="None">
-            <DataGrid.Resources>
-                <Style TargetType="{x:Type DataGridCell}">
-                    <Setter Property="Background" Value="#d75667"/>
-                    <Setter Property="BorderThickness" Value="0"/>
-                </Style>
-                <Style TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="Background" Value="#FFCF152D"/>
-                    <Setter Property="Foreground" Value="White"/>
-                    <Setter Property="BorderThickness" Value="0 0 0 1"/>
-                    <Setter Property="BorderBrush" Value="black"/>
-                </Style>
-                <Style TargetType="{x:Type DataGridRow}">
-                    <Setter Property="BorderBrush" Value="#d75667"/>
-                    <Setter Property="BorderThickness" Value="0 0 0 0"/>
-                </Style>
-            </DataGrid.Resources>
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Nom"/>
-                <DataGridTextColumn Header="Puntuació"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Label x:Name="lbl_classificacio_usuari" Content="Classificació" HorizontalAlignment="Left" Margin="329,235,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
         <Button x:Name="btn_enrere_registre" Content="Tancar sessió" HorizontalAlignment="Left" Margin="198,29,0,0" VerticalAlignment="Top" Height="40" Width="114" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_TancarSessio_iniciUsuari_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -120,6 +99,28 @@
                     </Border>
                 </ControlTemplate>
             </Button.Template>
+        </Button>
+        <Button x:Name="btn_ModPronostic_iniciaUsuari" Content="Modificar " HorizontalAlignment="Left" Margin="436,29,0,0" VerticalAlignment="Top" Height="40" Width="114" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_ModPronostic_iniciaUsuari_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
+            <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
+        </Button>
+        <Button x:Name="btn_CrearPronostic_iniciaUsuari" Content="Crear" HorizontalAlignment="Left" Margin="317,29,0,0" VerticalAlignment="Top" Height="40" Width="114" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_CrearPronostic_iniciUsuari_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
+            <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
         </Button>
 
 

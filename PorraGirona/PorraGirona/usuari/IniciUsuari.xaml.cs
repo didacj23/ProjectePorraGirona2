@@ -48,7 +48,7 @@ namespace PorraGirona.usuari
             
             
 
-            //LlistaPartits lp 
+            
 
         }
 
