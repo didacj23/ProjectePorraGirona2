@@ -45,6 +45,7 @@ namespace PorraGirona.usuari
                             
 
             dg_Pronostics_usuari.ItemsSource = lpr.Pronostics;
+            dg_PropersPartits_usuari.ItemsSource = lps.Partits;
             
             
 

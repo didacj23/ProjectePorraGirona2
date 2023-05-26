@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Administrador" Height="450" Width="800">
     <Grid Background="#FFCF152D">
-        <TextBlock x:Name="lbl_nomUsuari_admin" HorizontalAlignment="Left" Margin="35,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light" FontSize="19"><Run Text="Hola, nom"/><Run Language="es-es" Text="Admin"/></TextBlock>
+       
         <RadioButton x:Name="rad_eliminarUsuari_admin" Content="Eliminar usuari" HorizontalAlignment="Left" Margin="35,134,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Foreground="White" Checked="rad_eliminarUsuari_admin_Checked"/>
         <RadioButton x:Name="rad_programarPartit_admin" Content="Programar partit" HorizontalAlignment="Left" Margin="35,154,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light" Checked="rad_programarPartit_admin_Checked"/>
         <RadioButton Content="Entrar resultat" HorizontalAlignment="Left" Margin="35,174,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light"/>
@@ -22,29 +22,8 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBox x:Name="inp_Usuari_admin" HorizontalAlignment="Left" Margin="392,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="25" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center" Visibility="Collapsed">
-            <TextBox.Template>
-                <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="3">
-                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
-                    </Border>
-                </ControlTemplate>
-            </TextBox.Template>
-        </TextBox>
+        
         <TextBlock x:Name="lbl_usuari_admin" HorizontalAlignment="Left" Margin="392,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light" Visibility="Collapsed"><Run Text="Usu"/><Run Language="es-es" Text="ari"/></TextBlock>
-        <Button x:Name="btn_Crear_admin" Content="Crear" HorizontalAlignment="Left" Margin="392,179,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Click="btn_Crear_admin_Click" Visibility="Collapsed">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <RadioButton x:Name="rad_CrearAdmin_admin" Content="Crear Administrador" HorizontalAlignment="Left" Margin="35,114,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Foreground="White" Checked="rad_CrearAdmin_admin_Checked"/>
         <Button x:Name="btn_eliminarUsuari_admin" Content="Actualitzar punts" HorizontalAlignment="Left" Margin="392,179,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Visibility="Collapsed">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
