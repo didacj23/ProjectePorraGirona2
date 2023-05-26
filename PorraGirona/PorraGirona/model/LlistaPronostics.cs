@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PorraGirona.model
 {
-    internal class LlistaPronostics
+    public class LlistaPronostics
     {
         private List<Pronostic> pronostics;
 

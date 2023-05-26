@@ -18,14 +18,15 @@ namespace PorraGirona
         private string nom;
         private string cognom;
         private int puntsAcumulats;
+        private LlistaPronostics lpr;
         
 
         public Usuari()
         {
-            dni = string.Empty;
+            dni = "";
             contrasenya="";
-            nom = string.Empty;
-            cognom = string.Empty;            
+            nom = "";
+            cognom = "";            
             puntsAcumulats = 0;  
             
             
@@ -41,23 +42,24 @@ namespace PorraGirona
             puntsAcumulats = 0;
             LlistaPronostics lpr;
 
-            Connexio c = new Connexio("localhost", "porragirona", "root", "");
+            //Connexio c = new Connexio("localhost", "porragirona", "root", "");
 
-            if(c.BuscarUsuari(dni)== null) //si l'usuari que s'esta creant no existeix
+            /*if(c.BuscarUsuari(dni)== null) //si l'usuari que s'esta creant no existeix
             {
                 c.InsertarUsuari(this);
-            }
+            }*/
            
         }
 
         //no guarda a la base de dades. es fa servir per obtenir un usuari de la base de dades
-        public Usuari(string dni, string contrasenya, string nom, string cognom, int puntsAcumulats)
+        public Usuari(string dni, string contrasenya, string nom, string cognom, int puntsAcumulats, LlistaPronostics lpr)
         {
             this.dni = dni;
             this.contrasenya = contrasenya;
             this.nom = nom;
             this.cognom = cognom;
             this.puntsAcumulats = puntsAcumulats;
+            this.lpr=lpr;
         }
 
 
@@ -102,7 +104,10 @@ namespace PorraGirona
             set { contrasenya = value;}
         }
 
-
+        public LlistaPronostics Pronostics
+        {
+            get { return  lpr; }
+        }
 
         /*
         public int Pronosticar(Partit partit, int golsA, int golsB)

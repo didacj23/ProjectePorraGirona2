@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PorraGirona
 {
-    internal class Equip
+    public class Equip
     {
         private string nom;
         private string camp;
@@ -36,17 +36,16 @@ namespace PorraGirona
             totalPartitsEmpatats=0;
         }
 
-        /*
-        public Equip(string nom, string camp, string foto, string categoria, int totalPartitsGuanyats, int totalPartitsPerduts, int totalPartitsEmpatats)
+        
+        public Equip(string nom, string camp, string foto, int totalPartitsGuanyats, int totalPartitsPerduts, int totalPartitsEmpatats)
         {
             this.nom = nom;
             this.camp = camp;
             this.foto = foto;
-            this.categoria = categoria;
             this.totalPartitsGuanyats = 0;
             this.totalPartitsPerduts = 0;
             this.totalPartitsEmpatats = 0;
-        }*/
+        }
 
         public string Nom
         {

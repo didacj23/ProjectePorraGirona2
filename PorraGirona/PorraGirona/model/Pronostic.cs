@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PorraGirona
 {
-    internal class Pronostic
+    public class Pronostic
     {
         private static int contPronostic = 0;
         private int idPronostic;
@@ -27,7 +27,7 @@ namespace PorraGirona
             this.golsEquipB = golsEquipB;
 
             //guardar pronostic a la bd
-            Connexio c = new Connexio("localhost", "porragirona", "root", "");
+            //Connexio c = new Connexio("localhost", "porragirona", "root", "");
 
         }
 

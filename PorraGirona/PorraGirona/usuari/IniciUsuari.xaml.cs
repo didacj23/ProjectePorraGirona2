@@ -41,12 +41,9 @@ namespace PorraGirona.usuari
             lbl_nomUsuari_usuari.Content = "hola, " + us.Nom + " " + us.Cognom;
 
             lbl_puntuacio_usuari.Content = us.PuntsAcumulats;
-                       
-            //recuperar llista pronostics(us)
 
-            Connexio c = new Connexio("localhost", "porragirona", "root", "");
 
-            LlistaPronostics lpr = c.RecuperarPronostics(us);
+            LlistaPronostics lpr = us.Pronostics;
 
 
         }

@@ -19,10 +19,9 @@ namespace PorraGirona.model
 
         /// <summary>
         /// Crea un objecte de tipus Sessio amb paràmetres dni i pass introduits x usuari a pantalla
-        /// de inici de sessió. Crea un objecte Connexio i passa els detalls del servidor x la connectionString
-        /// El mètode ´c.IniciarSessio(this) torna true o false depenent de si amb el dni introduit,
-        /// coincideix la contrasenya introduida amb la contrasenya de la base de dades on hi ha
-        /// guardat l'usuari (dni+pass)
+        /// de inici de sessió. Crea un objecte dbUsuaris i executa el mètode de IniciarSessió, que retorn true
+        /// o false si la contrasenya es correcta o no. Si és correcta, l'atribut valida es posa a true i 
+        /// es recupera l'usuari amb el mètode BuscarUsuari. Si l'usuari és administrador, posa en true l'atribut admin
         /// </summary>
         /// <param name="dni"></param>
         /// <param name="pass"></param>
@@ -31,15 +30,15 @@ namespace PorraGirona.model
             this.dni=dni;
             this.pass=pass;
 
-            Connexio c = new Connexio("localhost", "porragirona", "root", "");
+            dbUsuaris c = new dbUsuaris();
 
             if(c.IniciarSessió(this))
             {
                 //sessio vàlida
                 valida=true;
-
                 usuari=c.BuscarUsuari(dni);
-                
+                if (usuari is Administrador) admin = true;
+                else admin = false;
             }
             else
             {
@@ -68,11 +67,7 @@ namespace PorraGirona.model
 
         public bool Admin
         {
-            get
-            {
-                if (usuari is Administrador) return true;
-                else return false;
-            }
+            get{ return admin; }
         }
 
         public bool Valida
@@ -80,6 +75,8 @@ namespace PorraGirona.model
             get { return valida; }
             //set { valida = value; }
         }
+
+        
 
     }
 }

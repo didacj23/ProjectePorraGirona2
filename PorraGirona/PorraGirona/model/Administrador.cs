@@ -10,7 +10,7 @@ namespace PorraGirona.model
     {
         public Administrador(string dni, string pass, string nom, string cognom):base(dni, pass, nom, cognom) { }
 
-        public Administrador(string dni, string pass, string nom, string cognom, int puntsAcumulats) : base(dni, pass, nom, cognom, puntsAcumulats) { }
+        public Administrador(string dni, string pass, string nom, string cognom, int puntsAcumulats, LlistaPronostics lpr) : base(dni, pass, nom, cognom, puntsAcumulats, lpr) { }
 
 
 

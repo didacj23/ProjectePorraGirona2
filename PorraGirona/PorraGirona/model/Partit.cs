@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PorraGirona.model
 {
-    internal class Partit
+    public class Partit
     {
         private static int contPartit=0;
         private int idPartit;
@@ -124,8 +124,8 @@ namespace PorraGirona.model
             this.diaHora=diaHora;
             this.camp=camp;
 
-            Connexio c = new Connexio("localhost", "porragirona", "root", "");
-            c.InsertarPartit(this);
+            //Connexio c = new Connexio("localhost", "porragirona", "root", "");
+            //c.InsertarPartit(this);
         }
 
 

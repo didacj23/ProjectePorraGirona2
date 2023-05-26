@@ -1,4 +1,4 @@
-﻿using MySqlConnector;
+﻿/*using MySqlConnector;
 using PorraGirona.model;
 using System;
 using System.Collections.Generic;
@@ -445,3 +445,4 @@ namespace PorraGirona.dades
         
     }
 }
+*/
