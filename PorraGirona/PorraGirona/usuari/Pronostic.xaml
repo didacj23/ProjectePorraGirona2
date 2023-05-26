@@ -8,7 +8,7 @@
         Title="Pronostic" Height="450" Width="800">
     <Grid Background="#FFCF152D">
         <Label x:Name="lb_pronostic" Content="El teu pronòstic" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Width="164" Foreground="White" FontWeight="Medium" FontSize="19" FontFamily="Yu Gothic UI Light"/>
-        <Label x:Name="lb_info_partit" Content="Partit:" HorizontalAlignment="Left" Margin="257,108,0,0" VerticalAlignment="Top" Width="55" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+        <Label x:Name="lb_info_partit" Content="Partit:" HorizontalAlignment="Left" Margin="206,108,0,0" VerticalAlignment="Top" Width="55" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
         <TextBox x:Name="tb_partit" HorizontalAlignment="Left" Margin="391,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI" BorderBrush="#FFD75667" BorderThickness="0" Height="22">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -21,8 +21,8 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Label x:Name="lb_info_pronostic_golsB" Content="Pronòstic Gols B:" HorizontalAlignment="Left" Margin="257,180,0,0" VerticalAlignment="Top" Width="129" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
-        <Label x:Name="lb_info_pronostic_golsA_Copy" Content="Pronòstic Gols A:" HorizontalAlignment="Left" Margin="257,144,0,0" VerticalAlignment="Top" Width="129" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+        <Label x:Name="lb_info_pronostic_golsB" Content="Pronòstic Gols Visitant:" HorizontalAlignment="Left" Margin="206,180,0,0" VerticalAlignment="Top" Width="189" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+        <Label x:Name="lb_info_pronostic_golsA_Copy" Content="Pronòstic Gols Local:" HorizontalAlignment="Left" Margin="206,144,0,0" VerticalAlignment="Top" Width="161" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
         <TextBox x:Name="tb_pronosticGolsA" HorizontalAlignment="Left" Margin="391,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI" BorderBrush="#FFD75667" BorderThickness="0" Height="22">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">

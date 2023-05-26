@@ -117,6 +117,10 @@ namespace PorraGirona.model
             set { estat=value; }
         }
 
+        public string Equips
+        {
+            get { return $"{EquipA} vs {EquipB}"; }
+        }
         public void ProgramarPartit(Equip ea, Equip eb, DateTime diaHora, string camp, string estat)
         {
             equipA=ea;
