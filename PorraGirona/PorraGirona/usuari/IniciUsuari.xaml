@@ -51,9 +51,15 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
+<<<<<<< Updated upstream
                 <DataGridTextColumn Header="Partit"/>
                 <DataGridTextColumn Header="Gols Local"/>
                 <DataGridTextColumn Header="Gols Visitant"/>
+=======
+                <DataGridTextColumn Header="Partit" Binding="{Binding Equips}" />
+                <DataGridTextColumn Header="Gols Local" Binding="{Binding GolsEquipA}" />
+                <DataGridTextColumn Header="Gols Visitant" Binding="{Binding GolsEquipB}" />
+>>>>>>> Stashed changes
             </DataGrid.Columns>
         </DataGrid>
 

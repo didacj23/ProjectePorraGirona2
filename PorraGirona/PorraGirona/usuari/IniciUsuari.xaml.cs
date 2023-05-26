@@ -25,7 +25,7 @@ namespace PorraGirona.usuari
     {
         public Usuari us;
 
-        public IniciUsuari(Usuari us, bool admin, LlistaPronostics lpr)
+        public IniciUsuari(Usuari us, bool admin, LlistaPronostics lpr, LlistaPartits lps)
         {
             InitializeComponent();
             this.us=us;
@@ -47,8 +47,13 @@ namespace PorraGirona.usuari
             dg_Pronostics_usuari.ItemsSource = lpr.Pronostics;
             
             
+<<<<<<< Updated upstream
 
             //LlistaPartits lp 
+=======
+            
+            
+>>>>>>> Stashed changes
 
         }
 
