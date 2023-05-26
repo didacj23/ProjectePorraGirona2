@@ -19,9 +19,22 @@ namespace PorraGirona.usuari
     /// </summary>
     public partial class Pronostic : Window
     {
-        public Pronostic()
-        {
+        public Usuari us;
+        public Pronostic(Usuari us)
+        {            
             InitializeComponent();
+            this.us = us;
+        }
+
+        private void btn_EditarPronostic_Click(object sender, RoutedEventArgs e)
+        {
+            int id_partit = Convert.ToInt32(tb_partit.Text);
+            int golsA = Convert.ToInt32(tb_pronosticGolsA.Text);
+            int golsB = Convert.ToInt32(tb_pronosticGolsB.Text);
+
+            Pronostic po = new Pronostic(us, id_partit, golsA, golsB);
+
+
         }
     }
 }

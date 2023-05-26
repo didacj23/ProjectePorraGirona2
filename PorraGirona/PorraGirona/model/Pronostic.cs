@@ -17,17 +17,28 @@ namespace PorraGirona
         private int golsEquipA;
         private int golsEquipB;
 
-        public Pronostic(Partit p, int golsEquipA, int golsEquipB) 
+        public Pronostic(Usuari usuari, int id_partit, int golsEquipA, int golsEquipB) 
         {
             idPronostic = contPronostic;
             contPronostic++;
 
-            partit=p;
+            this.usuari = usuari;
+
+            dbPartits dbp = new dbPartits();
+            partit = dbp.BuscarPartit(id_partit);
+
             this.golsEquipA=golsEquipA;
             this.golsEquipB = golsEquipB;
 
-            //guardar pronostic a la bd
-            //Connexio c = new Connexio("localhost", "porragirona", "root", "");
+            dbPronostics dbpr = new dbPronostics();
+            if(dbpr.BuscarPronostic(idPronostic) is null) //si no existiex el pronòstic
+            {
+                dbpr.InsertarPronostic(this);
+            }
+            else //si existeix el pronòstic. torna el pronostic
+            {
+
+            }
 
         }
 

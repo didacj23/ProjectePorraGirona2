@@ -47,7 +47,7 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Button x:Name="btn_EditarPronostic" Content="Guardar pronòstic" HorizontalAlignment="Left" Margin="249,249,0,0" VerticalAlignment="Top" Background="#FFD75667" BorderBrush="#FFD75667" FontWeight="Bold" FontFamily="Yu Gothic UI" Foreground="White" BorderThickness="0" Height="34" Width="113">
+        <Button x:Name="btn_EditarPronostic" Content="Editar pronòstic" HorizontalAlignment="Left" Margin="249,249,0,0" VerticalAlignment="Top" Background="#FFD75667" BorderBrush="#FFD75667" FontWeight="Bold" FontFamily="Yu Gothic UI" Foreground="White" BorderThickness="0" Height="34" Width="113">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}"

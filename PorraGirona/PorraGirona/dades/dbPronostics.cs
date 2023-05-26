@@ -3,6 +3,7 @@ using PorraGirona.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -55,7 +56,6 @@ namespace PorraGirona.dades
             return pr;
 
         }
-
 
 
         public LlistaPronostics RecuperarPronostics(Usuari u)
@@ -148,52 +148,34 @@ namespace PorraGirona.dades
 
             return lpr;
         }
-    }
 
-    /*
-    public LlistaPronostics RecuperarPronostics(Usuari u)
-    {
-        using (MySqlConnection conn = new MySqlConnection(connectionString))
+        public void InsertarPronostic(Pronostic pr)
         {
-            conn.Open();
+            string query = $"INSERT INTO pronostics(id_pronostic, dni_usuari, id_partit, gols_equip_a, gols_equip_b) values (@id_pronostic, @dni_usuari, @id_partit, @gols_equip_a, @gols_equip_b)";
 
-            string query = $"SELECT * FROM pronostics where dni_usuari='{u.Dni}'";
-
-            LlistaPronostics lpr = new LlistaPronostics();
-
-            using (MySqlCommand command = new MySqlCommand(query, conn))
+            try
             {
-                using (MySqlDataReader reader = command.ExecuteReader())
+                ConnectarBD();
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
-                    while (reader.Read())
-                    {
-                        int idPronostic = reader.GetInt32("id_pronostic");
+                    command.Parameters.AddWithValue("@id_pronostic", pr.IdPronostic);
+                    command.Parameters.AddWithValue("@dni_usuari", pr.Usuari.Dni);
+                    command.Parameters.AddWithValue("@id_partit", pr.Partit.IdPartit);
+                    command.Parameters.AddWithValue("@gols_equip_a", pr.GolsEquipA);
+                    command.Parameters.AddWithValue("@gols_equip_B", pr.GolsEquipB);
 
-                        int idPartit = reader.GetInt32("id_partit");
-                        Partit p = BuscarPartit(idPartit);
-
-                        int golsA = reader.GetInt32("gols_equip_a");
-                        int golsB = reader.GetInt32("gols_equip_b");
-
-                        Pronostic pr = new Pronostic(idPronostic, u, p, golsA, golsB);
-
-                        lpr.AfegirPronostic(pr);
-
-                    }
-
+                    command.ExecuteNonQuery();
                 }
-
             }
-
-            conn.Close();
-            return lpr;
-
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
         }
-    }*/
-
-
-
-
-
 
 }
