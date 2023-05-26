@@ -74,11 +74,11 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Partit"/>
-                <DataGridTextColumn Header="Equip local"/>
-                <DataGridTextColumn Header="Equip visitant"/>
-                <DataGridTextColumn Header="Data"/>
-                <DataGridTextColumn Header="Camp"/>
+                <DataGridTextColumn Header="Partit" Binding="{Binding IdPronostic}" />
+                <DataGridTextColumn Header="Equip local" Binding="{Binding EquipA.Nom}" />
+                <DataGridTextColumn Header="Equip visitant" Binding="{Binding EquipB.Nom}" />
+                <DataGridTextColumn Header="Data" Binding="{Binding DiaHora}" />
+                <DataGridTextColumn Header="Camp" Binding="{Binding Camp}" />
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btn_enrere_registre" Content="Tancar sessió" HorizontalAlignment="Left" Margin="198,29,0,0" VerticalAlignment="Top" Height="40" Width="114" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_TancarSessio_iniciUsuari_Click">
