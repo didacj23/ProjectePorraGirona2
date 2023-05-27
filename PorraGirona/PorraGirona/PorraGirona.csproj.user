@@ -11,6 +11,9 @@
     <Compile Update="usuari\Modificar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="usuari\PronosticFinestra.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="usuari\registre.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,6 +26,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="usuari\Modificar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="usuari\PronosticFinestra.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="usuari\registre.xaml">

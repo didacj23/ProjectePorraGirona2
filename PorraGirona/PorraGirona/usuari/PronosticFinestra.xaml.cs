@@ -15,35 +15,47 @@ using System.Windows.Shapes;
 namespace PorraGirona.usuari
 {
     /// <summary>
-    /// Lógica de interacción para Pronostic.xaml
+    /// Lógica de interacción para PronosticFinestra.xaml
     /// </summary>
-    public partial class Pronostic : Window
+    public partial class PronosticFinestra : Window
     {
         public Usuari us;
-        public Pronostic(Usuari us)
-        {            
+        public PronosticFinestra(Usuari us)
+        {
             InitializeComponent();
             this.us = us;
         }
 
         private void btn_enrere_registre_Click(object sender, RoutedEventArgs e)
         {
+
             IniciUsuari enrere = new IniciUsuari();
             enrere.Show();
 
+
         }
 
-        /*
+
+        
         private void btn_EditarPronostic_Click(object sender, RoutedEventArgs e)
         {
             int id_partit = Convert.ToInt32(tb_partit.Text);
             int golsA = Convert.ToInt32(tb_pronosticGolsA.Text);
             int golsB = Convert.ToInt32(tb_pronosticGolsB.Text);
 
-            Pronostic po = new Pronostic(us, id_partit, golsA, golsB);
+            try
+            {
+                Pronostic po = new Pronostic(us, id_partit, golsA, golsB);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error. "+ex.Message);
+            }
+            
 
-
+            /*crear un nou objecti tipo pronostic. al constructor, mirar si ja existeix a la bd.
+             si existeix, actualitzar els valors, sino afegirlo*/
         }
-        */
+        
     }
 }

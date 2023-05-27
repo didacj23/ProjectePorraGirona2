@@ -101,18 +101,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btn_ModPronostic_iniciaUsuari" Content="Modificar " HorizontalAlignment="Left" Margin="436,29,0,0" VerticalAlignment="Top" Height="40" Width="114" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_ModPronostic_iniciaUsuari_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-            <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
-            <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
-        </Button>
-        <Button x:Name="btn_CrearPronostic_iniciaUsuari" Content="Pronosticar" HorizontalAlignment="Left" Margin="317,29,0,0" VerticalAlignment="Top" Height="40" Width="114" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_CrearPronostic_iniciUsuari_Click">
+        <Button x:Name="btn_CrearPronostic_iniciaUsuari" Content="Crear / modificar pronostic" HorizontalAlignment="Left" Margin="317,29,0,0" VerticalAlignment="Top" Height="40" Width="258" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_CrearPronostic_iniciUsuari_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">

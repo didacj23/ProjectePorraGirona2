@@ -63,7 +63,7 @@ namespace PorraGirona.usuari
 
         private void btn_admin_iniciUsuari_Click(object sender, RoutedEventArgs e)
         {
-            Administrador admin = new Administrador();
+            Administrador admin = new Administrador(us);
             Close();
             admin.Show();
         }
@@ -77,8 +77,8 @@ namespace PorraGirona.usuari
 
         private void btn_CrearPronostic_iniciUsuari_Click(object sender, RoutedEventArgs e)
         {
-            Pronostic pronostic = new Pronostic(us);
-            Close();
+            PronosticFinestra pronostic = new PronosticFinestra(us);
+            //Close();
             pronostic.Show();
         }
 

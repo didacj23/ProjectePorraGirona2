@@ -143,5 +143,35 @@ namespace PorraGirona.dades
 
 
 
+
+        
+        public void EntrarResultat(int id_partit, int gA, int gB)
+        {
+            string query = $"UPDATE partit SET gols_equip_A = @golsA, gols_equip_B=@golsB where id_partit={id_partit}";
+
+            try
+            {
+                ConnectarBD();
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {                   
+                    command.Parameters.AddWithValue("@golsA", gA);
+                    command.Parameters.AddWithValue("@golsB", gB);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+
+        }
+
+
     }
 }

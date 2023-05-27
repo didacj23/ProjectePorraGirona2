@@ -12,9 +12,9 @@ namespace PorraGirona.dades
 {
     internal class dbPronostics : dbConnexio
     {
-        public Pronostic BuscarPronostic(int id_pronostic)
+        public Pronostic BuscarPronostic(Usuari u, int id_partit)
         {
-            string query = $"SELECT * FROM pronostics WHERE id_pronostic='{id_pronostic}'";
+            string query = $"SELECT * FROM pronostics WHERE dni_usuari='{u.Dni}' and id_partit='{id_partit}'";
 
             Pronostic pr = null;
 
@@ -29,9 +29,9 @@ namespace PorraGirona.dades
                         string dni_usuari = reader.GetString("dni_usuari");
 
                         dbUsuaris dbUser = new dbUsuaris();
-                        Usuari u = dbUser.BuscarUsuari(dni_usuari);
+                        u = dbUser.BuscarUsuari(dni_usuari);
 
-                        int id_partit = reader.GetInt32("id_partit");
+                        id_partit = reader.GetInt32("id_partit");
                         //buscar partit enviant la id
 
                         dbPartits dbPart = new dbPartits();
@@ -40,7 +40,7 @@ namespace PorraGirona.dades
                         int gols_equip_a = reader.GetInt32("gols_equip_a");
                         int gols_equip_b = reader.GetInt32("gols_equip_b");
 
-                        pr = new Pronostic(id_pronostic, u, partit, gols_equip_a, gols_equip_b);
+                        pr = new Pronostic(u, id_partit, gols_equip_a, gols_equip_b);
                     }
                 }
             }
@@ -177,5 +177,33 @@ namespace PorraGirona.dades
                 DesconnectarBD();
             }
         }
-    }
+
+        public void ActualitzarPronostic(Pronostic pr)
+        {            
+            string query = $"UPDATE pronostics SET id_pronostic = @id_pronostic, dni_usuari=@dni_usuari, id_partit=@id_partit, gols_equip_a=@gols_equip_a, @gols_equip_b=gols_equip_b where id_pronostic={pr.IdPronostic}";
+
+            try
+            {
+                ConnectarBD();
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@gols_equip_a", pr.GolsEquipA);
+                    command.Parameters.AddWithValue("@gols_equip_B", pr.GolsEquipB);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+            
+        }
+
+    } 
 }

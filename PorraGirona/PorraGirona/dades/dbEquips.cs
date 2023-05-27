@@ -50,6 +50,28 @@ namespace PorraGirona.dades
 
         }
 
+        public void EliminarEquip(string nom_equip)
+        {
+            string query = $"DELETE FROM equips WHERE nom_equip='{nom_equip}'";
+
+            try
+            {
+                ConnectarBD();
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+        }
 
     }
 }
