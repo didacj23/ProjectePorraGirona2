@@ -28,12 +28,13 @@ namespace PorraGirona.usuari
 
         private void btn_enrere_registre_Click(object sender, RoutedEventArgs e)
         {
-            IniciUsuari enrere = new IniciUsuari();
+            //IniciUsuari enrere = new IniciUsuari();
             Close();
-            enrere.Show();
+            //enrere.Show();
         }
 
-        /*
+
+        
         private void btn_EditarPronostic_Click(object sender, RoutedEventArgs e)
         {
             int id_partit = Convert.ToInt32(tb_partit.Text);
@@ -53,6 +54,6 @@ namespace PorraGirona.usuari
             /*crear un nou objecti tipo pronostic. al constructor, mirar si ja existeix a la bd.
              si existeix, actualitzar els valors, sino afegirlo*/
         }
-        */
+        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using PorraGirona.dades;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -22,9 +23,11 @@ namespace PorraGirona.usuari
     /// </summary>
     public partial class Administrador : Window
     {
-        public Administrador()
+        private Usuari us;
+        public Administrador(Usuari us)
         {
             InitializeComponent();
+            this.us = us;   
         }
 
         private void btn_PujarFoto_admin_Click(object sender, RoutedEventArgs e)
@@ -294,11 +297,15 @@ namespace PorraGirona.usuari
         private void btn_EliminarUsuari_admin_Click(object sender, RoutedEventArgs e)
         {
             string dni = inp_IdUsuari_admin.Text;
+            us.EliminarUsuari(dni);           
 
-            dbUsuaris usuari = new Usuari();
+        }
 
-            usuari.El
+        public void EliminarUsuauri(string dni)
+        {
+            dbUsuaris dbu = new dbUsuaris();
 
+            dbu.EliminarUsuari(dni);
         }
     }
 }

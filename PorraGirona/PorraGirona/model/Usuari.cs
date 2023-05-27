@@ -128,9 +128,11 @@ namespace PorraGirona
             return r;
         }*/
 
-        public void EliminarUsuauri(string dni)
+        public void EliminarUsuari(string dni)
         {
-            EliminarUsuauri
+            dbUsuaris dbu = new dbUsuaris();
+
+            dbu.EliminarUsuari(dni);
         }
 
         public override string ToString()

@@ -29,9 +29,9 @@ namespace PorraGirona.dades
                         string dni_usuari = reader.GetString("dni_usuari");
 
                         dbUsuaris dbUser = new dbUsuaris();
-                        Usuari u = dbUser.BuscarUsuari(dni_usuari);
+                        u = dbUser.BuscarUsuari(dni_usuari);
 
-                        int id_partit = reader.GetInt32("id_partit");
+                        id_partit = reader.GetInt32("id_partit");
                         //buscar partit enviant la id
 
                         dbPartits dbPart = new dbPartits();
@@ -180,7 +180,7 @@ namespace PorraGirona.dades
 
         public void ActualitzarPronostic(Pronostic pr)
         {            
-            string query = $"UPDATE pronostics SET id_pronostic = @id_pronostic, dni_usuari=@dni_usuari, id_partit=@id_partit, gols_equip_a=@gols_equip_a, @gols_equip_b=gols_equip_b";
+            string query = $"UPDATE pronostics SET id_pronostic = @id_pronostic, dni_usuari=@dni_usuari, id_partit=@id_partit, gols_equip_a=@gols_equip_a, @gols_equip_b=gols_equip_b where id_pronostic={pr.IdPronostic}";
 
             try
             {
@@ -188,9 +188,6 @@ namespace PorraGirona.dades
 
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
-                    command.Parameters.AddWithValue("@id_pronostic", pr.IdPronostic);
-                    command.Parameters.AddWithValue("@dni_usuari", pr.Usuari.Dni);
-                    command.Parameters.AddWithValue("@id_partit", pr.Partit.IdPartit);
                     command.Parameters.AddWithValue("@gols_equip_a", pr.GolsEquipA);
                     command.Parameters.AddWithValue("@gols_equip_B", pr.GolsEquipB);
 
