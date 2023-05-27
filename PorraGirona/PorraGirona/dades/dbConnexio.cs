@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PorraGirona.dades
 {
-    internal class dbConnexio
+    public class dbConnexio
     {
         private string connectionString = $"Server=localhost;Database=porragirona;Uid=root;Pwd=''";
 

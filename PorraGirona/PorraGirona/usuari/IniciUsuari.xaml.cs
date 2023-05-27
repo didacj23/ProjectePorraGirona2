@@ -52,6 +52,10 @@ namespace PorraGirona.usuari
 
         }
 
+        public IniciUsuari()
+        {
+        }
+
         private void dg_Pronostics_usuari_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

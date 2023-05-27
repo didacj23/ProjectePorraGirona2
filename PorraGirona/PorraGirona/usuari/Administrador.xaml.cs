@@ -1,10 +1,15 @@
 ﻿using Microsoft.Win32;
+
+using PorraGirona.model;
+
 using PorraGirona.dades;
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -301,11 +306,20 @@ namespace PorraGirona.usuari
 
         }
 
-        public void EliminarUsuauri(string dni)
+        private void btn_ProgramarPartit_admin_Click(object sender, RoutedEventArgs e)
         {
-            dbUsuaris dbu = new dbUsuaris();
+            string EquipLocal = inp_EquipA_admin.Text;
+            string EquipVisitant = inp_EquipB_admin.Text;
+            DateTime diaIhora = Convert.ToDateTime(inp_DataHora_admin.Text);
+            string camp = inp_Camp_admin.Text;
+            string estat = inp_estat_admin.Text;
+            int id = Convert.ToInt32(inp_id_admin.Text);
 
-            dbu.EliminarUsuari(dni);
+            Partit partit = new Partit();
+            partit.ProgramarPartit(EquipLocal, EquipVisitant, diaIhora, camp, estat, id);
+
         }
+
+
     }
 }

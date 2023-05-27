@@ -108,6 +108,8 @@ namespace PorraGirona
             set { contrasenya = value;}
         }
 
+        public dbUsuaris Connexio { get; set; }
+
         public LlistaPronostics Pronostics
         {
             get { return  lpr; }
@@ -130,9 +132,10 @@ namespace PorraGirona
 
         public void EliminarUsuari(string dni)
         {
-            dbUsuaris dbu = new dbUsuaris();
 
-            dbu.EliminarUsuari(dni);
+            Connexio = new dbUsuaris();
+            Connexio.EliminarUsuari(dni);
+
         }
 
         public override string ToString()

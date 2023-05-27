@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace PorraGirona.dades
 {
-    internal class dbPartits:dbConnexio
+    public class dbPartits:dbConnexio
     {
         public Partit BuscarPartit(int id_partit)
         {            
@@ -116,6 +116,32 @@ namespace PorraGirona.dades
             return llistaPartits;
 
         }
+        public void InsertarPartit(int id_partit, string equipA, string equipB, DateTime dia_hora, string camp, string estat)
+        {
+            string query = $"INSERT INTO partits (id_partit, equip_A, equip_B, dia_hora, camp, estat) VALUES ({id_partit}, '{equipA}', '{equipB}', '{dia_hora.ToString("yyyy-MM-dd HH:mm:ss")}', '{camp}', '{estat}')";
+
+            try
+            {
+                ConnectarBD();
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+        }
+
+
+
+
 
 
         

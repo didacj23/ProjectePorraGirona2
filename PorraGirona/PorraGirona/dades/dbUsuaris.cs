@@ -12,7 +12,7 @@ using System.Windows;
 
 namespace PorraGirona.dades
 {
-    internal class dbUsuaris:dbConnexio
+    public class dbUsuaris:dbConnexio
     {
 
         public bool IniciarSessió(Sessio s)
