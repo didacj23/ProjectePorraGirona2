@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -288,6 +289,16 @@ namespace PorraGirona.usuari
             IniciarSessio enrere = new IniciarSessio();
             Close();
             enrere.Show();
+        }
+
+        private void btn_EliminarUsuari_admin_Click(object sender, RoutedEventArgs e)
+        {
+            string dni = inp_IdUsuari_admin.Text;
+
+            dbUsuaris usuari = new Usuari();
+
+            usuari.El
+
         }
     }
 }
