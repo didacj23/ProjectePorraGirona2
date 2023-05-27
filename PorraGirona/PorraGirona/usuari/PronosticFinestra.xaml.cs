@@ -44,16 +44,32 @@ namespace PorraGirona.usuari
             try
             {
                 Pronostic po = new Pronostic(us, id_partit, golsA, golsB);
+                if(po.Guardat) 
+                {
+                    MessageBox.Show("Pronostic guardat");
+                    tb_partit.Text="";
+                    tb_pronosticGolsA.Text="";
+                    tb_pronosticGolsB.Text="";
+                }
+                else { MessageBox.Show("Pronostic NO guardat/actualitzat"); }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error. "+ex.Message);
             }
             
-
-            /*crear un nou objecti tipo pronostic. al constructor, mirar si ja existeix a la bd.
-             si existeix, actualitzar els valors, sino afegirlo*/
         }
-        
+
+        private void btn_CancelarPronostic_Click(object sender, RoutedEventArgs e)
+        {
+            int id = Convert.ToInt32(tb_idPronostic.Text);
+
+            Pronostic p = new Pronostic(id);
+
+            p.CancelarPronostic(id);
+
+            MessageBox.Show("Pronostic s'ha cancelat correctament");
+            tb_idPronostic.Text="";
+        }
     }
 }

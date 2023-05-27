@@ -1,4 +1,5 @@
-﻿using MySqlConnector;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySqlConnector;
 using PorraGirona.model;
 using System;
 using System.Collections.Generic;
@@ -26,21 +27,26 @@ namespace PorraGirona.dades
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        string dni_usuari = reader.GetString("dni_usuari");
 
-                        dbUsuaris dbUser = new dbUsuaris();
-                        u = dbUser.BuscarUsuari(dni_usuari);
+                        if(reader.Read())
+                        {
+                            string dni_usuari = reader.GetString("dni_usuari");
 
-                        id_partit = reader.GetInt32("id_partit");
-                        //buscar partit enviant la id
+                            dbUsuaris dbUser = new dbUsuaris();
+                            u = dbUser.BuscarUsuari(dni_usuari);
 
-                        dbPartits dbPart = new dbPartits();
-                        Partit partit = dbPart.BuscarPartit(id_partit);
+                            id_partit = reader.GetInt32("id_partit");
+                            //buscar partit enviant la id
 
-                        int gols_equip_a = reader.GetInt32("gols_equip_a");
-                        int gols_equip_b = reader.GetInt32("gols_equip_b");
+                            dbPartits dbPart = new dbPartits();
+                            Partit partit = dbPart.BuscarPartit(id_partit);
 
-                        pr = new Pronostic(u, id_partit, gols_equip_a, gols_equip_b);
+                            int gols_equip_a = reader.GetInt32("gols_equip_a");
+                            int gols_equip_b = reader.GetInt32("gols_equip_b");
+
+                            pr = new Pronostic(u, id_partit, gols_equip_a, gols_equip_b);
+                        }
+                        
                     }
                 }
             }
@@ -205,5 +211,52 @@ namespace PorraGirona.dades
             
         }
 
+        public void CancelarPronostic(int id)
+        {
+            string query = $"DELETE FROM pronostics WHERE id_pronostic='{id}'";
+
+            try
+            {
+                ConnectarBD();
+
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+        }
+
+        public int ObtenirUltimId()
+        {
+            string query = "SELECT MAX(id_pronostic) FROM pronostics";
+            int maxId=-1;
+
+            try
+            {
+                ConnectarBD();
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    maxId = Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error. "+ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+
+            return maxId;
+        }
     } 
 }

@@ -5,22 +5,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PorraGirona
 {
     public class Pronostic
     {
-        private static int contPronostic = 0;
+        //private static int contPronostic = 0;
         private int idPronostic;
         private Usuari usuari;
         private Partit partit;
         private int golsEquipA;
         private int golsEquipB;
+        private bool guardat;
 
         public Pronostic(Usuari usuari, int id_partit, int golsEquipA, int golsEquipB)
         {
-            idPronostic = contPronostic;
-            contPronostic++;
+            //idPronostic = contPronostic;
+            //contPronostic++;
+            dbPronostics dbpr = new dbPronostics();
+
+            idPronostic = dbpr.ObtenirUltimId()+1;
 
             this.usuari = usuari;
 
@@ -41,15 +46,16 @@ namespace PorraGirona
 
             if(partit.Estat=="programat") //si el partit NO ha començat
             {
-                dbPronostics dbpr = new dbPronostics();
-                if (dbpr.BuscarPronostic(usuari, partit.IdPartit) is null) //si no existiex el pronòstic
-                {
                 
+                if (dbpr.BuscarPronostic(usuari, partit.IdPartit) is null) //si no existiex el pronòstic
+                {                
                     dbpr.InsertarPronostic(this);
+                    guardat=true;
                 }
                 else //si existeix el pronòstic
                 {
                     dbpr.ActualitzarPronostic(this);
+                    guardat = true;
                 }
             }else if(partit.Estat == "iniciat")
             {
@@ -62,6 +68,11 @@ namespace PorraGirona
             }
 
 
+        }
+
+        public Pronostic(int id) //es fa servir x cancelar un pronostic
+        {
+            idPronostic=id;
         }
 
         public Pronostic(int idPronostic, Usuari usuari, Partit partit, int golsEquipA, int golsEquipB)
@@ -107,11 +118,22 @@ namespace PorraGirona
             get { return $"{Partit.EquipA.Nom} vs {Partit.EquipB.Nom}"; }
         }
 
+        public bool Guardat
+        {
+            get { return  guardat; }
+        }
+
         /*
         public string ResultatPartit()
         {
 
         }*/
+
+        public void CancelarPronostic(int idPronostic)
+        {
+            dbPronostics dbpr = new dbPronostics();
+            dbpr.CancelarPronostic(idPronostic);
+        }
 
         public override string ToString()
         {

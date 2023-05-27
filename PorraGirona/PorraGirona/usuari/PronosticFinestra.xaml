@@ -8,8 +8,8 @@
         Title="PronosticFinestra" Height="450" Width="800">
     <Grid Background="#FFCF152D">
         <Label x:Name="lb_pronostic" Content="El teu pronòstic" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Width="164" Foreground="White" FontWeight="Medium" FontSize="19" FontFamily="Yu Gothic UI Light"/>
-        <Label x:Name="lb_info_partit" Content="Partit:" HorizontalAlignment="Left" Margin="206,108,0,0" VerticalAlignment="Top" Width="55" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
-        <TextBox x:Name="tb_partit" HorizontalAlignment="Left" Margin="391,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI" BorderBrush="#FFD75667" BorderThickness="0" Height="22">
+        <Label x:Name="lb_info_partit" Content="Partit:" HorizontalAlignment="Left" Margin="206,129,0,0" VerticalAlignment="Top" Width="55" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+        <TextBox x:Name="tb_partit" HorizontalAlignment="Left" Margin="391,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI" BorderBrush="#FFD75667" BorderThickness="0" Height="22">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
@@ -21,9 +21,9 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Label x:Name="lb_info_pronostic_golsB" Content="Pronòstic Gols Visitant:" HorizontalAlignment="Left" Margin="206,180,0,0" VerticalAlignment="Top" Width="189" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
-        <Label x:Name="lb_info_pronostic_golsA_Copy" Content="Pronòstic Gols Local:" HorizontalAlignment="Left" Margin="206,144,0,0" VerticalAlignment="Top" Width="161" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
-        <TextBox x:Name="tb_pronosticGolsA" HorizontalAlignment="Left" Margin="391,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI" BorderBrush="#FFD75667" BorderThickness="0" Height="22">
+        <Label x:Name="lb_info_pronostic_golsB" Content="Pronòstic Gols Visitant:" HorizontalAlignment="Left" Margin="206,0,0,0" VerticalAlignment="Center" Width="189" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+        <Label x:Name="lb_info_pronostic_golsA_Copy" Content="Pronòstic Gols Local:" HorizontalAlignment="Left" Margin="206,165,0,0" VerticalAlignment="Top" Width="161" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+        <TextBox x:Name="tb_pronosticGolsA" HorizontalAlignment="Left" Margin="391,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI" BorderBrush="#FFD75667" BorderThickness="0" Height="22">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
@@ -35,7 +35,7 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <TextBox x:Name="tb_pronosticGolsB" HorizontalAlignment="Left" Margin="391,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI" BorderBrush="#FFD75667" BorderThickness="0" Height="22">
+        <TextBox x:Name="tb_pronosticGolsB" HorizontalAlignment="Left" Margin="391,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="138" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI" BorderBrush="#FFD75667" BorderThickness="0" Height="22">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
@@ -59,7 +59,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btn_CancelarPronostic" Content="Cancel·lar pronòstic" HorizontalAlignment="Left" Margin="400,249,0,0" VerticalAlignment="Top" Background="#FFD75667" BorderBrush="#FFD75667" FontWeight="Bold" FontFamily="Yu Gothic UI" Foreground="White" BorderThickness="0" Height="33" Width="120">
+        <Button x:Name="btn_CancelarPronostic" Content="Cancel·lar pronòstic" HorizontalAlignment="Left" Margin="400,249,0,0" VerticalAlignment="Top" Background="#FFD75667" BorderBrush="#FFD75667" FontWeight="Bold" FontFamily="Yu Gothic UI" Foreground="White" BorderThickness="0" Height="33" Width="120" Click="btn_CancelarPronostic_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}"
@@ -82,5 +82,18 @@
             <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
             <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
         </Button>
+        <Label x:Name="lb_id_infoPartit" Content="ID:" HorizontalAlignment="Left" Margin="206,90,0,0" VerticalAlignment="Top" Width="55" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
+        <TextBox x:Name="tb_idPronostic" HorizontalAlignment="Left" Margin="391,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI" BorderBrush="#FFD75667" BorderThickness="0" Height="22">
+            <TextBox.Template>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
     </Grid>
 </Window>
