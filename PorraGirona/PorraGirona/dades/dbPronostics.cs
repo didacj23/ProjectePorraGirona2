@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace PorraGirona.dades
 {
-    internal class dbPronostics:dbConnexio
+    internal class dbPronostics : dbConnexio
     {
         public Pronostic BuscarPronostic(Usuari u, int id_partit)
         {
@@ -25,12 +25,17 @@ namespace PorraGirona.dades
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
-                    {                       
-                        //acabar aixo
-                        dbUsuaris dbUser = new dbUsuaris();                        
-                                                                        
-                        /*dbPartits dbPart = new dbPartits();
-                        Partit partit = dbPart.BuscarPartit(id_partit);*/                     
+                    {
+                        string dni_usuari = reader.GetString("dni_usuari");
+
+                        dbUsuaris dbUser = new dbUsuaris();
+                        Usuari u = dbUser.BuscarUsuari(dni_usuari);
+
+                        int id_partit = reader.GetInt32("id_partit");
+                        //buscar partit enviant la id
+
+                        dbPartits dbPart = new dbPartits();
+                        Partit partit = dbPart.BuscarPartit(id_partit);
 
                         int gols_equip_a = reader.GetInt32("gols_equip_a");
                         int gols_equip_b = reader.GetInt32("gols_equip_b");
@@ -39,7 +44,7 @@ namespace PorraGirona.dades
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message);
             }
@@ -67,9 +72,9 @@ namespace PorraGirona.dades
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        while(reader.Read())
+                        while (reader.Read())
                         {
-                            int id_pronostic = reader.GetInt32("id_pronostic");       
+                            int id_pronostic = reader.GetInt32("id_pronostic");
                             int id_partit = reader.GetInt32("id_partit");
                             dbPartits dbp = new dbPartits();
                             Partit p = dbp.BuscarPartit(id_partit);
@@ -85,9 +90,9 @@ namespace PorraGirona.dades
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error "+ex.Message);
+                MessageBox.Show("Error " + ex.Message);
             }
             finally
             {
@@ -163,7 +168,7 @@ namespace PorraGirona.dades
                     command.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Error " + ex.Message);
             }

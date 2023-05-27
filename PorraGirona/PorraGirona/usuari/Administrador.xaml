@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="Administrador" Height="450" Width="800">
     <Grid Background="#FFCF152D">
-       
-        <RadioButton x:Name="rad_eliminarUsuari_admin" Content="Eliminar usuari" HorizontalAlignment="Left" Margin="35,134,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Foreground="White" Checked="rad_eliminarUsuari_admin_Checked"/>
+
+        <RadioButton x:Name="rad_eliminarUsuari_admin" Content="Eliminar usuari" HorizontalAlignment="Left" Margin="35,134,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Foreground="White" Checked="rad_eliminarUsuari_admin_Checked_1" />
         <RadioButton x:Name="rad_programarPartit_admin" Content="Programar partit" HorizontalAlignment="Left" Margin="35,154,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light" Checked="rad_programarPartit_admin_Checked"/>
-        <RadioButton Content="Entrar resultat" HorizontalAlignment="Left" Margin="35,174,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light"/>
+        <RadioButton x:Name="rad_EntrarResultat_admin" Content="Entrar resultat" HorizontalAlignment="Left" Margin="35,174,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light" Checked="rad_EntrarResultat_admin_Checked"/>
         <RadioButton x:Name="rad_CrearEquip_admin" Content="Crear equip" HorizontalAlignment="Left" Margin="35,194,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light" Checked="rad_CrearEquip_admin_Checked"/>
-        <RadioButton Content="Eliminar equip" HorizontalAlignment="Left" Margin="35,212,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light"/>
+        <RadioButton x:Name="rad_EliminarEquip_admin" Content="Eliminar equip" HorizontalAlignment="Left" Margin="35,212,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light" Checked="rad_EliminarEquip_admin_Checked"/>
         <Button x:Name="btn_ActualitzarPunts_admin" Content="Actualitzar punts" HorizontalAlignment="Left" Margin="38,246,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -22,17 +22,9 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        
+
         <TextBlock x:Name="lbl_usuari_admin" HorizontalAlignment="Left" Margin="392,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light" Visibility="Collapsed"><Run Text="Usu"/><Run Language="es-es" Text="ari"/></TextBlock>
-        <Button x:Name="btn_eliminarUsuari_admin" Content="Actualitzar punts" HorizontalAlignment="Left" Margin="392,179,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Visibility="Collapsed">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+
         <TextBox x:Name="inp_EquipA_admin" HorizontalAlignment="Left" Margin="392,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="25" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center" Visibility="Collapsed">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -46,7 +38,7 @@
             </TextBox.Template>
         </TextBox>
         <TextBlock x:Name="lbl_EquipA_admin" HorizontalAlignment="Left" Margin="392,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light" Visibility="Collapsed"><Run Language="es-es" Text="Equip Local"/></TextBlock>
-        <Button x:Name="btn_ProgramarPartit_admin" Content="Programar" HorizontalAlignment="Left" Margin="392,245,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Click="btn_Crear_admin_Click" Visibility="Collapsed">
+        <Button x:Name="btn_ProgramarPartit_admin" Content="Programar" HorizontalAlignment="Left" Margin="392,245,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light"  Visibility="Collapsed">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
@@ -177,8 +169,8 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBlock x:Name="lbl_idEliminar_admin" HorizontalAlignment="Left" Margin="392,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="Id"/></TextBlock>
-        <TextBox x:Name="inp_IdEliminar_admin" HorizontalAlignment="Left" Margin="392,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="25" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center">
+        <TextBlock x:Name="lbl_idEliminar_admin" HorizontalAlignment="Left" Margin="392,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light" Visibility="Collapsed"><Run Language="es-es" Text="Id"/></TextBlock>
+        <TextBox x:Name="inp_IdEliminar_admin" HorizontalAlignment="Left" Margin="392,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="25" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center" Visibility="Collapsed">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
@@ -190,7 +182,7 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Button x:Name="btn_eliminarEquip_admin" Content="Eliminar equip" HorizontalAlignment="Left" Margin="392,246,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Click="btn_PujarFoto_admin_Click">
+        <Button x:Name="btn_eliminarEquip_admin" Content="Eliminar equip" HorizontalAlignment="Left" Margin="320,246,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Click="btn_PujarFoto_admin_Click" Visibility="Collapsed">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
@@ -198,6 +190,110 @@
                     </Border>
                 </ControlTemplate>
             </Button.Template>
+        </Button>
+        <Label x:Name="lbl_titol_iniciarSessio" Content="Administració" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" Background="#FFCF152D" Foreground="White" FontSize="24" FontFamily="Yu Gothic UI" FontWeight="Bold"/>
+        <TextBlock x:Name="lbl_IdUsuari_admin" HorizontalAlignment="Left" Margin="327,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light" Visibility="Collapsed"><Run Language="es-es" Text="Id "/><Run Text="Usuari"/></TextBlock>
+        <TextBox x:Name="inp_IdUsuari_admin" HorizontalAlignment="Left" Margin="327,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center" Visibility="Collapsed">
+            <TextBox.Template>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+        <Button x:Name="btn_EliminarUsuari_admin" Content="Eliminar Usuari" HorizontalAlignment="Left" Margin="327,246,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Visibility="collapsed" Click="btn_EliminarUsuari_admin_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock x:Name="lbl_NomEquipEliminar_Admin" HorizontalAlignment="Left" Margin="320,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light" Visibility="Collapsed"><Run Text="Nom"/><Run Language="es-es" Text=" Equip"/></TextBlock>
+        <TextBox x:Name="inp_NomEquipEliminar_admin" HorizontalAlignment="Left" Margin="320,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center" Visibility="Collapsed">
+            <TextBox.Template>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+        <Button x:Name="btn_EliminarEquip_admin" Content="Eliminar" HorizontalAlignment="Left" Margin="320,246,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Visibility="Collapsed">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btn_EntrarResultat_admin" Content="Entrar Resultat" HorizontalAlignment="Left" Margin="319,281,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Visibility="Collapsed">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBlock x:Name="lbl_IdPartit_admin" HorizontalAlignment="Left" Margin="319,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light" Visibility="Collapsed"><Run Language="es-es" Text="Id Partit"/></TextBlock>
+        <TextBox x:Name="inp_IdPartitResultat_admin" HorizontalAlignment="Left" Margin="320,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center" Visibility="Collapsed">
+            <TextBox.Template>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+        <TextBlock x:Name="lbl_GLocal_admin" HorizontalAlignment="Left" Margin="320,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light" Visibility="Collapsed"><Run Text="Gols L"/><Run Language="es-es" Text="o"/><Run Text="cal"/></TextBlock>
+        <TextBlock x:Name="lbl_GVisitant_admin" HorizontalAlignment="Left" Margin="507,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light" Visibility="Collapsed"><Run Text="Gols "/><Run Language="es-es" Text="Visitant"/></TextBlock>
+        <TextBox x:Name="inp_GVisitant_admin" HorizontalAlignment="Left" Margin="507,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center" Visibility="Collapsed">
+            <TextBox.Template>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+        <TextBox x:Name="inp_GLocal_admin" HorizontalAlignment="Left" Margin="320,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="36" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center" Visibility="Collapsed">
+            <TextBox.Template>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="3">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
+                    </Border>
+                </ControlTemplate>
+            </TextBox.Template>
+        </TextBox>
+        <Button x:Name="btn_enrere_admin" Content="&lt;" HorizontalAlignment="Left" Margin="21,14,0,0" VerticalAlignment="Top" Height="40" Width="42" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_enrere_registre_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
+            <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
         </Button>
 
     </Grid>

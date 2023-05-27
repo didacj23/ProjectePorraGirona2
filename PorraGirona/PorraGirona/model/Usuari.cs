@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
+using PorraGirona;
 namespace PorraGirona
 {
     public class Usuari
@@ -127,6 +127,11 @@ namespace PorraGirona
             
             return r;
         }*/
+
+        public void EliminarUsuauri(string dni)
+        {
+            EliminarUsuauri
+        }
 
         public override string ToString()
         {

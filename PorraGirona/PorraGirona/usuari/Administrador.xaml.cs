@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -26,39 +27,6 @@ namespace PorraGirona.usuari
             InitializeComponent();
         }
 
-        /*private void rad_eliminarUsuari_admin_Checked(object sender, RoutedEventArgs e)
-        {
-            /*lbl_nomUsuari_admin.Visibility = rad_eliminarUsuari_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
-            inp_Usuari_admin.Visibility = rad_eliminarUsuari_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
-            btn_eliminarUsuari_admin.Visibility = rad_eliminarUsuari_admin.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;*/
-        //}
-
-        private void rad_programarPartit_admin_Checked(object sender, RoutedEventArgs e)
-        {
-            lbl_EquipA_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible: Visibility.Visible;
-            lbl_EquipB_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-            lbl_DataHora_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-            lbl_id_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-
-            inp_EquipA_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-            inp_EquipB_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-            inp_DataHora_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-            inp_id_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-
-            btn_ProgramarPartit_admin.Visibility = rad_programarPartit_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-        }
-
-        private void rad_CrearEquip_admin_Checked(object sender, RoutedEventArgs e)
-        {
-            lbl_NomCamp_admin.Visibility = rad_CrearEquip_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-            lbl_NomEquip_admin.Visibility = rad_CrearEquip_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-
-            inp_NomCamp_admin.Visibility = rad_CrearEquip_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-            inp_NomEquip_admin.Visibility = rad_CrearEquip_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-
-            btn_PujarFoto_admin.Visibility = rad_CrearEquip_admin.IsChecked == true ? Visibility.Visible : Visibility.Visible;
-        }
-
         private void btn_PujarFoto_admin_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -76,6 +44,261 @@ namespace PorraGirona.usuari
                 File.Copy(UsuariPath, CarpetaLogos, true);
 
             }
+        }
+
+        private void rad_eliminarUsuari_admin_Checked_1(object sender, RoutedEventArgs e)
+        {
+            if (rad_eliminarUsuari_admin.IsChecked == true)
+            {
+                lbl_IdUsuari_admin.Visibility = Visibility.Visible;
+                inp_IdUsuari_admin.Visibility = Visibility.Visible;
+                btn_EliminarUsuari_admin.Visibility = Visibility.Visible;
+            }
+
+            lbl_EquipA_admin.Visibility = Visibility.Collapsed;
+            lbl_EquipB_admin.Visibility = Visibility.Collapsed;
+            lbl_DataHora_admin.Visibility = Visibility.Collapsed;
+            lbl_id_admin.Visibility = Visibility.Collapsed;
+
+            inp_EquipA_admin.Visibility = Visibility.Collapsed;
+            inp_EquipB_admin.Visibility = Visibility.Collapsed;
+            inp_DataHora_admin.Visibility = Visibility.Collapsed;
+            inp_id_admin.Visibility = Visibility.Collapsed;
+
+            lbl_NomCamp_admin.Visibility = Visibility.Collapsed;
+            lbl_NomEquip_admin.Visibility = Visibility.Collapsed;
+
+            inp_NomCamp_admin.Visibility = Visibility.Collapsed;
+            inp_NomEquip_admin.Visibility = Visibility.Collapsed;
+
+            btn_PujarFoto_admin.Visibility = Visibility.Collapsed;
+            btn_ProgramarPartit_admin.Visibility = Visibility.Collapsed;
+
+            lbl_IdPartit_admin.Visibility = Visibility.Collapsed;
+            inp_IdPartitResultat_admin.Visibility = Visibility.Collapsed;
+            lbl_GolsVisitant_admin.Visibility = Visibility.Collapsed;
+            inp_GVisitant_admin.Visibility = Visibility.Collapsed;
+            lbl_GLocal_admin.Visibility = Visibility.Collapsed;
+            inp_GVisitant_admin.Visibility = Visibility.Collapsed;
+            btn_EntrarResultat_admin.Visibility = Visibility.Collapsed;
+
+            lbl_NomEquipEliminar_Admin.Visibility = Visibility.Collapsed;
+            inp_NomEquipEliminar_admin.Visibility = Visibility.Collapsed;
+            btn_eliminarEquip_admin.Visibility = Visibility.Collapsed;
+
+            inp_GLocal_admin.Visibility= Visibility.Collapsed;
+            lbl_GVisitant_admin.Visibility = Visibility.Collapsed;
+            
+        }
+
+
+        private void rad_programarPartit_admin_Checked(object sender, RoutedEventArgs e)
+        {
+            if (rad_programarPartit_admin.IsChecked == true)
+            {
+                
+                lbl_EquipA_admin.Visibility = Visibility.Visible;
+                lbl_EquipB_admin.Visibility = Visibility.Visible;
+                lbl_DataHora_admin.Visibility = Visibility.Visible;
+                lbl_id_admin.Visibility = Visibility.Visible;
+
+                inp_EquipA_admin.Visibility = Visibility.Visible;
+                inp_EquipB_admin.Visibility = Visibility.Visible;
+                inp_DataHora_admin.Visibility = Visibility.Visible;
+                inp_id_admin.Visibility = Visibility.Visible;
+
+                btn_ProgramarPartit_admin.Visibility = Visibility.Visible;
+            }
+
+            
+            lbl_NomCamp_admin.Visibility = Visibility.Collapsed;
+            lbl_NomEquip_admin.Visibility = Visibility.Collapsed;
+
+            inp_NomCamp_admin.Visibility = Visibility.Collapsed;
+            inp_NomEquip_admin.Visibility = Visibility.Collapsed;
+
+            btn_PujarFoto_admin.Visibility = Visibility.Collapsed;
+
+            lbl_IdUsuari_admin.Visibility = Visibility.Collapsed;
+            inp_IdUsuari_admin.Visibility = Visibility.Collapsed;
+            btn_EliminarUsuari_admin.Visibility = Visibility.Collapsed;
+
+            lbl_NomEquipEliminar_Admin.Visibility = Visibility.Collapsed;
+            inp_NomEquipEliminar_admin.Visibility = Visibility.Collapsed;
+            btn_eliminarEquip_admin.Visibility = Visibility.Collapsed;
+
+            lbl_IdPartit_admin.Visibility = Visibility.Collapsed;
+            inp_IdPartitResultat_admin.Visibility = Visibility.Collapsed;
+            lbl_GVisitant_admin.Visibility = Visibility.Collapsed;
+            inp_GVisitant_admin.Visibility = Visibility.Collapsed;
+            lbl_GLocal_admin.Visibility = Visibility.Collapsed;
+            inp_GLocal_admin.Visibility = Visibility.Collapsed;
+            btn_EntrarResultat_admin.Visibility = Visibility.Collapsed;
+
+            inp_GLocal_admin.Visibility = Visibility.Collapsed;
+
+        }
+
+        private void rad_CrearEquip_admin_Checked(object sender, RoutedEventArgs e)
+        {
+            if (rad_CrearEquip_admin.IsChecked == true)
+            {
+                
+                lbl_NomCamp_admin.Visibility = Visibility.Visible;
+                lbl_NomEquip_admin.Visibility = Visibility.Visible;
+
+                inp_NomCamp_admin.Visibility = Visibility.Visible;
+                inp_NomEquip_admin.Visibility = Visibility.Visible;
+
+                btn_PujarFoto_admin.Visibility = Visibility.Visible;
+            }
+
+
+            
+            lbl_EquipA_admin.Visibility = Visibility.Collapsed;
+            lbl_EquipB_admin.Visibility = Visibility.Collapsed;
+            lbl_DataHora_admin.Visibility = Visibility.Collapsed;
+            lbl_id_admin.Visibility = Visibility.Collapsed;
+
+            inp_EquipA_admin.Visibility = Visibility.Collapsed;
+            inp_EquipB_admin.Visibility = Visibility.Collapsed;
+            inp_DataHora_admin.Visibility = Visibility.Collapsed;
+            inp_id_admin.Visibility = Visibility.Collapsed;
+
+            btn_ProgramarPartit_admin.Visibility = Visibility.Collapsed;
+
+            lbl_IdUsuari_admin.Visibility = Visibility.Collapsed;
+            inp_IdUsuari_admin.Visibility = Visibility.Collapsed;
+            btn_EliminarUsuari_admin.Visibility = Visibility.Collapsed;
+            btn_ProgramarPartit_admin.Visibility = Visibility.Collapsed;
+
+            lbl_NomEquipEliminar_Admin.Visibility = Visibility.Collapsed;
+            inp_NomEquipEliminar_admin.Visibility = Visibility.Collapsed;
+            btn_eliminarEquip_admin.Visibility = Visibility.Collapsed;
+
+            lbl_IdPartit_admin.Visibility = Visibility.Collapsed;
+            inp_IdPartitResultat_admin.Visibility = Visibility.Collapsed;
+            lbl_GVisitant_admin.Visibility = Visibility.Collapsed;
+            inp_GVisitant_admin.Visibility = Visibility.Collapsed;
+            lbl_GLocal_admin.Visibility = Visibility.Collapsed;
+            inp_GLocal_admin.Visibility = Visibility.Collapsed;
+            btn_EntrarResultat_admin.Visibility = Visibility.Collapsed;
+
+
+        }
+
+        private void rad_EliminarEquip_admin_Checked(object sender, RoutedEventArgs e)
+        {
+            if (rad_EliminarEquip_admin.IsChecked == true)
+            {
+                
+                lbl_NomEquipEliminar_Admin.Visibility = Visibility.Visible;
+                inp_NomEquipEliminar_admin.Visibility = Visibility.Visible;
+                btn_eliminarEquip_admin.Visibility = Visibility.Visible;
+            }
+
+            
+            lbl_NomCamp_admin.Visibility = Visibility.Collapsed;
+            lbl_NomEquip_admin.Visibility = Visibility.Collapsed;
+
+            inp_NomCamp_admin.Visibility = Visibility.Collapsed;
+            inp_NomEquip_admin.Visibility = Visibility.Collapsed;
+
+            btn_PujarFoto_admin.Visibility = Visibility.Collapsed;
+
+            lbl_EquipA_admin.Visibility = Visibility.Collapsed;
+            lbl_EquipB_admin.Visibility = Visibility.Collapsed;
+            lbl_DataHora_admin.Visibility = Visibility.Collapsed;
+            lbl_id_admin.Visibility = Visibility.Collapsed;
+
+            inp_EquipA_admin.Visibility = Visibility.Collapsed;
+            inp_EquipB_admin.Visibility = Visibility.Collapsed;
+            inp_DataHora_admin.Visibility = Visibility.Collapsed;
+            inp_id_admin.Visibility = Visibility.Collapsed;
+
+            btn_ProgramarPartit_admin.Visibility = Visibility.Collapsed;
+
+            lbl_IdUsuari_admin.Visibility = Visibility.Collapsed;
+            inp_IdUsuari_admin.Visibility = Visibility.Collapsed;
+            btn_EliminarUsuari_admin.Visibility = Visibility.Collapsed;
+
+            lbl_IdPartit_admin.Visibility = Visibility.Collapsed;
+            inp_IdPartitResultat_admin.Visibility = Visibility.Collapsed;
+            lbl_GolsVisitant_admin.Visibility = Visibility.Collapsed;
+            inp_GVisitant_admin.Visibility = Visibility.Collapsed;
+            lbl_GLocal_admin.Visibility = Visibility.Collapsed;
+            inp_GVisitant_admin.Visibility = Visibility.Collapsed;
+            btn_EntrarResultat_admin.Visibility = Visibility.Collapsed;
+
+            inp_GLocal_admin.Visibility = Visibility.Collapsed;
+
+            
+        }
+
+        private void rad_EntrarResultat_admin_Checked(object sender, RoutedEventArgs e)
+        {
+            if (rad_EntrarResultat_admin.IsChecked == true)
+            {
+                
+                lbl_IdPartit_admin.Visibility = Visibility.Visible;
+                inp_IdPartitResultat_admin.Visibility = Visibility.Visible;
+                lbl_GVisitant_admin.Visibility = Visibility.Visible;
+                inp_GVisitant_admin.Visibility = Visibility.Visible;
+                lbl_GLocal_admin.Visibility = Visibility.Visible;
+                inp_GLocal_admin.Visibility = Visibility.Visible;
+                btn_EntrarResultat_admin.Visibility = Visibility.Visible;
+               
+            }
+
+            
+            lbl_NomCamp_admin.Visibility = Visibility.Collapsed;
+            lbl_NomEquip_admin.Visibility = Visibility.Collapsed;
+
+            inp_NomCamp_admin.Visibility = Visibility.Collapsed;
+            inp_NomEquip_admin.Visibility = Visibility.Collapsed;
+
+            btn_PujarFoto_admin.Visibility = Visibility.Collapsed;
+
+            lbl_EquipA_admin.Visibility = Visibility.Collapsed;
+            lbl_EquipB_admin.Visibility = Visibility.Collapsed;
+            lbl_DataHora_admin.Visibility = Visibility.Collapsed;
+            lbl_id_admin.Visibility = Visibility.Collapsed;
+
+            inp_EquipA_admin.Visibility = Visibility.Collapsed;
+            inp_EquipB_admin.Visibility = Visibility.Collapsed;
+            inp_DataHora_admin.Visibility = Visibility.Collapsed;
+            inp_id_admin.Visibility = Visibility.Collapsed;
+
+            btn_ProgramarPartit_admin.Visibility = Visibility.Collapsed;
+
+            lbl_IdUsuari_admin.Visibility = Visibility.Collapsed;
+            inp_IdUsuari_admin.Visibility = Visibility.Collapsed;
+            btn_EliminarUsuari_admin.Visibility = Visibility.Collapsed;
+
+            lbl_NomEquipEliminar_Admin.Visibility = Visibility.Collapsed;
+            inp_NomEquipEliminar_admin.Visibility = Visibility.Collapsed;
+            btn_eliminarEquip_admin.Visibility = Visibility.Collapsed;
+
+     
+
+            
+        }
+
+        private void btn_enrere_registre_Click(object sender, RoutedEventArgs e)
+        {
+            IniciarSessio enrere = new IniciarSessio();
+            Close();
+            enrere.Show();
+        }
+
+        private void btn_EliminarUsuari_admin_Click(object sender, RoutedEventArgs e)
+        {
+            string dni = inp_IdUsuari_admin.Text;
+
+            dbUsuaris usuari = new Usuari();
+
+            usuari.El
+
         }
     }
 }

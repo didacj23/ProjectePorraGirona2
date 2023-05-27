@@ -23,5 +23,12 @@ namespace PorraGirona.usuari
         {
             InitializeComponent();
         }
+
+        private void btn_enrere_registre_Click(object sender, RoutedEventArgs e)
+        {
+            IniciarSessio enrere = new IniciarSessio();
+            Close();
+            enrere.Show();
+        }
     }
 }
