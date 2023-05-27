@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace PorraGirona.model
 {
-    class Sessio
+    public class Sessio
     {
         private string dni;
         private string pass;

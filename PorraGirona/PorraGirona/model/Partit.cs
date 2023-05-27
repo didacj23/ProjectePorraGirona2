@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -117,19 +118,16 @@ namespace PorraGirona.model
             set { estat=value; }
         }
 
+        public dbPartits Connexio { get; set; }
+
         public string Equips
         {
             get { return $"{EquipA} vs {EquipB}"; }
         }
-        public void ProgramarPartit(Equip ea, Equip eb, DateTime diaHora, string camp, string estat)
+        public void ProgramarPartit(string ea, string eb, DateTime diaHora, string camp, string estat, int id)
         {
-            equipA=ea;
-            equipB=eb;
-            this.diaHora=diaHora;
-            this.camp=camp;
-
-            //Connexio c = new Connexio("localhost", "porragirona", "root", "");
-            //c.InsertarPartit(this);
+            Connexio = new dbPartits();
+            Connexio.InsertarPartit(id, ea, eb, diaHora, camp, estat);
         }
 
 

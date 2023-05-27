@@ -29,8 +29,8 @@ namespace PorraGirona.usuari
         private void btn_enrere_registre_Click(object sender, RoutedEventArgs e)
         {
             IniciUsuari enrere = new IniciUsuari();
-            Close();
             enrere.Show();
+
         }
 
         /*
