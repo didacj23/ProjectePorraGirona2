@@ -168,14 +168,16 @@ namespace PorraGirona.dades
                
         /// <summary>
         /// Actualitza els valors dels gols de l'equip A i B del partit passat que coincideixi amb l'ID.
-        /// Es connecta amb la ACABAR
+        /// Connecta amb la base de dades i actualitza els camps de gols equip A i gols equip B amb els 
+        /// valors donats del registre on el camp id_partit coincideix amb l'id del partit que es vol modificar.
+        /// Canvia l'estat del partit a finalitzat. Al acabar, es desconnecta de la base de dades.
         /// </summary>
-        /// <param name="id_partit"></param>
-        /// <param name="gA"></param>
-        /// <param name="gB"></param>
+        /// <param name="id_partit">Id del partit a modificar-ne els resultats</param>
+        /// <param name="gA">Gols de l'equip A al acabar el partit</param>
+        /// <param name="gB">Gols de l'equip B al acabar el partit</param>
         public void EntrarResultat(int id_partit, int gA, int gB)
         {
-            string query = $"UPDATE partit SET gols_equip_A = @golsA, gols_equip_B=@golsB where id_partit={id_partit}";
+            string query = $"UPDATE partit SET gols_equip_A = @golsA, gols_equip_B=@golsB, estat=@estat where id_partit={id_partit}";
 
             try
             {
@@ -185,6 +187,7 @@ namespace PorraGirona.dades
                 {                   
                     command.Parameters.AddWithValue("@golsA", gA);
                     command.Parameters.AddWithValue("@golsB", gB);
+                    command.Parameters.AddWithValue("@estat", "finalitzat");
 
                     command.ExecuteNonQuery();
                 }
@@ -200,6 +203,11 @@ namespace PorraGirona.dades
 
         }
 
+
+        /// <summary>
+        /// Obté l'id de l'últim partit guardat a la base de dades i l'hi suma 1 per assignar al nou partit.
+        /// </summary>
+        /// <returns>Retorna l'id pel nou partit a crear.</returns>
         public int ObtenirUltimId()
         {
             string query = "SELECT MAX(id_partit) FROM partits";
