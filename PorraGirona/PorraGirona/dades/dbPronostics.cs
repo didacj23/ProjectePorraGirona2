@@ -13,6 +13,15 @@ namespace PorraGirona.dades
 {
     internal class dbPronostics : dbConnexio
     {
+        /// <summary>
+        /// Connecta amb la base de dades i busca un registre a la taula pronostics on el camp dni_usuari
+        /// coincideixi amb l'atribut de l'objecte usuari passat i que l'id del partit del pronostic a buscar 
+        /// coincideixi amb el donat. Quan el troba, agafa totes les dades del registre i crea una nova 
+        /// instància de l'objecte pr de tipus pronostic. Al acabar es desconnecta de la base de dades
+        /// </summary>
+        /// <param name="u">Usuari que ha fet el pronostic que es vol buscar amb els seus atributs.</param>
+        /// <param name="id_partit">Id del partit a buscar el pronostic</param>
+        /// <returns></returns>
         public Pronostic BuscarPronostic(Usuari u, int id_partit)
         {
             string query = $"SELECT * FROM pronostics WHERE dni_usuari='{u.Dni}' and id_partit='{id_partit}'";
@@ -63,7 +72,13 @@ namespace PorraGirona.dades
 
         }
 
-
+        /// <summary>
+        /// Connecta amb la base de dades i busca tots els registre de la taula pronostics on el camp dni_usuari
+        /// coincideixi amb l'atribut de l'objecte usuari passat. Per cada registre que obté crea una instància nova de l'objecte 
+        /// lpr i l'afageix a l'objecte lpr de tipus LlistaPronostics. Al acabar es desconnecta de la base de dades
+        /// </summary>
+        /// <param name="u">Usuari que ha fet el pronostic que es vol buscar amb els seus atributs.</param>
+        /// <returns>Retorna l'objecte lpr de tipus LlistaPronostics amb els pronostics recuperats de la base de dades.</returns>
         public LlistaPronostics RecuperarPronostics(Usuari u)
         {
             string query = $"SELECT * FROM pronostics WHERE dni_usuari='{u.Dni}'";
@@ -234,6 +249,10 @@ namespace PorraGirona.dades
             }
         }
 
+        /// <summary>
+        ///Obté l'id de l'últim partit guardat a la base de dades i l'hi suma 1 per assignar al nou partit.
+        /// </summary>
+        /// <returns>Retorna l'id pel nou partit a crear.</returns>
         public int ObtenirUltimId()
         {
             string query = "SELECT MAX(id_pronostic) FROM pronostics";

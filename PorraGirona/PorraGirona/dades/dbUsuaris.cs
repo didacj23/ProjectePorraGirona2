@@ -14,7 +14,12 @@ namespace PorraGirona.dades
 {
     public class dbUsuaris:dbConnexio
     {
-
+        /// <summary>
+        /// Comprova que l'usuari i la contrasenya de la sessió coincideixin amb algun usuari registrat a la base de dades.
+        /// Primer obre la connexió, fa la comprovació i finalment la tanca.
+        /// </summary>
+        /// <param name="s">L'objecte sessió conté els atributs de dni i contrasenya.</param>
+        /// <returns>Retorna true si hi ha algun usuari registrar i concideix amb DNI i contrasenya, retorna false si l'usuari no està registrar o la contrasenya és incorrecte.</returns>
         public bool IniciarSessió(Sessio s)
         {
             string query = $"SELECT dni, contrasenya FROM usuaris WHERE dni='{s.Dni}'";
@@ -57,6 +62,12 @@ namespace PorraGirona.dades
 
         }
 
+        /// <summary>
+        /// Connecta amb la base de dades i analitza la llista que es torna amb la select on coincideixin els dni. Agafa tots els valors i crea un objecte Usuari.
+        /// Si el camp administrador es 0 crea un usuari, si es un altre numero crea un administrador. Al acabar es desconnecta de la base de dades.
+        /// </summary>
+        /// <param name="dni_usuari">Dni de l'usuari a buscar a la base de dades</param>
+        /// <returns>Retorna l'objecte usuari creat amb les dades recuperades de la base de dades.</returns>
         public Usuari BuscarUsuari(string dni_usuari)
         {
             string query = $"SELECT * FROM usuaris WHERE dni='{dni_usuari}'";
@@ -112,6 +123,10 @@ namespace PorraGirona.dades
 
         }
 
+        /// <summary>
+        /// Connecta amb la base de dades i elimina els registres que tinguin com a DNI el dni que se li ha passat. Al acabar es desconnecta de la base de dades.
+        /// </summary>
+        /// <param name="dni_usuari">Dni de l'usuari a eliminar de la base de dades</param>
         public void EliminarUsuari(string dni_usuari)
         {
             string query = $"DELETE FROM usuaris WHERE dni='{dni_usuari}'";
@@ -135,7 +150,12 @@ namespace PorraGirona.dades
             }
         }
 
-
+        /// <summary>
+        /// Connecta amb la base de dades i hi inserta els valors dels altributs l'objecte usuari rebut a la taula usuaris. 
+        /// Els parametritza per evitar atacs de SQL Injection.
+        /// Al acabar es desconnecta de la base de dades.
+        /// </summary>
+        /// <param name="u">Objecte de tipus usuari que s'ha de guardar a la base de dades.</param>
         public void InsertarUsuari(Usuari u)
         {
             string query = $"INSERT INTO usuaris(dni, constrasenya, nom, cognom, puntsAcumulats, administrador) values (@dni, @contrasenya, @nom, @cognom, @puntsAcumulats, @administrador)";
