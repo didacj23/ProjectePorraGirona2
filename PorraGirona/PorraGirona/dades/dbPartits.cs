@@ -1,6 +1,7 @@
 ﻿using MySqlConnector;
 using PorraGirona.model;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -165,7 +166,7 @@ namespace PorraGirona.dades
                 DesconnectarBD();
             }
         }
-               
+
         /// <summary>
         /// Actualitza els valors dels gols de l'equip A i B del partit passat que coincideixi amb l'ID.
         /// Connecta amb la base de dades i actualitza els camps de gols equip A i gols equip B amb els 
@@ -175,34 +176,33 @@ namespace PorraGirona.dades
         /// <param name="id_partit">Id del partit a modificar-ne els resultats</param>
         /// <param name="gA">Gols de l'equip A al acabar el partit</param>
         /// <param name="gB">Gols de l'equip B al acabar el partit</param>
-        public void EntrarResultat(int id_partit, int gA, int gB)
+        /// 
+
+        public void EntrarResultat(int idPartit, int golsEquipA, int golsEquipB)
         {
-            string query = $"UPDATE partit SET gols_equip_A = @golsA, gols_equip_B=@golsB, estat=@estat where id_partit={id_partit}";
+            string query = $"UPDATE partits SET gols_equip_A = {golsEquipA}, gols_equip_B = {golsEquipB}, estat = 'finalitzat' WHERE id_Partit = {idPartit}";
 
             try
             {
                 ConnectarBD();
 
                 using (MySqlCommand command = new MySqlCommand(query, conn))
-                {                   
-                    command.Parameters.AddWithValue("@golsA", gA);
-                    command.Parameters.AddWithValue("@golsB", gB);
-                    command.Parameters.AddWithValue("@estat", "finalitzat");
-
+                {
                     command.ExecuteNonQuery();
                 }
+
+                MessageBox.Show("Partit actualitzat correctament");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
             finally
             {
                 DesconnectarBD();
             }
-
         }
-
+        
 
         /// <summary>
         /// Obté l'id de l'últim partit guardat a la base de dades i l'hi suma 1 per assignar al nou partit.
