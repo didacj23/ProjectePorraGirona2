@@ -123,6 +123,13 @@ namespace PorraGirona.dades
             return lpr;
         }
 
+        /// <summary>
+        /// Connecta amb la base de dades i busca tots els registre de la taula pronostics on el camp dni_usuari
+        /// coincideixi amb el dni passat. Per cada registre que obté crea una instància nova de l'objecte 
+        /// lpr i l'afageix a l'objecte lpr de tipus LlistaPronostics. Al acabar es desconnecta de la base de dades
+        /// </summary>
+        /// <param name="dni">Dni de l'usuari a buscar els pronostics</param>
+        /// <returns></returns>
         public LlistaPronostics RecuperarPronostics(string dni)
         {
             string query = $"SELECT * FROM pronostics WHERE dni_usuari='{dni}'";
@@ -170,6 +177,12 @@ namespace PorraGirona.dades
             return lpr;
         }
 
+        /// <summary>
+        /// Connecta amb la base de dades i hi inserta els valors dels atributs l'objecte pronostic rebut a la taula pronostics. 
+        /// Els parametritza per evitar atacs de SQL Injection.
+        /// Al acabar es desconnecta de la base de dades.
+        /// </summary>
+        /// <param name="pr">Pronostic a guardar a la base de dades</param>
         public void InsertarPronostic(Pronostic pr)
         {
             string query = $"INSERT INTO pronostics(id_pronostic, dni_usuari, id_partit, gols_equip_a, gols_equip_b) values (@id_pronostic, @dni_usuari, @id_partit, @gols_equip_a, @gols_equip_b)";
@@ -199,6 +212,12 @@ namespace PorraGirona.dades
             }
         }
 
+        /// <summary>
+        ///  Connecta amb la base de dades i hi actualitza els valors dels atributs l'objecte pronostic rebut a la taula pronostics
+        ///  on l'id del pronostic que vol modificar amb el que està a la base de dades coincideixi,
+        /// Els parametritza per evitar atacs de SQL Injection.
+        /// </summary>
+        /// <param name="pr"></param>
         public void ActualitzarPronostic(Pronostic pr)
         {            
             string query = $"UPDATE pronostics SET id_pronostic = @id_pronostic, dni_usuari=@dni_usuari, id_partit=@id_partit, gols_equip_a=@gols_equip_a, @gols_equip_b=gols_equip_b where id_pronostic={pr.IdPronostic}";
@@ -226,6 +245,11 @@ namespace PorraGirona.dades
             
         }
 
+        /// <summary>
+        /// Connecta amb la base de dades. Elimina el registre de la taula pronostics on l'id coincideixi amb el passat.
+        /// Al acabar tanca la connexió amb la base de dades.
+        /// </summary>
+        /// <param name="id"></param>
         public void CancelarPronostic(int id)
         {
             string query = $"DELETE FROM pronostics WHERE id_pronostic='{id}'";

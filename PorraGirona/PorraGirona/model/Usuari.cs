@@ -32,7 +32,14 @@ namespace PorraGirona
             
         }
 
-        //guarda a la base de dades
+        /// <summary>
+        /// Aquest constructor s'utilitza per crear i guardar l'usuari a la base de dades
+        /// </summary>
+        /// <param name="dni">Dni</param>
+        /// <param name="contrasenya">Contrasenya</param>
+        /// <param name="nom">Nom</param>
+        /// <param name="cognom">Cognom</param>
+        /// <exception cref="Exception"></exception>
         public Usuari(string dni, string contrasenya, string nom, string cognom)
         {
             this.dni = dni;
@@ -55,7 +62,15 @@ namespace PorraGirona
            
         }
 
-        //no guarda a la base de dades. es fa servir per obtenir un usuari de la base de dades
+        /// <summary>
+        /// Aquest constructor es fa servir per obtenir un usuari de la base de dades sense tornar-lo a guardar.
+        /// </summary>
+        /// <param name="dni"></param>
+        /// <param name="contrasenya"></param>
+        /// <param name="nom"></param>
+        /// <param name="cognom"></param>
+        /// <param name="puntsAcumulats"></param>
+        /// <param name="lpr"></param>
         public Usuari(string dni, string contrasenya, string nom, string cognom, int puntsAcumulats, LlistaPronostics lpr)
         {
             this.dni = dni;
@@ -115,20 +130,6 @@ namespace PorraGirona
             get { return  lpr; }
         }
 
-        /*
-        public int Pronosticar(Partit partit, int golsA, int golsB)
-        {
-            int r=-1;
-
-            if(partit.Estat=="programat")
-            {
-                Pronostic pr = new Pronostic(partit, golsA, golsB);
-                r=0;
-            }else if (partit.Estat=="encurs") r=1;
-            else if(partit.Estat=="finalitzat") r=2;      
-            
-            return r;
-        }*/
 
         public void EliminarUsuari(string dni)
         {
