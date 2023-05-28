@@ -332,11 +332,6 @@ namespace PorraGirona.usuari
 
         }
 
-        private void btn_ActualitzarPunts_admin_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btn_CrearEquip_admin_Click(object sender, RoutedEventArgs e)
         {
             string NomEquip = inp_NomEquip_admin.Text;
@@ -346,6 +341,16 @@ namespace PorraGirona.usuari
 
             equips.CrearEquip(NomEquip, NomCamp);
 
+        }
+
+        private void btn_EntrarResultat_admin_Click(object sender, RoutedEventArgs e)
+        {
+            int id = Convert.ToInt32(inp_IdPartitResultat_admin.Text);
+            int Glocal = Convert.ToInt32(inp_GLocal_admin.Text);
+            int Gvisitant = Convert.ToInt32(inp_GVisitant_admin.Text);
+
+            dbPartits partit = new dbPartits();
+            partit.EntrarResultat(id, Glocal, Gvisitant);
         }
     }
 }

@@ -13,15 +13,6 @@
         <RadioButton x:Name="rad_EntrarResultat_admin" Content="Entrar resultat" HorizontalAlignment="Left" Margin="35,174,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light" Checked="rad_EntrarResultat_admin_Checked"/>
         <RadioButton x:Name="rad_CrearEquip_admin" Content="Crear equip" HorizontalAlignment="Left" Margin="35,194,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light" Checked="rad_CrearEquip_admin_Checked"/>
         <RadioButton x:Name="rad_EliminarEquip_admin" Content="Eliminar equip" HorizontalAlignment="Left" Margin="35,212,0,0" VerticalAlignment="Top" Background="#FF9C1022" BorderBrush="#FFD75667" Foreground="White" FontFamily="Yu Gothic Light" Checked="rad_EliminarEquip_admin_Checked"/>
-        <Button x:Name="btn_ActualitzarPunts_admin" Content="Actualitzar punts" HorizontalAlignment="Left" Margin="38,246,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Click="btn_ActualitzarPunts_admin_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
 
         <TextBlock x:Name="lbl_usuari_admin" HorizontalAlignment="Left" Margin="392,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light" Visibility="Collapsed"><Run Text="Usu"/><Run Language="es-es" Text="ari"/></TextBlock>
 
@@ -99,15 +90,6 @@
                 </ControlTemplate>
             </TextBox.Template>
         </TextBox>
-        <Button x:Name="btn_Entrar_admin" Content="Entrar resultat" HorizontalAlignment="Left" Margin="392,246,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Visibility="Collapsed">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
         <TextBox x:Name="inp_GolsLocal_admin" HorizontalAlignment="Left" Margin="392,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI Light" BorderBrush="#FFD75667" BorderThickness="0" Height="25" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center" Visibility="Collapsed">
             <TextBox.Template>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -227,7 +209,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btn_EntrarResultat_admin" Content="Entrar Resultat" HorizontalAlignment="Left" Margin="319,281,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Visibility="Collapsed">
+        <Button x:Name="btn_EntrarResultat_admin" Content="Entrar Resultat" HorizontalAlignment="Left" Margin="319,281,0,0" VerticalAlignment="Top" Height="33" Width="96" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontFamily="Yu Gothic Light" Visibility="Collapsed" Click="btn_EntrarResultat_admin_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
