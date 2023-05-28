@@ -35,25 +35,6 @@ namespace PorraGirona.usuari
             this.us = us;   
         }
 
-        private void btn_PujarFoto_admin_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Archivos de imagen (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png";
-
-            if (openFileDialog.ShowDialog() == true)
-            {
-                string UsuariPath = openFileDialog.FileName;
-                string destinationDirectory = "usuari/logos";
-                string NomLogo = new FileInfo(UsuariPath).Name;
-
-                string projectDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-                string CarpetaLogos = System.IO.Path.Combine(projectDirectory, destinationDirectory, NomLogo);
-
-                File.Copy(UsuariPath, CarpetaLogos, true);
-
-            }
-        }
-
         private void rad_eliminarUsuari_admin_Checked_1(object sender, RoutedEventArgs e)
         {
             if (rad_eliminarUsuari_admin.IsChecked == true)
@@ -79,7 +60,6 @@ namespace PorraGirona.usuari
             inp_NomCamp_admin.Visibility = Visibility.Collapsed;
             inp_NomEquip_admin.Visibility = Visibility.Collapsed;
 
-            btn_PujarFoto_admin.Visibility = Visibility.Collapsed;
             btn_ProgramarPartit_admin.Visibility = Visibility.Collapsed;
 
             lbl_IdPartit_admin.Visibility = Visibility.Collapsed;
@@ -96,7 +76,11 @@ namespace PorraGirona.usuari
 
             inp_GLocal_admin.Visibility= Visibility.Collapsed;
             lbl_GVisitant_admin.Visibility = Visibility.Collapsed;
-            
+            lbl_camp_admin.Visibility = Visibility.Collapsed;
+            lbl_estat_admin.Visibility = Visibility.Collapsed;
+            inp_Camp_admin.Visibility = Visibility.Collapsed;
+            inp_estat_admin.Visibility = Visibility.Collapsed;
+
         }
 
 
@@ -125,8 +109,6 @@ namespace PorraGirona.usuari
             inp_NomCamp_admin.Visibility = Visibility.Collapsed;
             inp_NomEquip_admin.Visibility = Visibility.Collapsed;
 
-            btn_PujarFoto_admin.Visibility = Visibility.Collapsed;
-
             lbl_IdUsuari_admin.Visibility = Visibility.Collapsed;
             inp_IdUsuari_admin.Visibility = Visibility.Collapsed;
             btn_EliminarUsuari_admin.Visibility = Visibility.Collapsed;
@@ -144,6 +126,10 @@ namespace PorraGirona.usuari
             btn_EntrarResultat_admin.Visibility = Visibility.Collapsed;
 
             inp_GLocal_admin.Visibility = Visibility.Collapsed;
+            lbl_camp_admin.Visibility = Visibility.Collapsed;
+            lbl_estat_admin.Visibility = Visibility.Collapsed;
+            inp_Camp_admin.Visibility = Visibility.Collapsed;
+            inp_estat_admin.Visibility = Visibility.Collapsed;
 
         }
 
@@ -158,7 +144,6 @@ namespace PorraGirona.usuari
                 inp_NomCamp_admin.Visibility = Visibility.Visible;
                 inp_NomEquip_admin.Visibility = Visibility.Visible;
 
-                btn_PujarFoto_admin.Visibility = Visibility.Visible;
             }
 
 
@@ -191,6 +176,10 @@ namespace PorraGirona.usuari
             lbl_GLocal_admin.Visibility = Visibility.Collapsed;
             inp_GLocal_admin.Visibility = Visibility.Collapsed;
             btn_EntrarResultat_admin.Visibility = Visibility.Collapsed;
+            lbl_camp_admin.Visibility = Visibility.Collapsed;
+            lbl_estat_admin.Visibility = Visibility.Collapsed;
+            inp_Camp_admin.Visibility = Visibility.Collapsed;
+            inp_estat_admin.Visibility = Visibility.Collapsed;
 
 
         }
@@ -211,8 +200,6 @@ namespace PorraGirona.usuari
 
             inp_NomCamp_admin.Visibility = Visibility.Collapsed;
             inp_NomEquip_admin.Visibility = Visibility.Collapsed;
-
-            btn_PujarFoto_admin.Visibility = Visibility.Collapsed;
 
             lbl_EquipA_admin.Visibility = Visibility.Collapsed;
             lbl_EquipB_admin.Visibility = Visibility.Collapsed;
@@ -240,7 +227,12 @@ namespace PorraGirona.usuari
 
             inp_GLocal_admin.Visibility = Visibility.Collapsed;
 
-            
+            lbl_camp_admin.Visibility = Visibility.Collapsed;
+            lbl_estat_admin.Visibility = Visibility.Collapsed;
+            inp_Camp_admin.Visibility = Visibility.Collapsed;
+            inp_estat_admin.Visibility = Visibility.Collapsed;
+
+
         }
 
         private void rad_EntrarResultat_admin_Checked(object sender, RoutedEventArgs e)
@@ -255,6 +247,10 @@ namespace PorraGirona.usuari
                 lbl_GLocal_admin.Visibility = Visibility.Visible;
                 inp_GLocal_admin.Visibility = Visibility.Visible;
                 btn_EntrarResultat_admin.Visibility = Visibility.Visible;
+                lbl_camp_admin.Visibility = Visibility.Visible;
+                lbl_estat_admin.Visibility = Visibility.Visible;
+                inp_Camp_admin.Visibility = Visibility.Visible;
+                inp_estat_admin.Visibility = Visibility.Visible;
                
             }
 
@@ -264,8 +260,6 @@ namespace PorraGirona.usuari
 
             inp_NomCamp_admin.Visibility = Visibility.Collapsed;
             inp_NomEquip_admin.Visibility = Visibility.Collapsed;
-
-            btn_PujarFoto_admin.Visibility = Visibility.Collapsed;
 
             lbl_EquipA_admin.Visibility = Visibility.Collapsed;
             lbl_EquipB_admin.Visibility = Visibility.Collapsed;
@@ -320,6 +314,9 @@ namespace PorraGirona.usuari
 
         }
 
+        private void btn_ActualitzarPunts_admin_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }
