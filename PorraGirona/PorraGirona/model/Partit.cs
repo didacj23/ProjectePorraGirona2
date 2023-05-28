@@ -43,7 +43,16 @@ namespace PorraGirona.model
             estat="programat";
         }
 
-        //Recuperar partits PROGRAMATS des de la bdd. (Per afegir a la llista de partits de la pantalla d'inici)
+        //
+        /// <summary>
+        /// Aquest constructor s'utilitza per Recuperar partits PROGRAMATS des de la bdd i per afegir a la llista de partits de la pantalla d'inici.
+        /// </summary>
+        /// <param name="idPartit">Id del partit</param>
+        /// <param name="equipA">Equip A</param>
+        /// <param name="equipB">Equip B</param>
+        /// <param name="diaHora">Dia i Hora</param>
+        /// <param name="camp">Camp</param>
+        /// <param name="estat">Estat del partit</param>
         public Partit(int idPartit, Equip equipA, Equip equipB, DateTime diaHora, string camp, string estat)
         {
             this.idPartit=idPartit;
@@ -54,7 +63,17 @@ namespace PorraGirona.model
             this.estat=estat;
         }
 
-        //Recuperar qualsevol partit de la bdd
+        /// <summary>
+        /// Aquest mètode s'utilitza per recuperar qualsevol partit de la base de dades.
+        /// </summary>
+        /// <param name="idPartit"></param>
+        /// <param name="equipA"></param>
+        /// <param name="equipB"></param>
+        /// <param name="golsEquipA"></param>
+        /// <param name="golsEquipB"></param>
+        /// <param name="diaHora"></param>
+        /// <param name="camp"></param>
+        /// <param name="estat"></param>
         public Partit(int idPartit, Equip equipA, Equip equipB, int golsEquipA, int golsEquipB, DateTime diaHora, string camp, string estat)
         {
             this.idPartit=idPartit;

@@ -75,8 +75,7 @@ namespace PorraGirona.model
             get { return valida; }
             //set { valida = value; }
         }
-
-        
+               
 
     }
 }

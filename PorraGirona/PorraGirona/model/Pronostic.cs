@@ -11,7 +11,6 @@ namespace PorraGirona
 {
     public class Pronostic
     {
-        //private static int contPronostic = 0;
         private int idPronostic;
         private Usuari usuari;
         private Partit partit;
@@ -19,10 +18,20 @@ namespace PorraGirona
         private int golsEquipB;
         private bool guardat;
 
+        /// <summary>
+        /// S'utilitza per crear i guardar un pronostic a la base de dades. Crea un objecte dbPronostic per
+        /// buscar l'id de l'últim pronòstic guardat i així evitar problemes amb els id. Després, busca el partit
+        /// pel que es vol fer el pronostic. Es comprova que el resultat del partit no sigui negatiu i que el partit 
+        /// estigui programat i no iniciat i que el pronostic per aquest partit i usuari no existeixi i si és així,
+        /// el guarda a la taula pronostics. Al acabar tanca la connexió de la base de dades.
+        /// </summary>
+        /// <param name="usuari">Usuari que vol fer el pronostic</param>
+        /// <param name="id_partit">Id del partit al que es vol fer el pronostic</param>
+        /// <param name="golsEquipA">Gols pronosticats per l'equip A</param>
+        /// <param name="golsEquipB">Gols pronosticats per l'equip B</param>
+        /// <exception cref="Exception"></exception>
         public Pronostic(Usuari usuari, int id_partit, int golsEquipA, int golsEquipB)
         {
-            //idPronostic = contPronostic;
-            //contPronostic++;
             dbPronostics dbpr = new dbPronostics();
 
             idPronostic = dbpr.ObtenirUltimId()+1;
@@ -70,7 +79,11 @@ namespace PorraGirona
 
         }
 
-        public Pronostic(int id) //es fa servir x cancelar un pronostic
+        /// <summary>
+        /// Aquest constructor s'utilitza per quan s'ha de cancel·lar un pronostic
+        /// </summary>
+        /// <param name="id"></param>
+        public Pronostic(int id)
         {
             idPronostic=id;
         }
