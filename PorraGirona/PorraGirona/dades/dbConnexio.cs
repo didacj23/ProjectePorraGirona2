@@ -13,6 +13,9 @@ namespace PorraGirona.dades
 
         protected MySqlConnection conn;
 
+        /// <summary>
+        /// Crea una instància de l'objecte conn de la classe MySqlConnection i obre la connexio amb la base de dades amb la connectionString.
+        /// </summary>
         protected void ConnectarBD()
         {
             conn = new MySqlConnection(connectionString);
@@ -20,6 +23,9 @@ namespace PorraGirona.dades
             conn.Open();
         }
 
+        /// <summary>
+        /// Tanca la connexió amb la base de dades.
+        /// </summary>
         protected void DesconnectarBD()
         {
             conn.Close();
