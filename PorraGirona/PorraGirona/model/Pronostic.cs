@@ -123,6 +123,8 @@ namespace PorraGirona
             get { return  guardat; }
         }
 
+        public dbPronostics Connexio { get; set; }
+
         /*
         public string ResultatPartit()
         {

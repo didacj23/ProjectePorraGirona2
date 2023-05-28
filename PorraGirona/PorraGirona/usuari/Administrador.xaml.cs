@@ -81,6 +81,7 @@ namespace PorraGirona.usuari
             inp_Camp_admin.Visibility = Visibility.Collapsed;
             inp_estat_admin.Visibility = Visibility.Collapsed;
 
+            btn_CrearEquip_admin.Visibility = Visibility.Collapsed;
         }
 
 
@@ -98,6 +99,11 @@ namespace PorraGirona.usuari
                 inp_EquipB_admin.Visibility = Visibility.Visible;
                 inp_DataHora_admin.Visibility = Visibility.Visible;
                 inp_id_admin.Visibility = Visibility.Visible;
+
+                lbl_camp_admin.Visibility = Visibility.Visible;
+                lbl_estat_admin.Visibility = Visibility.Visible;
+                inp_Camp_admin.Visibility = Visibility.Visible;
+                inp_estat_admin.Visibility = Visibility.Visible;
 
                 btn_ProgramarPartit_admin.Visibility = Visibility.Visible;
             }
@@ -126,10 +132,9 @@ namespace PorraGirona.usuari
             btn_EntrarResultat_admin.Visibility = Visibility.Collapsed;
 
             inp_GLocal_admin.Visibility = Visibility.Collapsed;
-            lbl_camp_admin.Visibility = Visibility.Collapsed;
-            lbl_estat_admin.Visibility = Visibility.Collapsed;
-            inp_Camp_admin.Visibility = Visibility.Collapsed;
-            inp_estat_admin.Visibility = Visibility.Collapsed;
+
+            btn_CrearEquip_admin.Visibility = Visibility.Collapsed;
+
 
         }
 
@@ -143,6 +148,8 @@ namespace PorraGirona.usuari
 
                 inp_NomCamp_admin.Visibility = Visibility.Visible;
                 inp_NomEquip_admin.Visibility = Visibility.Visible;
+
+                btn_CrearEquip_admin.Visibility = Visibility.Visible;
 
             }
 
@@ -231,6 +238,7 @@ namespace PorraGirona.usuari
             lbl_estat_admin.Visibility = Visibility.Collapsed;
             inp_Camp_admin.Visibility = Visibility.Collapsed;
             inp_estat_admin.Visibility = Visibility.Collapsed;
+            btn_CrearEquip_admin.Visibility = Visibility.Collapsed;
 
 
         }
@@ -281,9 +289,16 @@ namespace PorraGirona.usuari
             inp_NomEquipEliminar_admin.Visibility = Visibility.Collapsed;
             btn_eliminarEquip_admin.Visibility = Visibility.Collapsed;
 
-     
+            lbl_camp_admin.Visibility = Visibility.Collapsed;
+            lbl_estat_admin.Visibility = Visibility.Collapsed;
+            inp_Camp_admin.Visibility = Visibility.Collapsed;
+            inp_estat_admin.Visibility = Visibility.Collapsed;
+            btn_CrearEquip_admin.Visibility = Visibility.Collapsed;
 
-            
+
+
+
+
         }
 
         private void btn_enrere_registre_Click(object sender, RoutedEventArgs e)
@@ -319,6 +334,17 @@ namespace PorraGirona.usuari
 
         private void btn_ActualitzarPunts_admin_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void btn_CrearEquip_admin_Click(object sender, RoutedEventArgs e)
+        {
+            string NomEquip = inp_NomEquip_admin.Text;
+            string NomCamp = inp_NomCamp_admin.Text;
+
+            dbEquips equips = new dbEquips();
+
+            equips.CrearEquip(NomEquip, NomCamp);
 
         }
     }

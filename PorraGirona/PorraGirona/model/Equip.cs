@@ -1,4 +1,5 @@
-﻿using PorraGirona.model;
+﻿using PorraGirona.dades;
+using PorraGirona.model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -82,7 +83,8 @@ namespace PorraGirona
             get { return  totalPartitsEmpatats; }
             set { totalPartitsEmpatats = value; }
         }
-                
+
+        public dbPartits Connexio { get; set; }
 
         public override string ToString()
         {

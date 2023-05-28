@@ -11,7 +11,7 @@ using System.Windows;
 
 namespace PorraGirona.dades
 {
-    internal class dbPronostics : dbConnexio
+    public class dbPronostics : dbConnexio
     {
         /// <summary>
         /// Connecta amb la base de dades i busca un registre a la taula pronostics on el camp dni_usuari
