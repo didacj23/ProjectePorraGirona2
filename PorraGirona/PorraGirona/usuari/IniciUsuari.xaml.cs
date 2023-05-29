@@ -91,7 +91,7 @@ namespace PorraGirona.usuari
 
         private void btn_VeurePunts_inici_Click(object sender, RoutedEventArgs e)
         {
-            int punts = us.PuntsAcumulats;
+            int punts = us.RecuperarPuntsBd();
             MessageBox.Show("Punts: " + punts);
             
         }
