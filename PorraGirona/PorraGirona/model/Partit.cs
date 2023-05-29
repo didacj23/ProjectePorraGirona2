@@ -32,7 +32,7 @@ namespace PorraGirona.model
         public Partit(Equip equipA, Equip equipB, DateTime diaHora, string camp)
         {
             dbPartits dbp  =new dbPartits();
-            idPartit=dbp.ObtenirUltimId();
+            idPartit=dbp.ObtenirUltimId()+1;
 
             this.equipA = equipA;
             this.equipB = equipB;
@@ -143,10 +143,13 @@ namespace PorraGirona.model
         {
             get { return $"{EquipA} vs {EquipB}"; }
         }
-        public void ProgramarPartit()
+        public bool ProgramarPartit()
         {
             dbPartits dbp = new dbPartits();
-            dbp.InsertarPartit(this);                       
+            if(dbp.InsertarPartit(this))
+            {
+                return true;
+            }else return false;
         }
 
         public void EntrarResultat(int id, int Glocal, int Gvisitant)

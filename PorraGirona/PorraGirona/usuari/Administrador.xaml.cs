@@ -93,17 +93,17 @@ namespace PorraGirona.usuari
                 lbl_EquipA_admin.Visibility = Visibility.Visible;
                 lbl_EquipB_admin.Visibility = Visibility.Visible;
                 lbl_DataHora_admin.Visibility = Visibility.Visible;
-                lbl_id_admin.Visibility = Visibility.Visible;
+                //lbl_id_admin.Visibility = Visibility.Visible;
 
                 inp_EquipA_admin.Visibility = Visibility.Visible;
                 inp_EquipB_admin.Visibility = Visibility.Visible;
                 inp_DataHora_admin.Visibility = Visibility.Visible;
-                inp_id_admin.Visibility = Visibility.Visible;
+                //inp_id_admin.Visibility = Visibility.Visible;
 
                 lbl_camp_admin.Visibility = Visibility.Visible;
-                lbl_estat_admin.Visibility = Visibility.Visible;
+                //lbl_estat_admin.Visibility = Visibility.Visible;
                 inp_Camp_admin.Visibility = Visibility.Visible;
-                inp_estat_admin.Visibility = Visibility.Visible;
+                //inp_estat_admin.Visibility = Visibility.Visible;
 
                 btn_ProgramarPartit_admin.Visibility = Visibility.Visible;
             }
@@ -327,7 +327,15 @@ namespace PorraGirona.usuari
             string camp = inp_Camp_admin.Text; //?
 
             Partit partit = new Partit(a, b, diaIhora, camp);
-            partit.ProgramarPartit();
+            if(partit.ProgramarPartit())
+            {
+                MessageBox.Show("Partit programat correctament");
+                inp_EquipA_admin.Text="";
+                inp_EquipB_admin.Text="";
+                inp_DataHora_admin.Text="";
+                inp_Camp_admin.Text="";
+            }
+            else MessageBox.Show("El partit no s'ha pogut programar correctament");
         }
 
         private void btn_CrearEquip_admin_Click(object sender, RoutedEventArgs e)
@@ -337,7 +345,15 @@ namespace PorraGirona.usuari
 
             Equip equip = new Equip();
 
-            equip.CrearEquip(NomEquip, NomCamp);
+            if(equip.CrearEquip(NomEquip, NomCamp))
+            {   
+                MessageBox.Show("Equip creat correctament.");
+                inp_NomEquip_admin.Text="";
+                inp_NomCamp_admin.Text="";
+            }
+            else 
+                MessageBox.Show("El partit no s'ha pogut crear correctament.");
+
 
         }
 
@@ -349,6 +365,13 @@ namespace PorraGirona.usuari
 
             Partit partit = new Partit();
             partit.EntrarResultat(id, Glocal, Gvisitant);
+        }
+
+        private void btn_eliminarEquip_admin_Click(object sender, RoutedEventArgs e)
+        {
+            string nom_equip=inp_NomEquip_admin.Text;
+            Equip ep = new Equip();
+            ep.EliminarEquip(nom_equip);
         }
     }
 }

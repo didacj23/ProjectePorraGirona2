@@ -207,14 +207,8 @@ namespace PorraGirona.dades
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error. "+  ex.Message);
-            }
-            finally
-            {
-                DesconnectarBD();
-            }
+            catch (Exception ex) { MessageBox.Show("Error. "+  ex.Message); }
+            finally { DesconnectarBD(); }
             return punts;
         }
     }

@@ -137,9 +137,11 @@ namespace PorraGirona.dades
         /// Al acabar es desconnecta de la base de dades.
         /// </summary>
         /// <param name="p">Partit a insertar a la base de dades</param>
-        public void InsertarPartit(Partit p)
+        public bool InsertarPartit(Partit p)
         {
             string query = $"INSERT INTO partits (id_partit, equip_A, equip_B, dia_hora, camp, estat) VALUES (@id_partit, @ea, @eb, @diaHora, @camp, @estat)";
+
+            bool r=false;
 
             try
             {
@@ -148,13 +150,14 @@ namespace PorraGirona.dades
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.Parameters.AddWithValue("@id_partit", p.IdPartit);
-                    command.Parameters.AddWithValue("@ea", p.EquipA);
-                    command.Parameters.AddWithValue("@eb", p.EquipB);
+                    command.Parameters.AddWithValue("@ea", p.EquipA.Nom);
+                    command.Parameters.AddWithValue("@eb", p.EquipB.Nom);
                     command.Parameters.AddWithValue("@diaHora", p.DiaHora);
                     command.Parameters.AddWithValue("@camp", p.Camp);
                     command.Parameters.AddWithValue("@estat", p.Estat);
 
                     command.ExecuteNonQuery();
+                    r=  true;
                 }
             }
             catch (Exception ex)
@@ -165,6 +168,7 @@ namespace PorraGirona.dades
             {
                 DesconnectarBD();
             }
+            return r;
         }
 
         /// <summary>

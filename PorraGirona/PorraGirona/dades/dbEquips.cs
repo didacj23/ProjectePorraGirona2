@@ -73,9 +73,10 @@ namespace PorraGirona.dades
 
         //Crear Equip
 
-        public void CrearEquip(string nom_equip, string camp)
+        public bool CrearEquip(string nom_equip, string camp)
         {
             string query = $"INSERT INTO equips (nom_equip, camp) VALUES ('{nom_equip}', '{camp}')";
+            bool r =false;
 
             try
             {
@@ -84,10 +85,13 @@ namespace PorraGirona.dades
                 using (MySqlCommand command = new MySqlCommand(query, conn))
                 {
                     command.ExecuteNonQuery();
+                    r=true;
                 }
             }
             catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
             finally { DesconnectarBD();}
+
+            return r;
         }
 
 
