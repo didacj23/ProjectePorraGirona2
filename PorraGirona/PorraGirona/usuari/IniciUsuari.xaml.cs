@@ -64,7 +64,7 @@ namespace PorraGirona.usuari
         private void btn_admin_iniciUsuari_Click(object sender, RoutedEventArgs e)
         {
             Administrador admin = new Administrador(us);
-            Close();
+            //Close();
             admin.Show();
         }
 

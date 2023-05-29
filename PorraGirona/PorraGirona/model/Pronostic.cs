@@ -18,6 +18,12 @@ namespace PorraGirona
         private int golsEquipB;
         private bool guardat;
 
+        public Pronostic(Usuari us, int idPronostic)
+        {
+            usuari=us;
+            this.idPronostic = idPronostic;
+        }
+
         /// <summary>
         /// S'utilitza per crear i guardar un pronostic a la base de dades. Crea un objecte dbPronostic per
         /// buscar l'id de l'últim pronòstic guardat i així evitar problemes amb els id. Després, busca el partit
@@ -148,6 +154,28 @@ namespace PorraGirona
         {
             dbPronostics dbpr = new dbPronostics();
             dbpr.CancelarPronostic(idPronostic);
+        }
+
+        public bool ComprovarPronostic()
+        {
+            char resultatPartit = ' ';
+            char resultatPronostic = ' ';
+            bool r= false;
+
+            dbPronostics pronostic = new dbPronostics();
+
+            resultatPartit = pronostic.ObtindreEquipGuanyador(pronostic.ObtenirIdPartit(idPronostic));
+
+            resultatPronostic = pronostic.ObtindreEquipGuanyadorPronostic(pronostic.ObtenirIdPartit(idPronostic));
+
+            if (resultatPartit == resultatPronostic)
+            {
+                int punts = 2;
+                usuari.ActualitzarPunts(usuari.Dni, punts);
+                r = true;
+            }
+
+            return r;
         }
 
 

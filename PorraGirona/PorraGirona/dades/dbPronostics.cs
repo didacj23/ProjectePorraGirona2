@@ -420,6 +420,42 @@ namespace PorraGirona.dades
             return equipGuanyador;
         }
 
+        public int[] ObtenirResultatPartit(int idPronostic)
+        {
+            int[] resultat=new int[2];
+
+            string consulta = $"SELECT gols_equip_a, gols_equip_b FROM pronostics WHERE id_pronostic = {idPronostic}";
+
+            try
+            {
+                ConnectarBD();
+
+                using (MySqlCommand comanda = new MySqlCommand(consulta, conn))
+                {
+                    using (MySqlDataReader lector = comanda.ExecuteReader())
+                    {
+                        if (lector.Read())
+                        {
+                            resultat[0] = lector.GetInt32("gols_equip_A");
+                            resultat[1] = lector.GetInt32("gols_equip_B");                          
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+
+            return resultat;
+        }
+
+
+
 
 
 

@@ -303,9 +303,9 @@ namespace PorraGirona.usuari
 
         private void btn_enrere_registre_Click(object sender, RoutedEventArgs e)
         {
-            IniciarSessio enrere = new IniciarSessio();
+            //IniciarSessio enrere = new IniciarSessio();
             Close();
-            enrere.Show();
+            //enrere.Show();
         }
 
         private void btn_EliminarUsuari_admin_Click(object sender, RoutedEventArgs e)

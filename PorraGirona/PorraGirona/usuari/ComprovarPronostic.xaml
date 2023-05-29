@@ -21,7 +21,7 @@
             </TextBox.Template>
         </TextBox>
         <TextBlock x:Name="lbl_id_partit_comprovar" HorizontalAlignment="Left" Margin="313,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontFamily="Yu Gothic Light"><Run Language="es-es" Text="Id prònostic"/></TextBlock>
-        <Button x:Name="btn_comprovar_comprovar" Content="Comprovar prònostic" HorizontalAlignment="Center" Margin="0,296,0,0" VerticalAlignment="Top" Height="40" Width="174" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic Light" Click="btn_inicSessio_iniciSessio_Click">
+        <Button x:Name="btn_comprovar_comprovar" Content="Comprovar prònostic" HorizontalAlignment="Center" Margin="0,296,0,0" VerticalAlignment="Top" Height="40" Width="174" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic Light" Click="btn_comprovar_comprovar_Click">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">

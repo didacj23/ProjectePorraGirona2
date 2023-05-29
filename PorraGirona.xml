@@ -1,0 +1,350 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PorraGirona</name>
+    </assembly>
+    <members>
+        <member name="T:PorraGirona.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:PorraGirona.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:PorraGirona.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="M:PorraGirona.dades.dbConnexio.ConnectarBD">
+            <summary>
+            Crea una instància de l'objecte conn de la classe MySqlConnection i obre la connexio amb la base de dades amb la connectionString.
+            </summary>
+        </member>
+        <member name="M:PorraGirona.dades.dbConnexio.DesconnectarBD">
+            <summary>
+            Tanca la connexió amb la base de dades.
+            </summary>
+        </member>
+        <member name="M:PorraGirona.dades.dbEquips.BuscarEquip(System.String)">
+            <summary>
+            Connecta amb la base de dades i busca un registre a la taula equips on el camp nom_equip
+            coincideixi amb el nom de l'equip que es vol buscar. Si el troba, agafa totes les dades i crea una
+            nova instància de l'objecte de tipus equip. Al acabar es desconnecta de la base de dades.
+            </summary>
+            <param name="nom_equip">Nom de l'equip a buscar a la base de dades.</param>
+            <returns>Retorn l'objecte de tipus equip amb les dades de l'equip trobat.</returns>
+            
+        </member>
+        <member name="M:PorraGirona.dades.dbEquips.EliminarEquip(System.String)">
+            <summary>
+            Connecta amb la base de dades i esborra el registre on el camp nom_equip coincideix amb
+            el nom de l'equip que es vol eliminar. Al acabar es desconnecta de la base de dades.
+            </summary>
+            <param name="nom_equip">Nom de l'equip a eliminar de la base de dades.</param>
+        </member>
+        <member name="M:PorraGirona.dades.dbPartits.BuscarPartit(System.Int32)">
+            <summary>
+            Connecta amb la base de dades i busca un registre a la taula partits on el camp id_partit
+            coincideixi amb id del partit que es vol buscar. Quan el troba, agafa totes les dades del registre
+            i crea una nova instància de l'objecte p de tipus partit. Al acabar es desconnecta de la base de dades
+            </summary>
+            <param name="id_partit">Id del partit a buscar a la base de dades.</param>
+            <returns>Retorna l'objecte p amb les dades del partit trobat.</returns>
+        </member>
+        <member name="M:PorraGirona.dades.dbPartits.RecuperarLlistaPartitsProgramats">
+            <summary>
+            Connecta amb la base de dades i busca tots els registre de la taula partits on el camp estat
+            sigui programat i que la data programada sigui posterior a l'actual. Per cada registre que obté crea una 
+            instància nova de l'objecte p i l'afageix a la List de tipus partit llistaPartits. Al acabar es desconnecta de la base de dades
+            </summary>
+            <returns>Retorna l'objecte la List de tipus partit llistaPartits amb el valors recuperats de la base de dades.</returns>
+        </member>
+        <member name="M:PorraGirona.dades.dbPartits.InsertarPartit(PorraGirona.model.Partit)">
+            <summary>
+            Connecta amb la base de dades i hi inserta els valors dels altributs l'objecte usuari rebut a la taula partits. 
+            Els parametritza per evitar atacs de SQL Injection.
+            Al acabar es desconnecta de la base de dades.
+            </summary>
+            <param name="p">Partit a insertar a la base de dades</param>
+        </member>
+        <member name="M:PorraGirona.dades.dbPartits.EntrarResultat(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Actualitza els valors dels gols de l'equip A i B del partit passat que coincideixi amb l'ID.
+            Connecta amb la base de dades i actualitza els camps de gols equip A i gols equip B amb els 
+            valors donats del registre on el camp id_partit coincideix amb l'id del partit que es vol modificar.
+            Canvia l'estat del partit a finalitzat. Al acabar, es desconnecta de la base de dades.
+            </summary>
+            <param name="id_partit">Id del partit a modificar-ne els resultats</param>
+            <param name="gA">Gols de l'equip A al acabar el partit</param>
+            <param name="gB">Gols de l'equip B al acabar el partit</param>
+            
+        </member>
+        <member name="M:PorraGirona.dades.dbPartits.ObtenirUltimId">
+            <summary>
+            Obté l'id de l'últim partit guardat a la base de dades i l'hi suma 1 per assignar al nou partit.
+            </summary>
+            <returns>Retorna l'id pel nou partit a crear.</returns>
+        </member>
+        <member name="M:PorraGirona.dades.dbPronostics.BuscarPronostic(PorraGirona.Usuari,System.Int32)">
+            <summary>
+            Connecta amb la base de dades i busca un registre a la taula pronostics on el camp dni_usuari
+            coincideixi amb l'atribut de l'objecte usuari passat i que l'id del partit del pronostic a buscar 
+            coincideixi amb el donat. Quan el troba, agafa totes les dades del registre i crea una nova 
+            instància de l'objecte pr de tipus pronostic. Al acabar es desconnecta de la base de dades
+            </summary>
+            <param name="u">Usuari que ha fet el pronostic que es vol buscar amb els seus atributs.</param>
+            <param name="id_partit">Id del partit a buscar el pronostic</param>
+            <returns></returns>
+        </member>
+        <member name="M:PorraGirona.dades.dbPronostics.RecuperarPronostics(PorraGirona.Usuari)">
+            <summary>
+            Connecta amb la base de dades i busca tots els registre de la taula pronostics on el camp dni_usuari
+            coincideixi amb l'atribut de l'objecte usuari passat. Per cada registre que obté crea una instància nova de l'objecte 
+            lpr i l'afageix a l'objecte lpr de tipus LlistaPronostics. Al acabar es desconnecta de la base de dades
+            </summary>
+            <param name="u">Usuari que ha fet el pronostic que es vol buscar amb els seus atributs.</param>
+            <returns>Retorna l'objecte lpr de tipus LlistaPronostics amb els pronostics recuperats de la base de dades.</returns>
+        </member>
+        <member name="M:PorraGirona.dades.dbPronostics.RecuperarPronostics(System.String)">
+            <summary>
+            Connecta amb la base de dades i busca tots els registre de la taula pronostics on el camp dni_usuari
+            coincideixi amb el dni passat. Per cada registre que obté crea una instància nova de l'objecte 
+            lpr i l'afageix a l'objecte lpr de tipus LlistaPronostics. Al acabar es desconnecta de la base de dades
+            </summary>
+            <param name="dni">Dni de l'usuari a buscar els pronostics</param>
+            <returns></returns>
+        </member>
+        <member name="M:PorraGirona.dades.dbPronostics.InsertarPronostic(PorraGirona.Pronostic)">
+            <summary>
+            Connecta amb la base de dades i hi inserta els valors dels atributs l'objecte pronostic rebut a la taula pronostics. 
+            Els parametritza per evitar atacs de SQL Injection.
+            Al acabar es desconnecta de la base de dades.
+            </summary>
+            <param name="pr">Pronostic a guardar a la base de dades</param>
+        </member>
+        <member name="M:PorraGirona.dades.dbPronostics.ActualitzarPronostic(PorraGirona.Pronostic)">
+            <summary>
+             Connecta amb la base de dades i hi actualitza els valors dels atributs l'objecte pronostic rebut a la taula pronostics
+             on l'id del pronostic que vol modificar amb el que està a la base de dades coincideixi,
+            Els parametritza per evitar atacs de SQL Injection.
+            </summary>
+            <param name="pr"></param>
+        </member>
+        <member name="M:PorraGirona.dades.dbPronostics.CancelarPronostic(System.Int32)">
+            <summary>
+            Connecta amb la base de dades. Elimina el registre de la taula pronostics on l'id coincideixi amb el passat.
+            Al acabar tanca la connexió amb la base de dades.
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:PorraGirona.dades.dbPronostics.ObtenirUltimId">
+             <summary>
+            Obté l'id de l'últim partit guardat a la base de dades i l'hi suma 1 per assignar al nou partit.
+             </summary>
+             <returns>Retorna l'id pel nou partit a crear.</returns>
+        </member>
+        <member name="M:PorraGirona.dades.dbUsuaris.IniciarSessió(PorraGirona.model.Sessio)">
+            <summary>
+            Comprova que l'usuari i la contrasenya de la sessió coincideixin amb algun usuari registrat a la base de dades.
+            Primer obre la connexió, fa la comprovació i finalment la tanca.
+            </summary>
+            <param name="s">L'objecte sessió conté els atributs de dni i contrasenya.</param>
+            <returns>Retorna true si hi ha algun usuari registrar i concideix amb DNI i contrasenya, retorna false si l'usuari no està registrar o la contrasenya és incorrecte.</returns>
+        </member>
+        <member name="M:PorraGirona.dades.dbUsuaris.BuscarUsuari(System.String)">
+            <summary>
+            Connecta amb la base de dades i analitza la llista que es torna amb la select on coincideixin els dni. Agafa tots els valors i crea un objecte Usuari.
+            Si el camp administrador es 0 crea un usuari, si es un altre numero crea un administrador. Al acabar es desconnecta de la base de dades.
+            </summary>
+            <param name="dni_usuari">Dni de l'usuari a buscar a la base de dades</param>
+            <returns>Retorna l'objecte usuari creat amb les dades recuperades de la base de dades.</returns>
+        </member>
+        <member name="M:PorraGirona.dades.dbUsuaris.EliminarUsuari(System.String)">
+            <summary>
+            Connecta amb la base de dades i elimina els registres que tinguin com a DNI el dni que se li ha passat. Al acabar es desconnecta de la base de dades.
+            </summary>
+            <param name="dni_usuari">Dni de l'usuari a eliminar de la base de dades</param>
+        </member>
+        <member name="M:PorraGirona.dades.dbUsuaris.InsertarUsuari(PorraGirona.Usuari)">
+            <summary>
+            Connecta amb la base de dades i hi inserta els valors dels altributs l'objecte usuari rebut a la taula usuaris. 
+            Els parametritza per evitar atacs de SQL Injection.
+            Al acabar es desconnecta de la base de dades.
+            </summary>
+            <param name="u">Objecte de tipus usuari que s'ha de guardar a la base de dades.</param>
+        </member>
+        <member name="M:PorraGirona.model.Partit.#ctor(System.Int32,PorraGirona.Equip,PorraGirona.Equip,System.DateTime,System.String,System.String)">
+            <summary>
+            Aquest constructor s'utilitza per Recuperar partits PROGRAMATS des de la bdd i per afegir a la llista de partits de la pantalla d'inici.
+            </summary>
+            <param name="idPartit">Id del partit</param>
+            <param name="equipA">Equip A</param>
+            <param name="equipB">Equip B</param>
+            <param name="diaHora">Dia i Hora</param>
+            <param name="camp">Camp</param>
+            <param name="estat">Estat del partit</param>
+        </member>
+        <member name="M:PorraGirona.model.Partit.#ctor(System.Int32,PorraGirona.Equip,PorraGirona.Equip,System.Int32,System.Int32,System.DateTime,System.String,System.String)">
+            <summary>
+            Aquest mètode s'utilitza per recuperar qualsevol partit de la base de dades.
+            </summary>
+            <param name="idPartit"></param>
+            <param name="equipA"></param>
+            <param name="equipB"></param>
+            <param name="golsEquipA"></param>
+            <param name="golsEquipB"></param>
+            <param name="diaHora"></param>
+            <param name="camp"></param>
+            <param name="estat"></param>
+        </member>
+        <member name="M:PorraGirona.model.Sessio.#ctor(System.String,System.String)">
+            <summary>
+            Crea un objecte de tipus Sessio amb paràmetres dni i pass introduits x usuari a pantalla
+            de inici de sessió. Crea un objecte dbUsuaris i executa el mètode de IniciarSessió, que retorn true
+            o false si la contrasenya es correcta o no. Si és correcta, l'atribut valida es posa a true i 
+            es recupera l'usuari amb el mètode BuscarUsuari. Si l'usuari és administrador, posa en true l'atribut admin
+            </summary>
+            <param name="dni"></param>
+            <param name="pass"></param>
+        </member>
+        <member name="M:PorraGirona.Pronostic.#ctor(PorraGirona.Usuari,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            S'utilitza per crear i guardar un pronostic a la base de dades. Crea un objecte dbPronostic per
+            buscar l'id de l'últim pronòstic guardat i així evitar problemes amb els id. Després, busca el partit
+            pel que es vol fer el pronostic. Es comprova que el resultat del partit no sigui negatiu i que el partit 
+            estigui programat i no iniciat i que el pronostic per aquest partit i usuari no existeixi i si és així,
+            el guarda a la taula pronostics. Al acabar tanca la connexió de la base de dades.
+            </summary>
+            <param name="usuari">Usuari que vol fer el pronostic</param>
+            <param name="id_partit">Id del partit al que es vol fer el pronostic</param>
+            <param name="golsEquipA">Gols pronosticats per l'equip A</param>
+            <param name="golsEquipB">Gols pronosticats per l'equip B</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:PorraGirona.Pronostic.#ctor(System.Int32)">
+            <summary>
+            Aquest constructor s'utilitza per quan s'ha de cancel·lar un pronostic
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:PorraGirona.Usuari.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Aquest constructor s'utilitza per crear i guardar l'usuari a la base de dades
+            </summary>
+            <param name="dni">Dni</param>
+            <param name="contrasenya">Contrasenya</param>
+            <param name="nom">Nom</param>
+            <param name="cognom">Cognom</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:PorraGirona.Usuari.#ctor(System.String,System.String,System.String,System.String,System.Int32,PorraGirona.model.LlistaPronostics)">
+            <summary>
+            Aquest constructor es fa servir per obtenir un usuari de la base de dades sense tornar-lo a guardar.
+            </summary>
+            <param name="dni"></param>
+            <param name="contrasenya"></param>
+            <param name="nom"></param>
+            <param name="cognom"></param>
+            <param name="puntsAcumulats"></param>
+            <param name="lpr"></param>
+        </member>
+        <member name="T:PorraGirona.usuari.Administrador">
+            <summary>
+            Lógica de interacción para Administrador.xaml
+            </summary>
+            <summary>
+            Administrador
+            </summary>
+        </member>
+        <member name="M:PorraGirona.usuari.Administrador.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PorraGirona.usuari.ComprovarPronostic">
+            <summary>
+            Lógica de interacción para ComprovarPronostic.xaml
+            </summary>
+            <summary>
+            ComprovarPronostic
+            </summary>
+        </member>
+        <member name="M:PorraGirona.usuari.ComprovarPronostic.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PorraGirona.usuari.IniciarSessio">
+            <summary>
+            Lógica de interacción para IniciarSessio.xaml
+            </summary>
+            <summary>
+            IniciarSessio
+            </summary>
+        </member>
+        <member name="M:PorraGirona.usuari.IniciarSessio.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PorraGirona.usuari.IniciUsuari">
+            <summary>
+            Lógica de interacción para IniciUsuari.xaml
+            </summary>
+            <summary>
+            IniciUsuari
+            </summary>
+        </member>
+        <member name="M:PorraGirona.usuari.IniciUsuari.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PorraGirona.usuari.PronosticFinestra">
+            <summary>
+            Lógica de interacción para PronosticFinestra.xaml
+            </summary>
+            <summary>
+            PronosticFinestra
+            </summary>
+        </member>
+        <member name="M:PorraGirona.usuari.PronosticFinestra.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PorraGirona.usuari.registre">
+            <summary>
+            Lógica de interacción para registre.xaml
+            </summary>
+            <summary>
+            registre
+            </summary>
+        </member>
+        <member name="M:PorraGirona.usuari.registre.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:PorraGirona.mainWindow">
+            <summary>
+            Lógica de interacción para mainWindow.xaml
+            </summary>
+            <summary>
+            mainWindow
+            </summary>
+        </member>
+        <member name="M:PorraGirona.mainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

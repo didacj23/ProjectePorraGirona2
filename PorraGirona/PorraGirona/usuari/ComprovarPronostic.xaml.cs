@@ -28,25 +28,20 @@ namespace PorraGirona.usuari
             this.us = us;
         }
 
-        private void btn_inicSessio_iniciSessio_Click(object sender, RoutedEventArgs e)
+        private void btn_comprovar_comprovar_Click(object sender, RoutedEventArgs e)
         {
             int iDpronostic = Convert.ToInt32(inp_idPartit_comprovar.Text);
-            char resultatPartit = ' ';
-            char resultatPronostic = ' ';
 
-            dbPronostics pronostic = new dbPronostics();
+            Pronostic pr = new Pronostic(us, iDpronostic);
 
-            resultatPartit = pronostic.ObtindreEquipGuanyador(pronostic.ObtenirIdPartit(iDpronostic));
-
-            resultatPronostic = pronostic.ObtindreEquipGuanyadorPronostic(pronostic.ObtenirIdPartit(iDpronostic));
-
-            if(resultatPartit == resultatPronostic)
+            if(pr.ComprovarPronostic())
             {
-                int punts = 2;
-                us.ActualitzarPunts(us.Dni, punts);
+                MessageBox.Show("El pronostic és encertat");
             }
-
-            
+            else
+            {
+                MessageBox.Show("El pronostic és erroni");
+            }
 
         }
 
