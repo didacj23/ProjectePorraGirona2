@@ -152,7 +152,7 @@ namespace PorraGirona.model
         public void EntrarResultat(int id, int Glocal, int Gvisitant)
         {
             dbPartits partits = new dbPartits();
-            partits.(EntrarResultat(id, Glocal, Gvisitant));
+            partits.EntrarResultat(id, Glocal, Gvisitant);
         }
 
 

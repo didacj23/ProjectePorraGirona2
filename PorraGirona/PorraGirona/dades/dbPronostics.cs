@@ -385,7 +385,7 @@ namespace PorraGirona.dades
         {
             char equipGuanyador = 'b'; // Valor per defecte si els gols de l'equip B són majors o en cas d'error
 
-            string consulta = $"SELECT gols_equip_a, gols_equip_b FROM pronostics pr INNER JOIN partits p ON pr.id_partit = p.id WHERE pr.id_pronostic = {idPronostic}";
+            string consulta = $"SELECT gols_equip_a, gols_equip_b FROM pronostics WHERE id_pronostic = {idPronostic}";
 
             try
             {
@@ -397,8 +397,8 @@ namespace PorraGirona.dades
                     {
                         if (lector.Read())
                         {
-                            int golsEquipA = lector.GetInt32(0); 
-                            int golsEquipB = lector.GetInt32(1); 
+                            int golsEquipA = lector.GetInt32(0);
+                            int golsEquipB = lector.GetInt32(1);
 
                             if (golsEquipA > golsEquipB)
                             {
@@ -419,6 +419,8 @@ namespace PorraGirona.dades
 
             return equipGuanyador;
         }
+
+
 
 
 
