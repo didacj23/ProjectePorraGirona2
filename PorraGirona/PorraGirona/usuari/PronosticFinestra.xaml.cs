@@ -61,14 +61,14 @@ namespace PorraGirona.usuari
 
         private void btn_CancelarPronostic_Click(object sender, RoutedEventArgs e)
         {
-            int id = Convert.ToInt32(tb_idPronostic.Text);
+            int id = Convert.ToInt32(tb_partit.Text);
 
             Pronostic p = new Pronostic(id);
 
             p.CancelarPronostic(id);
 
             MessageBox.Show("Pronostic s'ha cancelat correctament");
-            tb_idPronostic.Text="";
+            tb_partit.Text="";
         }
     }
 }

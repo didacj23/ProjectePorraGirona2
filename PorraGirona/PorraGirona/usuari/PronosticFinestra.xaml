@@ -82,18 +82,5 @@
             <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
             <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
         </Button>
-        <Label x:Name="lb_id_infoPartit" Content="ID:" HorizontalAlignment="Left" Margin="206,90,0,0" VerticalAlignment="Top" Width="55" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
-        <TextBox x:Name="tb_idPronostic" HorizontalAlignment="Left" Margin="391,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Foreground="White" Background="#FFD75667" FontFamily="Yu Gothic UI" BorderBrush="#FFD75667" BorderThickness="0" Height="22">
-            <TextBox.Template>
-                <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="3">
-                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" />
-                    </Border>
-                </ControlTemplate>
-            </TextBox.Template>
-        </TextBox>
     </Grid>
 </Window>
