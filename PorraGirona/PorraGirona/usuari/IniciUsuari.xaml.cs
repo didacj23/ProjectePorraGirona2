@@ -42,8 +42,6 @@ namespace PorraGirona.usuari
             }
 
             lbl_nomUsuari_usuari.Content = "hola, " + us.Nom + " " + us.Cognom;
-
-            lbl_puntuacio_usuari.Content = us.PuntsAcumulats;
                             
 
             dg_Pronostics_usuari.ItemsSource = lpr.Pronostics;
@@ -87,7 +85,15 @@ namespace PorraGirona.usuari
         private void btn_Comprovar_iniciUsuari_Click(object sender, RoutedEventArgs e)
         {
             ComprovarPronostic comp = new ComprovarPronostic(us);
+            //Close();
             comp.Show();
+        }
+
+        private void btn_VeurePunts_inici_Click(object sender, RoutedEventArgs e)
+        {
+            int punts = us.PuntsAcumulats;
+            MessageBox.Show("Punts: " + );
+            
         }
 
         /*private void btn_ModPronostic_iniciaUsuari_Click(object sender, RoutedEventArgs e)

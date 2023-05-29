@@ -101,7 +101,7 @@ namespace PorraGirona
         public void CrearEquip(string nom_equip, string camp)
         {
             dbEquips equip = new dbEquips();
-            equip.CrearEquip();
+            equip.CrearEquip(nom_equip, camp);
         }
 
         public override string ToString()
