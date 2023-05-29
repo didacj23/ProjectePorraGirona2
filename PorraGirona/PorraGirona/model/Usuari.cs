@@ -113,8 +113,7 @@ namespace PorraGirona
         {
             get 
             { 
-                dbUsuaris dbu = new dbUsuaris();
-                puntsAcumulats=dbu.RecuperarPunts(this);
+                
                 return puntsAcumulats; 
             }
             set{ puntsAcumulats = value; }
@@ -144,6 +143,12 @@ namespace PorraGirona
         {
             Connexio = new dbUsuaris();
             Connexio.ActualitzarPuntsAcumulatsUsuari(dni, punts);
+        }
+
+        public int RecuperarPuntsBd()
+        {
+            dbUsuaris dbu = new dbUsuaris();            
+            return puntsAcumulats = dbu.RecuperarPunts(this);
         }
 
         public override string ToString()
