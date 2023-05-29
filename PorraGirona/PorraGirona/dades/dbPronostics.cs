@@ -301,5 +301,126 @@ namespace PorraGirona.dades
 
             return maxId;
         }
-    } 
+
+        public int ObtenirIdPartit(int idPronostic)
+        {
+            int idPartit = -1; // Valor per defecte en cas de no trobar coincidències
+
+            string consulta = $"SELECT id_partit FROM pronostics WHERE id_pronostic = {idPronostic}";
+
+            try
+            {
+                ConnectarBD();
+
+                using (MySqlCommand comanda = new MySqlCommand(consulta, conn))
+                {
+                    object resultat = comanda.ExecuteScalar();
+
+                    if (resultat != null && resultat != DBNull.Value)
+                    {
+                        idPartit = Convert.ToInt32(resultat);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+
+            return idPartit;
+        }
+
+        public char ObtindreEquipGuanyador(int idPartit)
+        {
+            char equipGuanyador = 'b'; // Valor per defecte si els gols de l'equip B són majors o en cas d'error
+
+            string consulta = $"SELECT gols_equip_A, gols_equip_B, estat FROM partits WHERE id = {idPartit}";
+
+            try
+            {
+                ConnectarBD();
+
+                using (MySqlCommand comanda = new MySqlCommand(consulta, conn))
+                {
+                    using (MySqlDataReader lector = comanda.ExecuteReader())
+                    {
+                        if (lector.Read())
+                        {
+                            int golsEquipA = lector.GetInt32("gols_equip_A");
+                            int golsEquipB = lector.GetInt32("gols_equip_B");
+                            string estatPartit = lector.GetString("estat");
+
+                            if (estatPartit == "finalitzat")
+                            {
+                                if (golsEquipA > golsEquipB)
+                                {
+                                    equipGuanyador = 'a';
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error: El partit no està finalitzat.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+
+            return equipGuanyador;
+        }
+
+        public char ObtindreEquipGuanyadorPronostic(int idPronostic)
+        {
+            char equipGuanyador = 'b'; // Valor per defecte si els gols de l'equip B són majors o en cas d'error
+
+            string consulta = $"SELECT gols_equip_a, gols_equip_b FROM pronostics pr INNER JOIN partits p ON pr.id_partit = p.id WHERE pr.id_pronostic = {idPronostic}";
+
+            try
+            {
+                ConnectarBD();
+
+                using (MySqlCommand comanda = new MySqlCommand(consulta, conn))
+                {
+                    using (MySqlDataReader lector = comanda.ExecuteReader())
+                    {
+                        if (lector.Read())
+                        {
+                            int golsEquipA = lector.GetInt32(0); 
+                            int golsEquipB = lector.GetInt32(1); 
+
+                            if (golsEquipA > golsEquipB)
+                            {
+                                equipGuanyador = 'a';
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+
+            return equipGuanyador;
+        }
+
+
+
+    }
 }
