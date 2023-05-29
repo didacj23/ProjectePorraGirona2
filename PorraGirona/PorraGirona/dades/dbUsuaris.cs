@@ -94,33 +94,18 @@ namespace PorraGirona.dades
                             dbPronostics dbp = new dbPronostics();                            
                             LlistaPronostics lpr = dbp.RecuperarPronostics(dni_usuari);
 
-                            if (administrador == 0)
-                            {
-                                u = new Usuari(dni, contrasenya, nom, cognom, puntsAcumulats, lpr);
-                            }
-                            else
-                            {
-                                u = new Administrador(dni, contrasenya, nom, cognom, puntsAcumulats, lpr);
-                            }
-
+                            if (administrador == 0) u = new Usuari(dni, contrasenya, nom, cognom, puntsAcumulats, lpr);
+                            else u = new Administrador(dni, contrasenya, nom, cognom, puntsAcumulats, lpr);
                         }                        
 
                     }
                 }
                 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message);
-               
-            }
-            finally
-            {                
-                DesconnectarBD();
-            }
+            catch (Exception ex) { MessageBox.Show("Error " + ex.Message); }
+            finally { DesconnectarBD(); }
 
             return u;
-
         }
 
         /// <summary>
@@ -179,15 +164,8 @@ namespace PorraGirona.dades
                 }
 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message);
-            }
-            finally
-            {
-                DesconnectarBD();
-            }
-
+            catch (Exception ex) {MessageBox.Show("Error " + ex.Message); }
+            finally { DesconnectarBD(); }
         }
 
         public void ActualitzarPuntsAcumulatsUsuari(string dniUsuari, int puntsAcumulats)
@@ -205,16 +183,17 @@ namespace PorraGirona.dades
 
                 MessageBox.Show("Punts acumulats actualitzats correctament.");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            finally
-            {
-                DesconnectarBD();
-            }
+            catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
+            finally {
+                DesconnectarBD(); }
         }
 
+        public void RecuperarPunts(Usuari u)
+        {
+            string query = $"SELECT puntsAcumulats FROM usuaris where dni = '{u.Dni}'";
+
+
+        }
 
     }
 

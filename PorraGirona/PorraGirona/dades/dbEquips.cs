@@ -18,9 +18,6 @@ namespace PorraGirona.dades
         /// <param name="nom_equip">Nom de l'equip a buscar a la base de dades.</param>
         /// <returns>Retorn l'objecte de tipus equip amb les dades de l'equip trobat.</returns>
         /// 
-
-
-
         public Equip BuscarEquip(string nom_equip)
         {
             string query = $"SELECT * FROM equips WHERE nom_equip='{nom_equip}'";
@@ -48,19 +45,10 @@ namespace PorraGirona.dades
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error " + ex.Message);
-            }
-            finally
-            {
-                DesconnectarBD();
-            }
-
+            catch (Exception ex) { MessageBox.Show("Error " + ex.Message); }
+            finally { DesconnectarBD(); }
             return e;
-
         }
-
         /// <summary>
         /// Connecta amb la base de dades i esborra el registre on el camp nom_equip coincideix amb
         /// el nom de l'equip que es vol eliminar. Al acabar es desconnecta de la base de dades.
@@ -79,14 +67,8 @@ namespace PorraGirona.dades
                     command.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            finally
-            {
-                DesconnectarBD();
-            }
+            catch (Exception ex) {MessageBox.Show("Error: " + ex.Message); }
+            finally { DesconnectarBD(); }
         }
 
         //Crear Equip
@@ -104,14 +86,8 @@ namespace PorraGirona.dades
                     command.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            finally
-            {
-                DesconnectarBD();
-            }
+            catch (Exception ex) { MessageBox.Show("Error: " + ex.Message); }
+            finally { DesconnectarBD();}
         }
 
 

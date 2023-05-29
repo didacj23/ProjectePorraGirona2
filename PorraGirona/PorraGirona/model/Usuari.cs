@@ -80,8 +80,6 @@ namespace PorraGirona
             this.puntsAcumulats = puntsAcumulats;
             this.lpr=lpr;
         }
-
-
         public string Dni
         {
             get { return dni; }
@@ -113,7 +111,12 @@ namespace PorraGirona
 
         public int PuntsAcumulats
         {
-            get { return puntsAcumulats; }
+            get 
+            { 
+                dbUsuaris dbu = new dbUsuaris();
+
+                return puntsAcumulats; 
+            }
             set{ puntsAcumulats = value; }
         }
 
@@ -133,10 +136,8 @@ namespace PorraGirona
 
         public void EliminarUsuari(string dni)
         {
-
             Connexio = new dbUsuaris();
             Connexio.EliminarUsuari(dni);
-
         }
 
         public void ActualitzarPunts(string dni, int punts)

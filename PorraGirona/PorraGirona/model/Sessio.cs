@@ -16,7 +16,6 @@ namespace PorraGirona.model
         private Usuari usuari;
         public bool admin;
 
-
         /// <summary>
         /// Crea un objecte de tipus Sessio amb paràmetres dni i pass introduits x usuari a pantalla
         /// de inici de sessió. Crea un objecte dbUsuaris i executa el mètode de IniciarSessió, que retorn true
@@ -40,11 +39,7 @@ namespace PorraGirona.model
                 if (usuari is Administrador) admin = true;
                 else admin = false;
             }
-            else
-            {
-                //sessio NO valida
-                valida=false;
-            }
+            else valida=false;
 
         }
 
@@ -74,8 +69,6 @@ namespace PorraGirona.model
         {
             get { return valida; }
             //set { valida = value; }
-        }
-               
-
+        }               
     }
 }
