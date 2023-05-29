@@ -188,13 +188,35 @@ namespace PorraGirona.dades
                 DesconnectarBD(); }
         }
 
-        public void RecuperarPunts(Usuari u)
+        public int RecuperarPunts(Usuari u)
         {
             string query = $"SELECT puntsAcumulats FROM usuaris where dni = '{u.Dni}'";
+            int punts = -1;
+            try
+            {
+                ConnectarBD();
 
-
+                using (MySqlCommand command = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            punts = reader.GetInt32("puntsAcumulats");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error. "+  ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+            return punts;
         }
-
     }
 
 }
