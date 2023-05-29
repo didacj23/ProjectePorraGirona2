@@ -149,6 +149,12 @@ namespace PorraGirona.model
             dbp.InsertarPartit(this);                       
         }
 
+        public void EntrarResultat(int id, int Glocal, int Gvisitant)
+        {
+            dbPartits partits = new dbPartits();
+            partits.(EntrarResultat(id, Glocal, Gvisitant));
+        }
+
 
 
         public override string ToString()

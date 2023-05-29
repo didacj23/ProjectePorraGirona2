@@ -84,7 +84,13 @@ namespace PorraGirona
             set { totalPartitsEmpatats = value; }
         }
 
-        public dbPartits Connexio { get; set; }
+        public dbEquips Connexio { get; set; }
+
+        public void CrearEquip(string nom_equip, string camp)
+        {
+            dbEquips equip = new dbEquips();
+            equip.CrearEquip();
+        }
 
         public override string ToString()
         {
