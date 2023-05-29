@@ -51,7 +51,7 @@ namespace PorraGirona.dades
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error "+ ex.Message);
+                //MessageBox.Show("Error "+ ex.Message);
             }
             finally
             {
