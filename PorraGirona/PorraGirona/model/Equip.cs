@@ -98,6 +98,11 @@ namespace PorraGirona
             return dbe.BuscarEquip(nom_equip);
         }
         
+        public void CrearEquip(string nom_equip, string camp)
+        {
+            dbEquips equip = new dbEquips();
+            equip.CrearEquip();
+        }
 
         public override string ToString()
         {

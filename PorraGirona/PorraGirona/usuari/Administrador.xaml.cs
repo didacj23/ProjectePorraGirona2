@@ -335,9 +335,9 @@ namespace PorraGirona.usuari
             string NomEquip = inp_NomEquip_admin.Text;
             string NomCamp = inp_NomCamp_admin.Text;
 
-            dbEquips equips = new dbEquips();
+            Equip equip = new Equip();
 
-            equips.CrearEquip(NomEquip, NomCamp);
+            equip.CrearEquip(NomEquip, NomCamp);
 
         }
 
@@ -347,7 +347,7 @@ namespace PorraGirona.usuari
             int Glocal = Convert.ToInt32(inp_GLocal_admin.Text);
             int Gvisitant = Convert.ToInt32(inp_GVisitant_admin.Text);
 
-            dbPartits partit = new dbPartits();
+            Partit partit = new Partit();
             partit.EntrarResultat(id, Glocal, Gvisitant);
         }
     }

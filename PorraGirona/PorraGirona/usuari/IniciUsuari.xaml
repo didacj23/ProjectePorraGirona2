@@ -93,7 +93,7 @@
             <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
             <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
         </Button>
-        <Button x:Name="btn_admin_iniciUsuari" Content="Administració" HorizontalAlignment="Left" Margin="580,306,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI Light" Click="btn_admin_iniciUsuari_Click">
+        <Button x:Name="btn_admin_iniciUsuari" Content="Administració" HorizontalAlignment="Left" Margin="580,306,0,0" VerticalAlignment="Top" Height="41" Width="108" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI Light" Click="btn_admin_iniciUsuari_Click" Visibility="Collapsed">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
@@ -112,6 +112,15 @@
             </Button.Template>
             <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
             <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
+        </Button>
+        <Button x:Name="btn_Comprovar_iniciUsuari" Content="Comprova prònostic" HorizontalAlignment="Left" Margin="557,306,0,0" VerticalAlignment="Top" Height="41" Width="154" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI Light" Click="btn_Comprovar_iniciUsuari_Click" Visibility="Visible">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
 
 

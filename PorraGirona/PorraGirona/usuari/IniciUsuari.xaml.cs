@@ -33,10 +33,12 @@ namespace PorraGirona.usuari
             if(admin) 
             {
                 btn_admin_iniciUsuari.Visibility = Visibility.Visible;
+                btn_Comprovar_iniciUsuari.Visibility=Visibility.Collapsed;
             }
             else
             {
                 btn_admin_iniciUsuari.Visibility = Visibility.Collapsed;
+                btn_Comprovar_iniciUsuari.Visibility=Visibility.Visible;
             }
 
             lbl_nomUsuari_usuari.Content = "hola, " + us.Nom + " " + us.Cognom;
@@ -80,6 +82,12 @@ namespace PorraGirona.usuari
             PronosticFinestra pronostic = new PronosticFinestra(us);
             //Close();
             pronostic.Show();
+        }
+
+        private void btn_Comprovar_iniciUsuari_Click(object sender, RoutedEventArgs e)
+        {
+            ComprovarPronostic comp = new ComprovarPronostic(us);
+            comp.Show();
         }
 
         /*private void btn_ModPronostic_iniciaUsuari_Click(object sender, RoutedEventArgs e)

@@ -17,6 +17,10 @@ namespace PorraGirona.dades
         /// </summary>
         /// <param name="nom_equip">Nom de l'equip a buscar a la base de dades.</param>
         /// <returns>Retorn l'objecte de tipus equip amb les dades de l'equip trobat.</returns>
+        /// 
+
+
+
         public Equip BuscarEquip(string nom_equip)
         {
             string query = $"SELECT * FROM equips WHERE nom_equip='{nom_equip}'";
