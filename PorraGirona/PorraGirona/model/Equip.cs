@@ -37,6 +37,12 @@ namespace PorraGirona
             totalPartitsEmpatats=0;
         }
 
+        public Equip(string nom_equip)
+        {
+            dbEquips dbe = new dbEquips();
+
+            dbe.BuscarEquip(nom_equip);
+        }
         
         public Equip(string nom, string camp, string foto, int totalPartitsGuanyats, int totalPartitsPerduts, int totalPartitsEmpatats)
         {
@@ -84,7 +90,14 @@ namespace PorraGirona
             set { totalPartitsEmpatats = value; }
         }
 
-        public dbPartits Connexio { get; set; }
+        public dbEquips Connexio { get; set; }
+
+        public Equip BuscarEquip(string nom_equip)
+        {
+            dbEquips dbe = new dbEquips();
+            return dbe.BuscarEquip(nom_equip);
+        }
+        
 
         public override string ToString()
         {

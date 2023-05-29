@@ -317,19 +317,17 @@ namespace PorraGirona.usuari
 
         private void btn_ProgramarPartit_admin_Click(object sender, RoutedEventArgs e)
         {
-            dbEquips dbe = new dbEquips();
-            Equip ea = dbe.BuscarEquip(inp_EquipA_admin.Text);
-            Equip eb = dbe.BuscarEquip(inp_EquipB_admin.Text);            
+            Equip a = new Equip();
+            a=a.BuscarEquip(inp_EquipA_admin.Text);
+
+            Equip b = new Equip();
+            b = b.BuscarEquip(inp_EquipB_admin.Text);
+
             DateTime diaIhora = Convert.ToDateTime(inp_DataHora_admin.Text);
             string camp = inp_Camp_admin.Text; //?
 
-            //int id = Convert.ToInt32(inp_id_admin.Text);
-
-            Partit partit = new Partit(ea, eb, diaIhora, camp);
+            Partit partit = new Partit(a, b, diaIhora, camp);
             partit.ProgramarPartit();
-
-            //partit.ProgramarPartit(EquipLocal, EquipVisitant, diaIhora, camp, estat, id);
-
         }
 
         private void btn_CrearEquip_admin_Click(object sender, RoutedEventArgs e)

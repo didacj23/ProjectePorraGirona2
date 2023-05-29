@@ -82,11 +82,11 @@ namespace PorraGirona.usuari
             pronostic.Show();
         }
 
-        private void btn_ModPronostic_iniciaUsuari_Click(object sender, RoutedEventArgs e)
+        /*private void btn_ModPronostic_iniciaUsuari_Click(object sender, RoutedEventArgs e)
         {
             Modificar modificar = new Modificar();
             Close();
             modificar.Show();
-        }
+        }*/
     }
 }

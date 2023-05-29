@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace PorraGirona.dades
 {
-    internal class dbEquips:dbConnexio
+    public class dbEquips:dbConnexio
     {
         /// <summary>
         /// Connecta amb la base de dades i busca un registre a la taula equips on el camp nom_equip
