@@ -13,25 +13,6 @@
         <Label x:Name="lbl_nomUsuari_usuari" Content="Hola, nomUsuari" HorizontalAlignment="Left" Margin="35,29,0,0" VerticalAlignment="Top" Width="163" Foreground="White" FontWeight="Medium" FontSize="19" FontFamily="Yu Gothic UI Light"/>
         <Label x:Name="lbl_teusPronostics_usuari" Content="Els teus pronòstics" HorizontalAlignment="Left" Margin="35,75,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
         <Label x:Name="lbl_propersPartits_usuari" Content="Propers partits" HorizontalAlignment="Left" Margin="35,235,0,0" VerticalAlignment="Top" Width="147" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
-        <Label x:Name="lbl_infoPuntuacio_usuari" Content="Puntuació" HorizontalAlignment="Left" Margin="580,32,0,0" VerticalAlignment="Top" Width="80" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI Light"/>
-        <Label x:Name="lbl_puntuacio_usuari" Content="número" HorizontalAlignment="Left" Margin="666,31,0,0" VerticalAlignment="Top" Width="68" Foreground="White" FontSize="16" FontFamily="Yu Gothic UI" Height="33">
-            <Label.Style>
-                <Style TargetType="{x:Type Label}">
-                    <Setter Property="Background" Value="#FFD75667"/>
-                    <Setter Property="BorderBrush" Value="Transparent"/>
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Label}">
-                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Label.Style>
-        </Label>
 
         <DataGrid x:Name="dg_Pronostics_usuari" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Height="NaN" Margin="35,106,32,193" Width="NaN" FontFamily="Yu Gothic UI Light" Background="#FFCF152D" BorderBrush="#FFCF152D" GridLinesVisibility="None" SelectionChanged="dg_Pronostics_usuari_SelectionChanged">
             <DataGrid.Resources>
@@ -121,6 +102,17 @@
                     </Border>
                 </ControlTemplate>
             </Button.Template>
+        </Button>
+        <Button x:Name="btn_VeurePunts_inici" Content="Veure punts" HorizontalAlignment="Left" Margin="580,29,0,0" VerticalAlignment="Top" Height="40" Width="141" Background="#FFD75667" Foreground="White" BorderBrush="#FFD75667" FontSize="16" FontFamily="Yu Gothic UI" Click="btn_VeurePunts_inici_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="3">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.HorizontalContentAlignment>Center</Button.HorizontalContentAlignment>
+            <Button.VerticalContentAlignment>Center</Button.VerticalContentAlignment>
         </Button>
 
 

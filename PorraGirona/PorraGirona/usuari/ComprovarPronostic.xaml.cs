@@ -46,6 +46,16 @@ namespace PorraGirona.usuari
                 us.ActualitzarPunts(us.Dni, punts);
             }
 
+            
+
+        }
+
+        private void btn_enrere_registre_Click(object sender, RoutedEventArgs e)
+        {
+            IniciUsuari enrere = new IniciUsuari();
+            Close();
+            enrere.Show();
+            
         }
     }
 }
