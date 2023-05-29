@@ -8,9 +8,6 @@
     <Compile Update="usuari\mainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="usuari\Modificar.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="usuari\PronosticFinestra.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,9 +20,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="usuari\MainWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="usuari\Modificar.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="usuari\PronosticFinestra.xaml">

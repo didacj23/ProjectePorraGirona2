@@ -138,6 +138,12 @@ namespace PorraGirona
 
         }
 
+        public void ActualitzarPunts(string dni, int punts)
+        {
+            Connexio = new dbUsuaris();
+            Connexio.ActualitzarPuntsAcumulatsUsuari(dni, punts);
+        }
+
         public override string ToString()
         {
             return $"Usuari [DNI: {dni}, Nom: {nom}, Cognom: {cognom}, Punts acumulats: {puntsAcumulats}]";

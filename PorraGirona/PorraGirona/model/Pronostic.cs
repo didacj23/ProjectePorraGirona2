@@ -137,6 +137,8 @@ namespace PorraGirona
             dbpr.CancelarPronostic(idPronostic);
         }
 
+
+
         public override string ToString()
         {
             return $"Pronostic [ID: {idPronostic}, Usuari: {usuari.Dni}, Partit: {partit.EquipA} vs {partit.EquipB}]";

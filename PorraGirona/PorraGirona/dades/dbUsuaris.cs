@@ -190,6 +190,32 @@ namespace PorraGirona.dades
 
         }
 
+        public void ActualitzarPuntsAcumulatsUsuari(string dniUsuari, int puntsAcumulats)
+        {
+            string consulta = $"UPDATE usuaris SET puntsAcumulats = puntsAcumulats + {puntsAcumulats} WHERE dni = '{dniUsuari}'";
+
+            try
+            {
+                ConnectarBD();
+
+                using (MySqlCommand comanda = new MySqlCommand(consulta, conn))
+                {
+                    comanda.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("Punts acumulats actualitzats correctament.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                DesconnectarBD();
+            }
+        }
+
+
     }
 
 }
